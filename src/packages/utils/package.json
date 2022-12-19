@@ -1,0 +1,19 @@
+{
+  "name": "@kviewui/utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "module": "index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build"
+  },
+  "keywords": [
+    "kviewui",
+    "@kviewui/utils"
+  ],
+  "author": "kviewui@163.com",
+  "license": "MIT"
+}

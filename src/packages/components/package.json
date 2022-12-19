@@ -1,0 +1,25 @@
+{
+  "name": "@kviewui/kviewui",
+  "version": "1.0.0",
+  "description": "",
+  "typings": "dist/components/src/index.d.ts",
+  "scripts": {
+    "build": "vite build"
+  },
+  "files": [
+    "es",
+    "lib"
+  ],
+  "keywords": [
+    "kviewui",
+    "vue3组件库",
+    "uniapp",
+    "uniapp组件库",
+    "暗黑模式"
+  ],
+  "author": "kviewui@163.com",
+  "license": "MIT",
+  "dependencies": {
+    "@kviewui/utils": "workspace:^1.0.0"
+  }
+}

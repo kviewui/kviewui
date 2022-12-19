@@ -1,0 +1,46 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "rootDir": ".",
+        "jsx": "preserve",
+        "strict": false,
+        "target": "ES2015",
+        "module": "ESNext",
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
+        "sourceMap": false,
+        "declaration": false,
+        "removeComments": true,
+        "experimentalDecorators": true,// 启动装饰器
+        "lib": [
+            "esnext",
+            "dom"
+        ],
+        "rootDirs": [
+            "./src",
+            "./src/packages/components"
+        ],
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        },
+        "types": [
+            "unplugin-vue-define-options/macros-global", 
+            "vite/client",
+            "@dcloudio/types"
+        ]
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.vue",
+        "src/**/*.jsx"
+, "src/packages/components/index.js", "src/packages/components/index.js"    ],
+    "exclude": [
+        "./node_modules",
+        "src/packages/vscode-extension"
+    ]
+}
