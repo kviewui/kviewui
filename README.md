@@ -1,7 +1,7 @@
 
 <div align="center">
   <a href="https://cn.kviewui.com">
-    <img src="https://cn.kviewui.com/public/kviewui.png" width="150">
+    <img src="https://www.kviewui.com/logo/kviewui-small2x.png" width="150">
   </a>
   <h1>KVIEWUI</h1>
   <p>基于 UNI-APP 的多端开发组件库，让您的开发效率加倍！</p>
