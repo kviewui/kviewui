@@ -10,5 +10,7 @@ onHide(() => {
   console.log("App Hide");
 });
 </script>
-<!-- <template><div></div></template> -->
-<!-- <style></style> -->
+<style lang="less">
+// @import url('node_modules/@kviewui/kviewui/style/theme/index.less');
+@import url('@kviewui/kviewui/common/css/dist/index.css');
+</style>

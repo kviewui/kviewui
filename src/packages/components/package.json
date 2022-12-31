@@ -1,7 +1,7 @@
 {
   "name": "@kviewui/kviewui",
   "version": "1.0.0",
-  "description": "",
+  "description": "基于UNI-APP框架的多端开发UI组件库，让您的开发效率加倍提升",
   "typings": "dist/components/src/index.d.ts",
   "scripts": {
     "build": "vite build"
@@ -12,14 +12,29 @@
   ],
   "keywords": [
     "kviewui",
+    "vue3",
     "vue3组件库",
+    "vue3 component",
+    "vite",
+    "vue",
     "uniapp",
     "uniapp组件库",
     "暗黑模式"
   ],
   "author": "kviewui@163.com",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "dependencies": {
     "@kviewui/utils": "workspace:^1.0.0"
+  },
+  "devDependencies": {
+    "@kviewui/color-builder": "^1.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitcode.net/kviewui/kviewui"
   }
 }

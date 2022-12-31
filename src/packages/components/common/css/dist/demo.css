@@ -1,0 +1,351 @@
+/**
+* 以下为工具自动填写
+**/
+/******** 下面的样式方便转换为css代码后修改uniapp的条件编译 ********/
+/* 变换 */
+.kui-transform {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: translateX(0) translateY(0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+    /* #endif */
+            transform: translateX(0) translateY(0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+  }
+  .kui-transform-gpu {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+    /* #endif */
+            transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+  }
+  .kui-transform-none {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: none;
+    /* #endif */
+            transform: none;
+  }
+  /* 变换原点 */
+  .kui-origin-center {
+    /* #ifndef APP-PLUS */
+    -webkit-transform-origin: center;
+    /* #endif */
+            transform-origin: center;
+  }
+  .kui-origin-top {
+    /* #ifndef APP-PLUS */
+    -webkit-transform-origin: top;
+    /* #endif */
+            transform-origin: top;
+  }
+  .kui-origin-top-right {
+    /* #ifndef APP-PLUS */
+    -webkit-transform-origin: top right;
+    /* #endif */
+            transform-origin: top right;
+  }
+  .kui-origin-right {
+    /* #ifndef APP-PLUS */
+    -webkit-transform-origin: right;
+    /* #endif */
+            transform-origin: right;
+  }
+  .kui-origin-bottom-right {
+    /* #ifndef APP-PLUS */
+    -webkit-transform-origin: bottom right;
+    /* #endif */
+            transform-origin: bottom right;
+  }
+  .kui-origin-bottom {
+    /* #ifndef APP-PLUS */
+    -webkit-transform-origin: bottom;
+    /* #endif */
+            transform-origin: bottom;
+  }
+  .kui-origin-bottom-left {
+    /* #ifndef APP-PLUS */
+    -webkit-transform-origin: bottom left;
+    /* #endif */
+            transform-origin: bottom left;
+  }
+  .kui-origin-left {
+    /* #ifndef APP-PLUS */
+    -webkit-transform-origin: left;
+    /* #endif */
+            transform-origin: left;
+  }
+  .kui-origin-top-left {
+    /* #ifndef APP-PLUS */
+    -webkit-transform-origin: top left;
+    /* #endif */
+            transform-origin: top left;
+  }
+  /* 缩放 */
+  /* 旋转 */
+  .kui-rotate-0 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(0deg);
+    /* #endif */
+            transform: rotate(0deg);
+  }
+  .kui-rotate-1 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(1deg);
+    /* #endif */
+            transform: rotate(1deg);
+  }
+  .kui-rotate-2 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(2deg);
+    /* #endif */
+            transform: rotate(2deg);
+  }
+  .kui-rotate-3 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(3deg);
+    /* #endif */
+            transform: rotate(3deg);
+  }
+  .kui-rotate-6 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(6deg);
+    /* #endif */
+            transform: rotate(6deg);
+  }
+  .kui-rotate-12 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(12deg);
+    /* #endif */
+            transform: rotate(12deg);
+  }
+  .kui-rotate-45 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(45deg);
+    /* #endif */
+            transform: rotate(45deg);
+  }
+  .kui-rotate-90 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(90deg);
+    /* #endif */
+            transform: rotate(90deg);
+  }
+  .kui-rotate-180 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(180deg);
+    /* #endif */
+            transform: rotate(180deg);
+  }
+  .-kui-rotate-180 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(-180deg);
+    /* #endif */
+            transform: rotate(-180deg);
+  }
+  .-kui-rotate-90 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(-90deg);
+    /* #endif */
+            transform: rotate(-90deg);
+  }
+  .-kui-rotate-45 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(-45deg);
+    /* #endif */
+            transform: rotate(-45deg);
+  }
+  .-kui-rotate-12 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(-12deg);
+    /* #endif */
+            transform: rotate(-12deg);
+  }
+  .-kui-rotate-6 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(-6deg);
+    /* #endif */
+            transform: rotate(-6deg);
+  }
+  .-kui-rotate-3 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(-3deg);
+    /* #endif */
+            transform: rotate(-3deg);
+  }
+  .-kui-rotate-2 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(-2deg);
+    /* #endif */
+            transform: rotate(-2deg);
+  }
+  .-kui-rotate-1 {
+    /* #ifndef APP-PLUS */
+    -webkit-transform: rotate(-1deg);
+    /* #endif */
+            transform: rotate(-1deg);
+  }
+
+/* Flex */
+.kui-flex {
+    /* #ifndef APP-PLUS */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    /* #endif */
+    display: flex;
+  }
+  .kui-flex-1 {
+    /* #ifndef APP-PLUS */
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+    /* #endif */
+            flex: 1;
+  }
+  /*  #ifndef  APP-PLUS  */
+  .kui-flex-none {
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+  }
+  /*  #endif  */
+  /* Flex Direction */
+  .kui-flex-row {
+    /* #ifndef APP-PLUS */
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+    /* #endif */
+            flex-direction: row;
+  }
+  .kui-flex-row-reverse {
+    /* #ifndef APP-PLUS */
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+    /* #endif */
+            flex-direction: row-reverse;
+  }
+  .kui-flex-col {
+    /* #ifndef APP-PLUS */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+    /* #endif */
+            flex-direction: column;
+  }
+  .kui-flex-col-reverse {
+    /* #ifndef APP-PLUS */
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+    /* #endif */
+            flex-direction: column-reverse;
+  }
+  /* Flex Wrap */
+  .kui-flex-wrap {
+    /* #ifndef APP-PLUS */
+    -ms-flex-wrap: wrap;
+    /* #endif */
+        flex-wrap: wrap;
+  }
+  .kui-flex-wrap-reverse {
+    /* #ifndef APP-PLUS */
+    -ms-flex-wrap: wrap-reverse;
+    /* #endif */
+        flex-wrap: wrap-reverse;
+  }
+  .kui-flex-nowrap {
+    /* #ifndef APP-PLUS */
+    -ms-flex-wrap: nowrap;
+    /* #endif */
+        flex-wrap: nowrap;
+  }
+  /* Justify Content */
+  .kui-justify-start {
+    /* #ifndef APP-PLUS */
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+    /* #endif */
+            justify-content: flex-start;
+  }
+  .kui-justify-end {
+    /* #ifndef APP-PLUS */
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+    /* #endif */
+            justify-content: flex-end;
+  }
+  .kui-justify-center {
+    /* #ifndef APP-PLUS */
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+    /* #endif */
+            justify-content: center;
+  }
+  .kui-justify-between {
+    /* #ifndef APP-PLUS */
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+    /* #endif */
+            justify-content: space-between;
+  }
+  .kui-justify-around {
+    /* #ifndef APP-PLUS */
+    -ms-flex-pack: distribute;
+    /* #endif */
+        justify-content: space-around;
+  }
+  /* #ifndef APP-PLUS */
+  .kui-justify-evenly {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  /* #endif */
+  /* Align Items */
+  .kui-items-start {
+    /* #ifndef APP-PLUS */
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+    /* #endif */
+            align-items: flex-start;
+  }
+  .kui-items-end {
+    /* #ifndef APP-PLUS */
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+    /* #endif */
+            align-items: flex-end;
+  }
+  .kui-items-center {
+    /* #ifndef APP-PLUS */
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+    /* #endif */
+            align-items: center;
+  }
+  .kui-items-stretch {
+    /* #ifndef APP-PLUS */
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+    /* #endif */
+            align-items: stretch;
+  }
+  /* #ifndef APP-PLUS */
+  .kui-items-baseline {
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+  }
+  /* #endif */
+
+  .kui-sticky {
+    /* #ifndef APP-PLUS */
+    position: -webkit-sticky;
+    /* #endif */
+    position: sticky;
+  }
+
+  .kui-w-full {
+    /* width: 100%; */
+    /* #ifndef APP-PLUS */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    /* #endif */
+    display: flex;
+  }

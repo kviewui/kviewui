@@ -1,22 +1,7 @@
 <template>
-	<view :class="block ? 'kui-w-full' : ''" @touchstart="start" @touchend="end" @click="beforeStart">
-		<button class="" :class="shadow ? `kui-shadow-${shadowSize}` : ''" :plain="true" :disabled="disabled" :style="{
-		  borderWidth: data.btnBorderWidth,
-		  borderStyle: data.btnBorderStyle,
-		  borderColor: data.btnBorderColor,
-		  backgroundColor: data.backgroundColor,
-		  backgroundImage: data.backgroundImage,
-		  color: data.color,
-		  width: data.width,
-		  height: data.height,
-		  padding: data.padding,
-		  opacity: data.opacity,
-		  margin: 0,
-		  marginTop: `${marginY}px`,
-		  borderRadius: `${data.radius}rpx`,
-		  lineHeight: 1,
-		  flexGrow: (size === 'large' || block) ? 1 : '',
-		}"
+	<view class="kui-box-border kui-flex kui-flex-col" @touchstart="start" @touchend="end" @click="beforeStart">
+		<button class="kui-flex" :class="shadow ? `kui-shadow-${shadowSize}` : ''" :plain="true" :disabled="disabled"
+		:style="btnStyle"
 			:form-type="formType"
 			:open-type="openType"
 			:hover-class="hoverClass"
@@ -79,8 +64,12 @@
 		reactive,
 		getCurrentInstance,
 		defineComponent,
-		SetupContext
+		SetupContext,
+		computed,
+		CSSProperties
 	} from "vue";
+
+	import * as CSS from 'csstype';
 	
 	import { useThrottle } from '@kviewui/utils';
     import { theme as Theme } from '../../common/theme'
@@ -115,6 +104,7 @@
 				width: "max-content",
 				height: '',
 				padding: '',
+				margin: '',
 				opacity: props.disabled ? 0.6 : 1,
 				longClick: 0,
 				timeOutEvent: 0,
@@ -125,7 +115,36 @@
 				radius: props.shape !== 'square' ? 9999 : props.radius,
 				fontSize: `${theme.size.fonts['base']}${theme.size.fontUnit}`,
                 btnWidth: '',
+				btnStyle: {}
 			});
+
+			const style: CSSProperties = reactive({});
+
+			const btnStyle = computed(() => {
+
+				style.borderWidth = data.btnBorderWidth;
+				style.borderStyle = data.btnBorderStyle;
+				style.borderColor = data.btnBorderColor;
+				style.backgroundColor = data.backgroundColor;
+				style.backgroundImage = data.backgroundImage;
+				style.color = data.color;
+				style.height = data.height;
+				style.padding = data.padding;
+				style.margin = data.margin;
+				style.marginTop = `${props.marginY}px`;
+				style.borderRadius = `${data.radius}rpx`;
+				style.lineHeight = 1;
+				style.flexGrow = props.size === 'large' ? 1 : '';
+				
+				if (!props.block) {
+					// 普通按钮时，需要给宽度
+					style.width = data.width;
+				}
+
+				style.justifyContent = 'center';
+
+				return style;
+			})
 			
 			const init = (steep: number = 0) => {
 				// console.log(steep+5);
@@ -188,11 +207,11 @@
 				data.width = props.shape === 'round' ? data.height : data.width;
 				
 				/**
-				 * 块级按钮样式
+				 * 通栏按钮样式
 				 */
 				if (props.block) {
 					// data.height = '72rpx';
-					data.width = '100%';
+					// data.width = '100%';
 				}
 			};
 			
@@ -257,6 +276,7 @@
 			}
 			
 			return {
+				btnStyle,
 				useThrottle,
 				data,
 				start,
@@ -277,7 +297,7 @@
 		margin-left: 0;
 		margin-right: 0;
 		box-sizing: border-box;
-		width: 0;
+		/* width: 0; */
 	}
 	.kui-flex-1 {
 		flex: 1 !important;
