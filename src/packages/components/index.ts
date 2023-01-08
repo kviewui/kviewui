@@ -4,10 +4,13 @@ import Page from './src/page/index.vue';
 import Image from './src/image/index.vue';
 import Text from './src/text/index.vue';
 import Container from './src/container/index.vue';
+import Switch from './src/switch/index.vue';
+import Animation from './src/animation/index.vue';
+
 import { theme } from './common/theme';
 
 function install(app: App) {
-    const packages = [Button, Page, Image, Text, Container];
+    const packages = [Button, Page, Image, Text, Container, Switch, Animation];
 
     packages.forEach((item: any) => {
         if (item.install) {
@@ -35,6 +38,8 @@ export {
     Image as KuiImage,
     Text as KuiText,
     Container as KuiContainer,
+    Switch as KuiSwitch,
+    Animation as KuiAnimation,
     theme,
     app,
     version

@@ -79,13 +79,11 @@
     import { theme as Theme } from '../../common/theme';
 
 	const { componentName, create } = createComponent('button');
-	
-	const name = 'kui-button';
-	
-	import { ButtonProps } from './props';
+		
+	import { buttonProps } from './types';
 	
 	export default create({
-		props: ButtonProps,
+		props: buttonProps,
 		emits: ['click', 'getphonenumber', 'getuserinfo', 'error', 'opensetting', 'launchapp'],
 		options: {
 			// 小程序虚拟节点设置

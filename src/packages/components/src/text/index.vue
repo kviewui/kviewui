@@ -1,5 +1,5 @@
 <template>
-	<view
+	<text
 		class="kui-flex kui-flex-col kui-items-center kui-justify-center"
 		:selectable="selectable"
 		:user-select="userSelect"
@@ -11,8 +11,8 @@
 			fontWeight: data.fontWeight
 		}"
 	>
-		<slot></slot>
-	</view>
+        {{ content }}
+	</text>
 </template>
 
 <script lang="ts">
@@ -39,10 +39,10 @@ import { colorBuilder } from '@kviewui/color-builder';
 
 const { create } = createComponent('text');
 
-import TextProps from './props';
+import { textProps } from './types';
 
 export default create({
-	props: TextProps,
+	props: textProps,
 	options: {
 		// 小程序虚拟节点设置
 		virtualHost: false

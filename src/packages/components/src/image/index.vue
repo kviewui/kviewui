@@ -12,7 +12,7 @@
         height: height,
         borderRadius: `${radius}rpx`,
       }" v-if="data.loading || error">
-			<kui-icons type="image" :size="Number(data.iconSize)" class="kui-text-gray-300"></kui-icons>
+			<!-- <kui-icons type="image" :size="Number(data.iconSize)" class="kui-text-gray-300"></kui-icons> -->
 		</view>
 		<image :src="data.src" :style="{
         width: width,
@@ -72,7 +72,7 @@
     import { createComponent } from '@kviewui/utils';
     const { create } = createComponent('image');
 
-	import ImageProps from './props';
+	import { imageProps } from './types';
 	
 	import { getNumberByUnit, getUnitByUnit } from '@kviewui/utils';
     import { getElId } from '@kviewui/utils';
@@ -80,7 +80,7 @@
 	var intersectionObserver;
 
 	export default create({
-		props: ImageProps,
+		props: imageProps,
 		emits: ['click', 'previewImageSuccess', 'previewImageFail'],
 		setup(props, context: SetupContext) {
 			
@@ -184,9 +184,9 @@
 				}, 1000);
 			});
 			
-			onUnmounted(() => {
-				intersectionObserver.disconnect();
-			});
+			// onUnmounted(() => {
+			// 	intersectionObserver.disconnect();
+			// });
 
 			return {
 				props,
@@ -201,10 +201,12 @@
 </script>
 
 <style scoped>
-	image {
+    /* #ifndef APP-NVUE */
+    image {
 		will-change: transform;
 	}
 	view {
 		align-items: baseline;
 	}
+    /* #endif */
 </style>

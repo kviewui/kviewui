@@ -48,6 +48,7 @@
     "@dcloudio/uni-mp-toutiao": "3.0.0-3061520221228001",
     "@dcloudio/uni-mp-weixin": "3.0.0-3061520221228001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-3061520221228001",
+    "@kviewui/kviewui": "^1.0.0",
     "vue": "^3.2.45",
     "vue-i18n": "^9.1.9",
     "weex-bindingx": "^0.0.49"

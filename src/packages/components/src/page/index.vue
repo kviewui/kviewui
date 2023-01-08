@@ -76,10 +76,10 @@
     import { createComponent } from '@kviewui/utils';
     const { create } = createComponent('page');
 		
-	import PageProps from './props';
+    import { pageProps } from "./types";
 	
 	export default create({
-		props: PageProps,
+		props: pageProps,
 		setup(props) {
             console.log(33333);
             
@@ -121,7 +121,7 @@
 			/* #endif */
 			// height = height - 44;
 
-			height = +height - 80;
+			// height = +height - 80;
 						
 			data.height = height ? `${height}px` : '';
 			data.bgColor = !props.bgColor ?

@@ -1,8 +1,8 @@
 <template>
-	<view class="kui-container" :style="{
-		'--width': width,
-		'--height': height,
-		'--color': data.backgroundColor,
+	<view :class="[customClass]" class="kui-container kui-flex kui-flex-col kui-flex-1" :style="{
+		width: width,
+		height: height,
+		color: data.backgroundColor,
 		borderTopLeftRadius: data.topLeftRadius,
 		borderTopRightRadius: data.topRightRadius,
 		borderBottomLeftRadius: data.bottomLeftRadius,
@@ -14,8 +14,10 @@
 		marginLeft: `${marginX}rpx`,
 		marginRight: `${marginX}rpx`,
 		marginTop: `${marginY}rpx`,
-		marginBottom: `${marginY}rpx`
-	}" :class="customClass">
+		marginBottom: `${marginY}rpx`,
+        backgroundColor: data.backgroundColor,
+        ...customStyle
+	}">
 		<slot></slot>
 	</view>
 </template>
@@ -32,10 +34,10 @@
 
     const { create } = createComponent('container');
 
-	import ContainerProps from './props';
+	import { containerProps } from './types';
 
 	export default create({
-		props: ContainerProps,
+		props: containerProps,
 		setup(props) {
 
             const theme: KuiNamespace.Theme = uni.$kView.theme;
@@ -77,19 +79,19 @@
 </script>
 
 <style lang="less" scoped>
-	.kui-container {
-		width: var(--width);
-		height: var(--height);
-		background-color: var(--color);
-		padding-left: var(--pX);
-		padding-right: var(--paddingX);
-		padding-top: var(--paddingY);
-		padding-bottom: var(--paddingY);
-		margin-left: var(--marginX);
-		margin-right: var(--marginX);
-		margin-top: var(--marginY);
-		margin-bottom: var(--marginY);
-		box-sizing: border-box;
-		line-height: 1;
-	}
+	// .kui-container {
+	// 	width: var(--width);
+	// 	height: var(--height);
+	// 	background-color: var(--color);
+	// 	padding-left: var(--pX);
+	// 	padding-right: var(--paddingX);
+	// 	padding-top: var(--paddingY);
+	// 	padding-bottom: var(--paddingY);
+	// 	margin-left: var(--marginX);
+	// 	margin-right: var(--marginX);
+	// 	margin-top: var(--marginY);
+	// 	margin-bottom: var(--marginY);
+	// 	box-sizing: border-box;
+	// 	line-height: 1;
+	// }
 </style>

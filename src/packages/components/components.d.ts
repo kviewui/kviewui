@@ -4,7 +4,9 @@ declare module "@vue/runtime-core" {
         kPage: typeof import('./index').KuiPage,
         kImage: typeof import('./index').KuiImage,
         kText: typeof import('./index').KuiText,
-        kContainer: typeof import('./index').KuiContainer
+        kContainer: typeof import('./index').KuiContainer,
+        kSwitch: typeof import('./index').KuiSwitch,
+        kAnimation: typeof import('./index').KuiAnimation
     }
 }
 export {}
