@@ -1,7 +1,8 @@
 @import '../color/colors.less';
 // @import '../color/css-variables.less';
 
-@plugin '../color/get-rgb-str.js'; // 注册插件
+@plugin '../../scripts/less/get-rgb-str.js'; // 注册插件
+@plugin '../../scripts/less/get-colors-map.js'; // 注册插件
 
 @kui-theme-tag: body; // css 变量定义的选择器
 
@@ -175,3 +176,25 @@
 @rounded-3xl: unit(60 * @kui-font-to-proportion, @kui-font-unit-suffix);
 @rounded-4xl: unit(80 * @kui-font-to-proportion, @kui-font-unit-suffix);
 @rounded-max: unit(4999 * @kui-font-to-proportion, @kui-font-unit-suffix);
+
+/******** Font Weight ********/
+/**
+* thin-极细
+* extralight-纤细
+* light-细体
+* normal-常规
+* medium-中等加粗
+* semibold-半粗
+* bold-粗体
+* extrabold-中黑
+* black-黑体
+**/
+@font-thin: 100;
+@font-extralight: 200;
+@font-light: 300;
+@font-normal: 400;
+@font-medium: 500;
+@font-semibold: 600;
+@font-bold: 700;
+@font-extrabold: 800;
+@font-black: 900;

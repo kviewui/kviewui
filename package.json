@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	"build:less": "cd src/packages/components/common/css && lessc bg-gradient-t.less > ../../styles/kviewui/bg-gradient-t.css && lessc bg-gradient-tr.less > ../../styles/kviewui/bg-gradient-tr.css && lessc bg-gradient-r.less > ../../styles/kviewui/bg-gradient-r.css && lessc bg-gradient-br.less > ../../styles/kviewui/bg-gradient-br.css && lessc bg-gradient-b.less > ../../styles/kviewui/bg-gradient-b.css && lessc bg-gradient-bl.less > ../../styles/kviewui/bg-gradient-bl.css && lessc bg-gradient-l.less > ../../styles/kviewui/bg-gradient-l.css && lessc bg-gradient-tl.less > ../../styles/kviewui/bg-gradient-tl.css",
+    "generate:components:css": "npm run build:less && cd src/packages/components/scripts && gulp less && node --max_old_space_size=4096 appendFile.js",
+    "build:utils": "cd src/packages/utils && pnpm i && pnpm run build",
+    "dev:h5:mobile-uni-cli": "cd src/examples/mobile-uni-cli && pnpm run dev:h5"
   },
   "keywords": [],
   "author": "",
@@ -12,14 +15,16 @@
   "devDependencies": {
     "@babel/core": "^7.20.5",
     "@dcloudio/types": "^3.2.3",
-    "@kviewui/color-builder": "^1.0.2",
+    "@kviewui/color-builder": "^1.0.3",
     "@rollup/plugin-babel": "^6.0.3",
     "@rollup/plugin-commonjs": "^23.0.5",
     "@rollup/plugin-image": "^3.0.1",
     "@rollup/plugin-json": "^5.0.2",
     "@rollup/plugin-typescript": "^10.0.1",
     "@types/color": "^3.0.3",
+    "@types/node": "^18.11.18",
     "@vitejs/plugin-vue": "^4.0.0",
+    "chalk": "^4.1.2",
     "color": "^4.2.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
@@ -36,13 +41,42 @@
     "rollup-plugin-typescript2": "^0.34.1",
     "rollup-plugin-vue": "^6.0.0",
     "shelljs": "^0.8.5",
-    "typescript": "^4.9.4",
     "unplugin-vue-define-options": "^1.1.1",
-    "vite": "^3.2.4",
-    "vite-plugin-dts": "^1.6.5"
+    "vite-plugin-dts": "^1.6.5",
+    "vue": "^3.2.45",
+    "@dcloudio/uni-automator": "3.0.0-3061520221228001",
+    "@dcloudio/uni-cli-shared": "3.0.0-3061520221228001",
+    "@dcloudio/uni-stacktracey": "3.0.0-3061520221228001",
+    "@dcloudio/vite-plugin-uni": "3.0.0-3061520221228001",
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "sass": "^1.57.1",
+    "typescript": "^4.8.4",
+    "unplugin-vue-components": "^0.22.12",
+    "vite": "^3.2.4"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.0"
   },
   "dependencies": {
+    "@kviewui/components": "workspace:^1.0.0",
+    "@kviewui/types": "workspace:*",
+    "@kviewui/utils": "workspace:*",
     "csstype": "^3.1.1",
-    "vue": "^3.2.45"
-  }
+    "@dcloudio/uni-app": "3.0.0-3061520221228001",
+    "@dcloudio/uni-app-plus": "3.0.0-3061520221228001",
+    "@dcloudio/uni-components": "3.0.0-3061520221228001",
+    "@dcloudio/uni-h5": "3.0.0-3061520221228001",
+    "@dcloudio/uni-mp-alipay": "3.0.0-3061520221228001",
+    "@dcloudio/uni-mp-baidu": "3.0.0-3061520221228001",
+    "@dcloudio/uni-mp-kuaishou": "3.0.0-3061520221228001",
+    "@dcloudio/uni-mp-lark": "3.0.0-3061520221228001",
+    "@dcloudio/uni-mp-qq": "3.0.0-3061520221228001",
+    "@dcloudio/uni-mp-toutiao": "3.0.0-3061520221228001",
+    "@dcloudio/uni-mp-weixin": "3.0.0-3061520221228001",
+    "@dcloudio/uni-quickapp-webview": "3.0.0-3061520221228001",
+    "vue": "^3.2.45",
+    "vue-i18n": "^9.1.9",
+    "weex-bindingx": "^0.0.49"
+  },
+  "private": "true"
 }

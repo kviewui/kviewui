@@ -4,348 +4,361 @@
 /******** 下面的样式方便转换为css代码后修改uniapp的条件编译 ********/
 /* 变换 */
 .kui-transform {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: translateX(0) translateY(0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: translateX(0) translateY(0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1) !important;
     /* #endif */
-            transform: translateX(0) translateY(0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            transform: translateX(0) translateY(0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1) !important;
   }
   .kui-transform-gpu {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1) !important;
     /* #endif */
-            transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+            transform: translate3d(0, 0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1) !important;
   }
   .kui-transform-none {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: none;
+    /* #ifndef APP-NVUE */
+    -webkit-transform: none !important;
     /* #endif */
-            transform: none;
+            transform: none !important;
   }
   /* 变换原点 */
   .kui-origin-center {
-    /* #ifndef APP-PLUS */
-    -webkit-transform-origin: center;
+    /* #ifndef APP-NVUE */
+    -webkit-transform-origin: center !important;
     /* #endif */
-            transform-origin: center;
+            transform-origin: center !important;
   }
   .kui-origin-top {
-    /* #ifndef APP-PLUS */
-    -webkit-transform-origin: top;
+    /* #ifndef APP-NVUE */
+    -webkit-transform-origin: top !important;
     /* #endif */
-            transform-origin: top;
+            transform-origin: top !important;
   }
   .kui-origin-top-right {
-    /* #ifndef APP-PLUS */
-    -webkit-transform-origin: top right;
+    /* #ifndef APP-NVUE */
+    -webkit-transform-origin: top right !important;
     /* #endif */
-            transform-origin: top right;
+            transform-origin: top right !important;
   }
   .kui-origin-right {
-    /* #ifndef APP-PLUS */
-    -webkit-transform-origin: right;
+    /* #ifndef APP-NVUE */
+    -webkit-transform-origin: right !important;
     /* #endif */
-            transform-origin: right;
+            transform-origin: right !important;
   }
   .kui-origin-bottom-right {
-    /* #ifndef APP-PLUS */
-    -webkit-transform-origin: bottom right;
+    /* #ifndef APP-NVUE */
+    -webkit-transform-origin: bottom right !important;
     /* #endif */
-            transform-origin: bottom right;
+            transform-origin: bottom right !important;
   }
   .kui-origin-bottom {
-    /* #ifndef APP-PLUS */
-    -webkit-transform-origin: bottom;
+    /* #ifndef APP-NVUE */
+    -webkit-transform-origin: bottom !important;
     /* #endif */
-            transform-origin: bottom;
+            transform-origin: bottom !important;
   }
   .kui-origin-bottom-left {
-    /* #ifndef APP-PLUS */
-    -webkit-transform-origin: bottom left;
+    /* #ifndef APP-NVUE */
+    -webkit-transform-origin: bottom left !important;
     /* #endif */
-            transform-origin: bottom left;
+            transform-origin: bottom left !important;
   }
   .kui-origin-left {
-    /* #ifndef APP-PLUS */
-    -webkit-transform-origin: left;
+    /* #ifndef APP-NVUE */
+    -webkit-transform-origin: left !important;
     /* #endif */
-            transform-origin: left;
+            transform-origin: left !important;
   }
   .kui-origin-top-left {
-    /* #ifndef APP-PLUS */
-    -webkit-transform-origin: top left;
+    /* #ifndef APP-NVUE */
+    -webkit-transform-origin: top left !important;
     /* #endif */
-            transform-origin: top left;
+            transform-origin: top left !important;
   }
   /* 缩放 */
   /* 旋转 */
   .kui-rotate-0 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(0deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(0deg) !important;
     /* #endif */
-            transform: rotate(0deg);
+            transform: rotate(0deg) !important;
   }
   .kui-rotate-1 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(1deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(1deg) !important;
     /* #endif */
-            transform: rotate(1deg);
+            transform: rotate(1deg) !important;
   }
   .kui-rotate-2 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(2deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(2deg) !important;
     /* #endif */
-            transform: rotate(2deg);
+            transform: rotate(2deg) !important;
   }
   .kui-rotate-3 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(3deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(3deg) !important;
     /* #endif */
-            transform: rotate(3deg);
+            transform: rotate(3deg) !important;
   }
   .kui-rotate-6 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(6deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(6deg) !important;
     /* #endif */
-            transform: rotate(6deg);
+            transform: rotate(6deg) !important;
   }
   .kui-rotate-12 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(12deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(12deg) !important;
     /* #endif */
-            transform: rotate(12deg);
+            transform: rotate(12deg) !important;
   }
   .kui-rotate-45 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(45deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(45deg) !important;
     /* #endif */
-            transform: rotate(45deg);
+            transform: rotate(45deg) !important;
   }
   .kui-rotate-90 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(90deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(90deg) !important;
     /* #endif */
-            transform: rotate(90deg);
+            transform: rotate(90deg) !important;
   }
   .kui-rotate-180 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(180deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(180deg) !important;
     /* #endif */
-            transform: rotate(180deg);
+            transform: rotate(180deg) !important;
   }
   .-kui-rotate-180 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(-180deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(-180deg) !important;
     /* #endif */
-            transform: rotate(-180deg);
+            transform: rotate(-180deg) !important;
   }
   .-kui-rotate-90 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(-90deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(-90deg) !important;
     /* #endif */
-            transform: rotate(-90deg);
+            transform: rotate(-90deg) !important;
   }
   .-kui-rotate-45 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(-45deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(-45deg) !important;
     /* #endif */
-            transform: rotate(-45deg);
+            transform: rotate(-45deg) !important;
   }
   .-kui-rotate-12 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(-12deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(-12deg) !important;
     /* #endif */
-            transform: rotate(-12deg);
+            transform: rotate(-12deg) !important;
   }
   .-kui-rotate-6 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(-6deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(-6deg) !important;
     /* #endif */
-            transform: rotate(-6deg);
+            transform: rotate(-6deg) !important;
   }
   .-kui-rotate-3 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(-3deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(-3deg) !important;
     /* #endif */
-            transform: rotate(-3deg);
+            transform: rotate(-3deg) !important;
   }
   .-kui-rotate-2 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(-2deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(-2deg) !important;
     /* #endif */
-            transform: rotate(-2deg);
+            transform: rotate(-2deg) !important;
   }
   .-kui-rotate-1 {
-    /* #ifndef APP-PLUS */
-    -webkit-transform: rotate(-1deg);
+    /* #ifndef APP-NVUE */
+    -webkit-transform: rotate(-1deg) !important;
     /* #endif */
-            transform: rotate(-1deg);
+            transform: rotate(-1deg) !important;
   }
 
 /* Flex */
 .kui-flex {
-    /* #ifndef APP-PLUS */
-    display: -webkit-box;
-    display: -ms-flexbox;
+    /* #ifndef APP-NVUE */
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
     /* #endif */
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important;
   }
   .kui-flex-1 {
-    /* #ifndef APP-PLUS */
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
+    /* #ifndef APP-NVUE */
+    -webkit-box-flex: 1 !important;
+      -ms-flex-positive: 1 !important;
+          flex-grow: 1 !important;
     /* #endif */
-            flex: 1;
+            flex: 1 !important;
   }
-  /*  #ifndef  APP-PLUS  */
+  /*  #ifndef  APP-NVUE  */
   .kui-flex-none {
-    -webkit-box-flex: 0;
-        -ms-flex: none;
-            flex: none;
+    -webkit-box-flex: 0 !important;
+        -ms-flex: none !important;
+            flex: none !important;
   }
   /*  #endif  */
   /* Flex Direction */
   .kui-flex-row {
-    /* #ifndef APP-PLUS */
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
+    /* #ifndef APP-NVUE */
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
     /* #endif */
-            flex-direction: row;
+            flex-direction: row !important;
   }
   .kui-flex-row-reverse {
-    /* #ifndef APP-PLUS */
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
+    /* #ifndef APP-NVUE */
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: row-reverse !important;
     /* #endif */
-            flex-direction: row-reverse;
+            flex-direction: row-reverse !important;
   }
   .kui-flex-col {
-    /* #ifndef APP-PLUS */
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
+    /* #ifndef APP-NVUE */
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
     /* #endif */
-            flex-direction: column;
+            flex-direction: column !important;
   }
   .kui-flex-col-reverse {
-    /* #ifndef APP-PLUS */
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
+    /* #ifndef APP-NVUE */
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: reverse !important;
+        -ms-flex-direction: column-reverse !important;
     /* #endif */
-            flex-direction: column-reverse;
+            flex-direction: column-reverse !important;
   }
   /* Flex Wrap */
   .kui-flex-wrap {
-    /* #ifndef APP-PLUS */
-    -ms-flex-wrap: wrap;
+    /* #ifndef APP-NVUE */
+    -ms-flex-wrap: wrap !important;
     /* #endif */
-        flex-wrap: wrap;
+        flex-wrap: wrap !important;
   }
   .kui-flex-wrap-reverse {
-    /* #ifndef APP-PLUS */
-    -ms-flex-wrap: wrap-reverse;
+    /* #ifndef APP-NVUE */
+    -ms-flex-wrap: wrap-reverse !important;
     /* #endif */
-        flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse !important;
   }
   .kui-flex-nowrap {
-    /* #ifndef APP-PLUS */
-    -ms-flex-wrap: nowrap;
+    /* #ifndef APP-NVUE */
+    -ms-flex-wrap: nowrap !important;
     /* #endif */
-        flex-wrap: nowrap;
+        flex-wrap: nowrap !important;
   }
   /* Justify Content */
   .kui-justify-start {
-    /* #ifndef APP-PLUS */
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
+    /* #ifndef APP-NVUE */
+    -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
     /* #endif */
-            justify-content: flex-start;
+            justify-content: flex-start !important;
   }
   .kui-justify-end {
-    /* #ifndef APP-PLUS */
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
+    /* #ifndef APP-NVUE */
+    -webkit-box-pack: end !important;
+        -ms-flex-pack: end !important;
     /* #endif */
-            justify-content: flex-end;
+            justify-content: flex-end !important;
   }
   .kui-justify-center {
-    /* #ifndef APP-PLUS */
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
+    /* #ifndef APP-NVUE */
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
     /* #endif */
-            justify-content: center;
+            justify-content: center !important;
   }
   .kui-justify-between {
-    /* #ifndef APP-PLUS */
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
+    /* #ifndef APP-NVUE */
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
     /* #endif */
-            justify-content: space-between;
+            justify-content: space-between !important;
   }
   .kui-justify-around {
-    /* #ifndef APP-PLUS */
-    -ms-flex-pack: distribute;
+    /* #ifndef APP-NVUE */
+    -ms-flex-pack: distribute !important;
     /* #endif */
-        justify-content: space-around;
+        justify-content: space-around !important;
   }
-  /* #ifndef APP-PLUS */
+  /* #ifndef APP-NVUE */
   .kui-justify-evenly {
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    -webkit-box-pack: space-evenly !important;
+        -ms-flex-pack: space-evenly !important;
+            justify-content: space-evenly !important;
   }
   /* #endif */
   /* Align Items */
   .kui-items-start {
-    /* #ifndef APP-PLUS */
-    -webkit-box-align: start;
-        -ms-flex-align: start;
+    /* #ifndef APP-NVUE */
+    -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
     /* #endif */
-            align-items: flex-start;
+            align-items: flex-start !important;
   }
   .kui-items-end {
-    /* #ifndef APP-PLUS */
-    -webkit-box-align: end;
-        -ms-flex-align: end;
+    /* #ifndef APP-NVUE */
+    -webkit-box-align: end !important;
+        -ms-flex-align: end !important;
     /* #endif */
-            align-items: flex-end;
+            align-items: flex-end !important;
   }
   .kui-items-center {
-    /* #ifndef APP-PLUS */
-    -webkit-box-align: center;
-        -ms-flex-align: center;
+    /* #ifndef APP-NVUE */
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
     /* #endif */
-            align-items: center;
+            align-items: center !important;
   }
   .kui-items-stretch {
-    /* #ifndef APP-PLUS */
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
+    /* #ifndef APP-NVUE */
+    -webkit-box-align: stretch !important;
+        -ms-flex-align: stretch !important;
     /* #endif */
-            align-items: stretch;
+            align-items: stretch !important;
   }
-  /* #ifndef APP-PLUS */
+  /* #ifndef APP-NVUE */
   .kui-items-baseline {
-    -webkit-box-align: baseline;
-        -ms-flex-align: baseline;
-            align-items: baseline;
+    -webkit-box-align: baseline !important;
+        -ms-flex-align: baseline !important;
+            align-items: baseline !important;
   }
   /* #endif */
 
   .kui-sticky {
-    /* #ifndef APP-PLUS */
-    position: -webkit-sticky;
+    /* #ifndef APP-NVUE */
+    position: -webkit-sticky !important;
     /* #endif */
-    position: sticky;
+    position: sticky !important;
   }
+  
+  /* #ifndef APP-NVUE */
+  .kui-static {
+	  position: static !important;
+  }
+  /* #endif */
 
   .kui-w-full {
     /* width: 100%; */
-    /* #ifndef APP-PLUS */
-    display: -webkit-box;
-    display: -ms-flexbox;
+    /* #ifndef APP-NVUE */
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    width: 100vw !important;
     /* #endif */
-    display: flex;
+    display: flex !important;
   }

@@ -1,0 +1,84 @@
+<template>
+  <kui-page ref="kuiPage" :padding-x="0" :padding-y="0" bg-color="#FFFFFF">
+    <template v-slot:body>
+      <view class=" kui-flex-col kui-items-center kui-justify-center kui-py-6" :style="style">
+        <kui-image src="/static/kviewui.png" :radius="10" width="440rpx" height="110rpx" disable-fit />
+        <view class="kui-px-6 kui-mt-5">
+					<kui-text :color="theme.colors.light.grey[6]">基于UNI-APP框架的多端开发UI组件库，让您的开发效率加倍提升</kui-text>
+				</view>
+        <view class=" kui-flex-1 kui-mt-6" style="flex: 1 1 0;width: 750rpx;">
+          <kui-container background-color="#F8F8F8" top-left-radius="60rpx" top-right-radius="60rpx" custom-class=" kui-px-6">
+            <view class="kui-mt-6 kui-items-start">
+              <kui-text>暗黑模式：</kui-text>
+              <!-- <kui-switch v-model="data.checked" @change="changeMode"></kui-switch> -->
+            </view>
+          </kui-container>
+        </view>
+      </view>
+    </template>
+  </kui-page>
+</template>
+
+<script setup lang="ts">
+import { onMounted, ref, reactive, CSSProperties } from 'vue';
+import { colorBuilder } from '@kviewui/color-builder';
+import KuiButton from '@kviewui/components/src/button/index.vue';
+import KuiPage from '@kviewui/components/src/page/index.vue';
+import KuiImage from '@kviewui/components/src/image/index.vue';
+import KuiText from '@kviewui/components/src/text/index.vue';
+import KuiContainer from '@kviewui/components/src/container/index.vue';
+// import { default as KuiButton } from '../../kviewui/src/kui-button/kui-button.vue'
+console.log(colorBuilder.generate('#F53F3F', { list: true }));
+console.log(colorBuilder.generate('#F53F3F', { index: 10 }));
+console.log(colorBuilder.getRgbStr('#00BC79'));
+const title = ref('Hello')
+
+const theme: KuiNamespace.Theme = uni.$kView.theme;
+
+console.log(theme.colors.light.blue[1]);
+
+const kuiPage = ref(null);
+
+let sysinfo: UniNamespace.GetSystemInfoResult = reactive({} as any);
+
+let style: CSSProperties = reactive({});
+
+onMounted(() => {
+  sysinfo = kuiPage.value.getApp();
+  style.height = `${sysinfo.windowHeight}px`;
+})
+
+const open = () => {
+  uni.navigateTo({
+    url: '/pages/index/bindingx'
+  })
+}
+</script>
+
+<style>
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  height: 200rpx;
+  width: 200rpx;
+  margin-top: 200rpx;
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  margin-bottom: 50rpx;
+}
+
+.text-area {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-size: 36rpx;
+  /* color: #8f8f94; */
+}
+</style>

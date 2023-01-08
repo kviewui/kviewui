@@ -1,8 +1,8 @@
 {
-  "name": "@kviewui/kviewui",
+  "name": "@kviewui/components",
   "version": "1.0.0",
   "description": "基于UNI-APP框架的多端开发UI组件库，让您的开发效率加倍提升",
-  "typings": "dist/components/src/index.d.ts",
+  "typings": "components.d.ts",
   "scripts": {
     "build": "vite build"
   },
@@ -26,12 +26,6 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
-  },
-  "dependencies": {
-    "@kviewui/utils": "workspace:^1.0.0"
-  },
-  "devDependencies": {
-    "@kviewui/color-builder": "^1.0.2"
   },
   "repository": {
     "type": "git",

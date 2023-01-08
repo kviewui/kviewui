@@ -1,0 +1,12 @@
+{
+  "name": "@kviewui/types",
+  "version": "1.0.0",
+  "description": "",
+  "typings": "index.d.ts",
+  "scripts": {
+    "build": "tsup index.d.ts --clean --splitting"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

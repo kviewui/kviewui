@@ -1,12 +1,44 @@
-import components from './src/index'
-export * from './src/index'
-import { App } from 'vue'
-import './common/css/index.less'
-// import './style/theme/primary.less'
+import { App, createSSRApp } from "vue";
+import Button from './src/button/index.vue';
+import Page from './src/page/index.vue';
+import Image from './src/image/index.vue';
+import Text from './src/text/index.vue';
+import Container from './src/container/index.vue';
+import { theme } from './common/theme';
+
+function install(app: App) {
+    const packages = [Button, Page, Image, Text, Container];
+
+    packages.forEach((item: any) => {
+        if (item.install) {
+            app.use(item);
+        } else if (item.name) {
+            app.component(item.name, item);
+        }
+    });
+}
+
+const app = createSSRApp(import('vue'));
+
+uni.$kView = {
+    install,
+    theme: theme,
+    app
+}
+console.log('test');
+
+export {
+    Button as KuiButton,
+    Page as KuiPage,
+    Image as KuiImage,
+    Text as KuiText,
+    Container as KuiContainer,
+    theme,
+    app
+}
 
 export default {
-    // 安装所有组件
-    install: (app: App) => {
-        components.forEach(c => app.use(c))
-    }
+    install,
+    theme,
+    app
 }

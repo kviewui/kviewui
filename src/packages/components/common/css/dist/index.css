@@ -1,10 +1,11 @@
 /**
 * kviewui组件库内置样式库，由工具自动生成，请不要手动修改！！！
+* 2023-0-3 14:42
 * @author kviewui@163.com
 * @version 1.0.0
 * @see {@link https://gitcode.net/kviewui/kviewui}
-* @license
-* Copyright (c) cn.kviewui.com.
+* @license MIT
+* Copyright (c) 2023 cn.kviewui.com
 *
 * Permission is hereby granted, free of charge, to any person obtaining a copy
 * of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +27,6 @@
 *
 **/
 
-@charset "UTF-8";
 /******** Primary *******/
 /******** Dark Primary *******/
 /******** Success *******/
@@ -65,6 +65,18 @@
 * lg-较大
 * xl-大
 * max-全圆角
+**/
+/******** Font Weight ********/
+/**
+* thin-极细
+* extralight-纤细
+* light-细体
+* normal-常规
+* medium-中等加粗
+* semibold-半粗
+* bold-粗体
+* extrabold-中黑
+* black-黑体
 **/
 /******** Red / 浪漫红 ********/
 /******** Orangered / 晚秋红 ********/
@@ -179,9 +191,31 @@ view {
   left: 0px;
 }
 /* zIndex */
+/* #ifndef APP-PLUS */
+.kui-z-auto {
+  z-index: auto;
+}
+/* #endif */
+/* zIndex 0-5 */
 .kui-z-0 {
   z-index: 0;
 }
+.kui-z-1 {
+  z-index: 1;
+}
+.kui-z-2 {
+  z-index: 2;
+}
+.kui-z-3 {
+  z-index: 3;
+}
+.kui-z-4 {
+  z-index: 4;
+}
+.kui-z-5 {
+  z-index: 5;
+}
+/* zIndex 10-60 */
 .kui-z-10 {
   z-index: 10;
 }
@@ -196,6 +230,25 @@ view {
 }
 .kui-z-50 {
   z-index: 50;
+}
+.kui-z-60 {
+  z-index: 60;
+}
+/* zIndex -1--5 */
+.-kui-z-5 {
+  z-index: -5;
+}
+.-kui-z-4 {
+  z-index: -4;
+}
+.-kui-z-3 {
+  z-index: -3;
+}
+.-kui-z-2 {
+  z-index: -2;
+}
+.-kui-z-1 {
+  z-index: -1;
 }
 /* Top/Right/Bottom/Left */
 .kui-inset-0 {
@@ -254,40 +307,40 @@ view {
   display: grid;
 }
 /* Grid Template Columns */
-.kui-grid-cols-1 {
+.kui-grld-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
-.kui-grid-cols-2 {
+.kui-grld-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-.kui-grid-cols-3 {
+.kui-grld-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
-.kui-grid-cols-4 {
+.kui-grld-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
-.kui-grid-cols-5 {
+.kui-grld-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
-.kui-grid-cols-6 {
+.kui-grld-cols-6 {
   grid-template-columns: repeat(6, minmax(0, 1fr));
 }
-.kui-grid-cols-7 {
+.kui-grld-cols-7 {
   grid-template-columns: repeat(7, minmax(0, 1fr));
 }
-.kui-grid-cols-8 {
+.kui-grld-cols-8 {
   grid-template-columns: repeat(8, minmax(0, 1fr));
 }
-.kui-grid-cols-9 {
+.kui-grld-cols-9 {
   grid-template-columns: repeat(9, minmax(0, 1fr));
 }
-.kui-grid-cols-10 {
+.kui-grld-cols-10 {
   grid-template-columns: repeat(10, minmax(0, 1fr));
 }
-.kui-grid-cols-11 {
+.kui-grld-cols-11 {
   grid-template-columns: repeat(11, minmax(0, 1fr));
 }
-.kui-grid-cols-12 {
+.kui-grld-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
 .kui-grid-cols-none {
@@ -519,15 +572,15 @@ view {
 .kui-gap-y-1 {
   row-gap: 9.375rpx;
 }
-.kui-gap-1-5 {
+.kui-gap-1_5 {
   gap: 14.0625rpx;
 }
-.kui-gap-x-1-5 {
+.kui-gap-x-1_5 {
   -webkit-column-gap: 14.0625rpx;
      -moz-column-gap: 14.0625rpx;
           column-gap: 14.0625rpx;
 }
-.kui-gap-y-1-5 {
+.kui-gap-y-1_5 {
   row-gap: 14.0625rpx;
 }
 .kui-gap-2 {
@@ -15455,13 +15508,19 @@ view {
     /* #ifndef APP-PLUS */
     display: -webkit-box;
     display: -ms-flexbox;
+
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
     /* #endif */
     display: flex;
+    flex-direction: row;
   }
   .kui-flex-1 {
     /* #ifndef APP-PLUS */
     -webkit-box-flex: 1;
-        -ms-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
     /* #endif */
             flex: 1;
   }

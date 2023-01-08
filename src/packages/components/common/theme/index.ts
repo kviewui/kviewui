@@ -8,7 +8,22 @@ const colors = {
     darken: themeColors.darken
 }
 
-export const theme = {
+export interface Theme {
+    colors: {
+        light: any;
+        dark: any;
+        darken: Function;
+    };
+    size: any;
+    config: {
+        shade: string;
+        colorPresetPanel: {
+            [colorName: string]: string;
+        }
+    }
+}
+
+export const theme: Theme = {
     colors,
     size,
     config

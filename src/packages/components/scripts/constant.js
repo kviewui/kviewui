@@ -1,14 +1,22 @@
 const package = require('../package.json');
 const os = require('os');
 
+const addZero = (n) => {
+	return n < 10 ? `0${n}` : n;
+}
+
+const nowDate = new Date();
+const nowDateTime = `${nowDate.getFullYear()}-${addZero(nowDate.getMonth()+1)}-${addZero(nowDate.getDate())} ${nowDate.getHours()}:${nowDate.getMinutes()}`;
+
 // 文件注释头部内容
 var head = `/**${os.EOL}`;
     head += `* kviewui组件库内置样式库，由工具自动生成，请不要手动修改！！！${os.EOL}`;
+    head += `* ${nowDateTime}${os.EOL}`;
     head += `* @author ${package.author}${os.EOL}`;
     head += `* @version ${package.version}${os.EOL}`;
     head += `* @see {@link ${package.repository.url}}${os.EOL}`;
-    head += `* @license${os.EOL}`;
-    head += `* Copyright (c) cn.kviewui.com.${os.EOL}`;
+    head += `* @license MIT${os.EOL}`;
+    head += `* Copyright (c) ${new Date().getFullYear()} cn.kviewui.com${os.EOL}`;
     head += `*${os.EOL}`;
     head += `* Permission is hereby granted, free of charge, to any person obtaining a copy${os.EOL}`;
     head += `* of this software and associated documentation files (the "Software"), to deal${os.EOL}`;
