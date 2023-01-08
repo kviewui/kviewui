@@ -1,3 +1,3 @@
 #!/usr/bin/env zx
 
-const list = await $`standard-version`;
+const list = await $`standard-version --tag-prefix "v"`;
