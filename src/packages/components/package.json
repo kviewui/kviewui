@@ -1,14 +1,17 @@
 {
-  "name": "@kviewui/components",
+  "name": "@kviewui/kviewui",
   "version": "1.0.0",
   "description": "基于UNI-APP框架的多端开发UI组件库，让您的开发效率加倍提升",
   "typings": "components.d.ts",
-  "scripts": {
-    "build": "vite build"
-  },
   "files": [
-    "es",
-    "lib"
+    "common",
+    "global",
+    "src",
+    "styles",
+    "components.d.ts",
+    "global.d.ts",
+    "index.ts",
+    "README.md"
   ],
   "keywords": [
     "kviewui",
@@ -19,7 +22,8 @@
     "vue",
     "uniapp",
     "uniapp组件库",
-    "暗黑模式"
+    "暗黑模式",
+    "跨端组件库"
   ],
   "author": "kviewui@163.com",
   "license": "MIT",
@@ -29,6 +33,28 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitcode.net/kviewui/kviewui"
-  }
+    "url": "git+https://github.com/kviewui/kviewui"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@kviewui/color-builder": "^1.0.3",
+    "@types/color": "^3.0.3",
+    "@types/node": "^18.11.18"
+  },
+  "dependencies": {
+    "@kviewui/types": "workspace:*",
+    "@kviewui/utils": "workspace:*",
+    "csstype": "^3.1.1"
+  },
+  "homepage": "https://cn.kviewui.com",
+  "bugs": {
+    "url": "https://github.com/kviewui/kviewui/issues"
+  },
+  "browerslist": [
+    "> 1%",
+    "not ie 11",
+    "not op_mini all"
+  ]
 }

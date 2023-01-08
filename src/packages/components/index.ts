@@ -20,12 +20,14 @@ function install(app: App) {
 
 const app = createSSRApp(import('vue'));
 
-uni.$kView = {
+uni['$kView'] = {
     install,
     theme: theme,
     app
 }
 console.log('test');
+
+const version = '1.0.0';
 
 export {
     Button as KuiButton,
@@ -34,11 +36,13 @@ export {
     Text as KuiText,
     Container as KuiContainer,
     theme,
-    app
+    app,
+    version
 }
 
 export default {
     install,
     theme,
-    app
+    app,
+    version
 }
