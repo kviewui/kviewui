@@ -37,10 +37,11 @@ declare const showToast: (title: string, icon?: 'success' | 'loading' | 'error' 
 declare const hideToast: () => void;
 declare const showLoading: (title: string) => void;
 declare const hideLoading: () => void;
+declare const showModal: (title: string, content: string, showCancel: boolean, cancelText: string, confirmText: string, cancelColor: string, confirmColor: string, editable: boolean, success: () => {}, fail: () => {}, complete: () => {}) => void;
 
 declare const themeColors: string[];
 declare const isThemeColor: (color: string) => boolean;
 
 declare const setCliboardData: (data: string, showToast?: boolean) => Promise<any>;
 
-export { compress, createComponent, fileToUrl, getElId, getFontSize, getImageInfo, getNumberByUnit, getUnitByUnit, hideLoading, hideToast, isBoolean, isImage, isNumber, isObject, isString, isThemeColor, setCliboardData, showLoading, showToast, themeColors, useConfig, useInject, useKviewuiRect, useProvide, useThrottle, withInstall };
+export { compress, createComponent, fileToUrl, getElId, getFontSize, getImageInfo, getNumberByUnit, getUnitByUnit, hideLoading, hideToast, isBoolean, isImage, isNumber, isObject, isString, isThemeColor, setCliboardData, showLoading, showModal, showToast, themeColors, useConfig, useInject, useKviewuiRect, useProvide, useThrottle, withInstall };

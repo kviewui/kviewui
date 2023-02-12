@@ -13,12 +13,13 @@ import Icons from './src/icons/index.vue';
 import Space from './src/space/index.vue';
 import ConfigProvider from './src/config-provider/index.vue';
 import Animate from './src/animate/index.vue';
+import Tag from './src/tag/index.vue';
 
 import { theme } from "@kviewui/theme";
 // import { theme } from "./common/theme";
 
 function install(app: App) {
-    const packages = [Button, Page, Image, Text, Container, Switch, Animation, CellGroup, Cell, Icon, Icons, Space, ConfigProvider, Animate];
+    const packages = [Button, Page, Image, Text, Container, Switch, Animation, CellGroup, Cell, Icon, Icons, Space, ConfigProvider, Animate, Tag];
 
     packages.forEach((item: any) => {
         if (item.install) {
@@ -55,6 +56,7 @@ export {
     ConfigProvider as KuiConfigProvider,
     Icons as KuiIcons,
     Animate as KuiAnimate,
+    Tag as KuiTag,
     theme,
     app,
     version

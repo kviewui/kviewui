@@ -14080,6 +14080,21 @@ var showLoading = (title) => {
 var hideLoading = () => {
   uni.hideLoading();
 };
+var showModal = (title, content, showCancel, cancelText, confirmText, cancelColor, confirmColor = "#00BC79", editable, success, fail, complete) => {
+  uni.showModal({
+    title,
+    content,
+    showCancel: showCancel ?? true,
+    cancelText: cancelText ?? "\u53D6\u6D88",
+    confirmText: confirmText ?? "\u786E\u5B9A",
+    cancelColor,
+    confirmColor,
+    editable: editable ?? false,
+    success,
+    fail,
+    complete
+  });
+};
 
 // src/theme/index.ts
 var themeColors = [
@@ -14148,6 +14163,7 @@ export {
   isThemeColor,
   setCliboardData,
   showLoading,
+  showModal,
   showToast,
   themeColors,
   useConfig,

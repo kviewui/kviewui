@@ -14080,6 +14080,21 @@ var showLoading = (title) => {
 var hideLoading = () => {
   uni.hideLoading();
 };
+var showModal = (title, content, showCancel, cancelText, confirmText, cancelColor, confirmColor = "#00BC79", editable, success, fail, complete) => {
+  uni.showModal({
+    title,
+    content,
+    showCancel: _nullishCoalesce(showCancel, () => ( true)),
+    cancelText: _nullishCoalesce(cancelText, () => ( "\u53D6\u6D88")),
+    confirmText: _nullishCoalesce(confirmText, () => ( "\u786E\u5B9A")),
+    cancelColor,
+    confirmColor,
+    editable: _nullishCoalesce(editable, () => ( false)),
+    success,
+    fail,
+    complete
+  });
+};
 
 // src/theme/index.ts
 var themeColors = [
@@ -14156,4 +14171,5 @@ var setCliboardData = (data, showToast2 = true) => {
 
 
 
-exports.compress = compress; exports.createComponent = createComponent; exports.fileToUrl = fileToUrl; exports.getElId = getElId; exports.getFontSize = getFontSize; exports.getImageInfo = getImageInfo; exports.getNumberByUnit = getNumberByUnit; exports.getUnitByUnit = getUnitByUnit; exports.hideLoading = hideLoading; exports.hideToast = hideToast; exports.isBoolean = isBoolean2; exports.isImage = isImage; exports.isNumber = isNumber; exports.isObject = isObject2; exports.isString = isString2; exports.isThemeColor = isThemeColor; exports.setCliboardData = setCliboardData; exports.showLoading = showLoading; exports.showToast = showToast; exports.themeColors = themeColors; exports.useConfig = useConfig; exports.useInject = useInject; exports.useKviewuiRect = useKviewuiRect; exports.useProvide = useProvide; exports.useThrottle = useThrottle; exports.withInstall = withInstall;
+
+exports.compress = compress; exports.createComponent = createComponent; exports.fileToUrl = fileToUrl; exports.getElId = getElId; exports.getFontSize = getFontSize; exports.getImageInfo = getImageInfo; exports.getNumberByUnit = getNumberByUnit; exports.getUnitByUnit = getUnitByUnit; exports.hideLoading = hideLoading; exports.hideToast = hideToast; exports.isBoolean = isBoolean2; exports.isImage = isImage; exports.isNumber = isNumber; exports.isObject = isObject2; exports.isString = isString2; exports.isThemeColor = isThemeColor; exports.setCliboardData = setCliboardData; exports.showLoading = showLoading; exports.showModal = showModal; exports.showToast = showToast; exports.themeColors = themeColors; exports.useConfig = useConfig; exports.useInject = useInject; exports.useKviewuiRect = useKviewuiRect; exports.useProvide = useProvide; exports.useThrottle = useThrottle; exports.withInstall = withInstall;

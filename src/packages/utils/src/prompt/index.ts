@@ -37,3 +37,48 @@ export const showLoading = (title: string) => {
 export const hideLoading = () => {
     uni.hideLoading();
 }
+
+/**
+ * @zh 显示模态弹窗
+ * 
+ * 参考：[原API文档](https://uniapp.dcloud.net.cn/api/ui/prompt.html#showModal)
+ * 
+ * @param {string} title 提示标题
+ * @param {string} content 提示内容
+ * @param {boolean} showCancel 是否显示取消按钮
+ * @param {string} cancelText 取消按钮文本
+ * @param {string} confirmText 确定按钮文本
+ * @param {string} cancelColor 取消按钮文字颜色
+ * @param {string} confirmColor 确定按钮文字颜色
+ * @param {boolean} editable 是否显示输入框
+ * @param {Function} success 成功回调
+ * @param {Function} fail 失败回调
+ * @param {Function} complete 完成回调
+ */
+export const showModal = (
+    title: string, 
+    content: string, 
+    showCancel: boolean,
+    cancelText: string,
+    confirmText: string,
+    cancelColor: string,
+    confirmColor: string = '#00BC79',
+    editable: boolean,
+    success: () => {},
+    fail: () => {},
+    complete: () => {}
+) => {
+    uni.showModal({
+        title: title,
+        content: content,
+        showCancel: showCancel ?? true,
+        cancelText: cancelText ?? '取消',
+        confirmText: confirmText ?? '确定',
+        cancelColor: cancelColor,
+        confirmColor: confirmColor,
+        editable: editable ?? false,
+        success: success,
+        fail: fail,
+        complete: complete
+    });
+}
