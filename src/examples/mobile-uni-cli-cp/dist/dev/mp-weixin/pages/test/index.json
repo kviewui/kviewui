@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "测试2",
-  "usingComponents": {
-    "kui-icon": "../../node-modules/@kviewui/kviewui/src/icon/index"
-  }
-}

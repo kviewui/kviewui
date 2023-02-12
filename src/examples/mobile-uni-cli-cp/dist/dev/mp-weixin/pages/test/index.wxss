@@ -1,8 +1,0 @@
-@import "../../nvue.wxss";
-
-/* @import '@kviewui/kviewui/src/icon/kviewicons.css';
-
-@font-face {
-    font-family: kviewicons;
-    src: url('http:at.alicdn.com/t/c/font_3857824_xhasxwq88ir.ttf?t=1673400146978') format('truetype');
-} */

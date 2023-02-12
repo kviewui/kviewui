@@ -1,9 +1,0 @@
-
-	/* .kui-page1 {
-		min-height: v-bind(height);
-		background-color: v-bind(bgColor);
-		padding-top: v-bind(pY);
-		padding-bottom: v-bind(pY);
-		padding-left: v-bind(pX);
-		padding-right: v-bind(pX);
-	} */
