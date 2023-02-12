@@ -1,0 +1,177 @@
+@import './global.less';
+
+/* #ifndef APP-NVUE */
+.@{kui-css-variables-prefix}-animate-none {
+    animation: none !important;
+}
+
+/* 
+* 动画时间曲线定义 -animate-tf-{linear|ease|ease-in|ease-out|ease-in-out}
+*/
+.@{kui-css-variables-prefix}-animate-tf-linear {
+    animation-timing-function: linear !important;
+}
+
+.@{kui-css-variables-prefix}-animate-tf-ease {
+    animation-timing-function: ease !important;
+}
+
+.@{kui-css-variables-prefix}-animate-tf-ease-in {
+    animation-timing-function: ease-in !important;
+}
+
+.@{kui-css-variables-prefix}-animate-tf-ease-out {
+    animation-timing-function: ease-out !important;
+}
+
+.@{kui-css-variables-prefix}-animate-tf-ease-in-out {
+    animation-timing-function: ease-in-out !important;
+}
+
+/* 旋转动画 */
+.@{kui-css-variables-prefix}-animate-spin {
+    animation-name: spin;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// 
+.@{kui-css-variables-prefix}-animate-ping {
+    animation-name: ping;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+@keyframes ping {
+    75%,
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+/* 脉搏动画 */
+.@{kui-css-variables-prefix}-animate-pulse {
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+}
+
+/* 上下跳动动画 */
+.@{kui-css-variables-prefix}-animate-bounce {
+    animation-name: bounce;
+    animation-duration: 1s;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+/* 闪烁动画 */
+.@{kui-css-variables-prefix}-animate-flicker {
+    animation-name: flicker;
+    animation-duration: 1s;
+}
+
+@keyframes flicker {
+    from {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* 心跳动画 */
+.@{kui-css-variables-prefix}-animate-heartbeat {
+    animation-name: heartbeat;
+    animation-duration: 1s;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* 抖动动画 */
+.@{kui-css-variables-prefix}-animate-shake {
+    animation-name: shake;
+    animation-duration: .6s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+}
+
+@keyframes shake {
+    0%, 90%, 100% {
+        transform: translateX(0);
+    }
+    10% {
+        transform: translateX(-8px);
+    }
+    20% {
+        transform: translateX(7px);
+    }
+    30% {
+        transform: translateX(-6px);
+    }
+    40% {
+        transform: translateX(5px);
+    }
+    50% {
+        transform: translateX(-4px);
+    }
+    60% {
+        transform: translateX(3px);
+    }
+    70% {
+        transform: translateX(-2px);
+    }
+    80% {
+        transform: translateX(1px);
+    }
+}
+
+/* 动画循环执行 */
+.@{kui-css-variables-prefix}-animate-ic-loop {
+    animation-iteration-count: infinite;
+}
+/* #endif */

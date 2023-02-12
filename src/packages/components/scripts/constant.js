@@ -6,7 +6,7 @@ const addZero = (n) => {
 }
 
 const nowDate = new Date();
-const nowDateTime = `${nowDate.getFullYear()}-${addZero(nowDate.getMonth()+1)}-${addZero(nowDate.getDate())} ${nowDate.getHours()}:${nowDate.getMinutes()}`;
+const nowDateTime = `${nowDate.getFullYear()}-${addZero(nowDate.getMonth()+1)}-${addZero(nowDate.getDate())} ${addZero(nowDate.getHours())}:${addZero(nowDate.getMinutes())}`;
 
 // 文件注释头部内容
 var head = `/**${os.EOL}`;

@@ -39,13 +39,15 @@
     "vue": "^3.2.45"
   },
   "devDependencies": {
-    "@kviewui/color-builder": "^1.0.3",
     "@types/color": "^3.0.3",
     "@types/node": "^18.11.18"
   },
   "dependencies": {
+    "@kviewui/color-builder": "^1.0.5",
+    "@kviewui/theme": "workspace:*",
     "@kviewui/types": "workspace:*",
     "@kviewui/utils": "workspace:*",
+    "@kviewui/animate": "workspace:*",
     "csstype": "^3.1.1"
   },
   "homepage": "https://cn.kviewui.com",

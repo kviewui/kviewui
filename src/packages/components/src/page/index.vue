@@ -80,16 +80,13 @@
 	
 	export default create({
 		props: pageProps,
-		setup(props) {
-            console.log(33333);
-            
+		setup(props) {            
 			// const {
 			// 	proxy
 			// }: any = getCurrentInstance();
 			// const $theme = proxy.$theme;
 
-            const $theme: KuiNamespace.Theme = uni.$kView.theme;
-            console.log($theme.colors);
+            const $theme: KuiNamespace.Theme = uni['$kView'].theme;
 			
 			const sysinfo = uni.getSystemInfoSync();
 			
@@ -142,9 +139,6 @@
 			};
 
 			const getApp = () => {
-				console.log(uni.getAppBaseInfo());
-				console.log(uni.getDeviceInfo());
-				console.log(uni.getSystemInfoSync());
 				return uni.getSystemInfoSync();
 			}
 			

@@ -6,6 +6,8 @@ declare namespace KuiNamespace {
         [key: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9]: string
     }
 
+    type ColorLevel = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
+
     /**
      * 预设颜色库
      */
@@ -55,6 +57,57 @@ declare namespace KuiNamespace {
         success: string[],
         // 警告色
         warning: string[],
+    }
+
+    /**
+     * 预设颜色库默认配置
+     */
+    interface ColorsConfig {
+        // 海空蓝
+        blue: string,
+        // 品牌绿
+        brandgreen: string,
+        // 碧涛青
+        cyan: string,
+        // 极致蓝
+        deepblue: string,
+        // 黄昏色
+        gold: string,
+        // 翡翠绿
+        green: string,
+        // 中性灰
+        grey: string,
+        // 新生绿
+        lime: string,
+        // 品红色
+        magenta: string,
+        // 活力橙
+        orange: string,
+        // 晚秋红
+        orangered: string,
+        // 青春紫
+        pinkpurple: string,
+        // 暗夜紫
+        purple: string,
+        // 浪漫红
+        red: string,
+        // 柠檬黄
+        yellow: string,
+        /**
+         * 主题色
+         */
+        // 危险色
+        danger: string,
+        // 信息色
+        info: string,
+        // 链接色
+        link: string,
+        // 品牌色
+        primary: string,
+        // 成功色
+        success: string,
+        // 警告色
+        warning: string,
     }
 
     interface Colors {
@@ -160,7 +213,7 @@ declare namespace KuiNamespace {
         size: Size,
         config: {
             shade: string,
-            colorPresetPanel: ColorsMap,
+            colorPresetPanel: ColorsConfig,
         }
     }
 }

@@ -12,6 +12,12 @@ export const getUnitByUnit = (e): String => {
 	if (e.endsWith('rem')) {
 		return 'rem';
 	}
+    if (e.endsWith('em')) {
+        return 'em';
+    }
+    if (e.endsWith('upx')) {
+        return 'upx';
+    }
 	return '';
 }
 

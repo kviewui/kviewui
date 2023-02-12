@@ -1,0 +1,1 @@
+<view class="test kui-flex kui-flex-col data-v-fab03d13"> test </view><kui-icon wx:if="{{a}}" class="data-v-fab03d13" u-i="fab03d13-0" bind:__l="__l" u-p="{{a}}"></kui-icon>

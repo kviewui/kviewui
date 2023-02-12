@@ -6,11 +6,19 @@ import Text from './src/text/index.vue';
 import Container from './src/container/index.vue';
 import Switch from './src/switch/index.vue';
 import Animation from './src/animation/index.vue';
+import CellGroup from './src/cell-group/index.vue';
+import Cell from './src/cell/index.vue';
+import Icon from './src/icon/index.vue';
+import Icons from './src/icons/index.vue';
+import Space from './src/space/index.vue';
+import ConfigProvider from './src/config-provider/index.vue';
+import Animate from './src/animate/index.vue';
 
-import { theme } from './common/theme';
+import { theme } from "@kviewui/theme";
+// import { theme } from "./common/theme";
 
 function install(app: App) {
-    const packages = [Button, Page, Image, Text, Container, Switch, Animation];
+    const packages = [Button, Page, Image, Text, Container, Switch, Animation, CellGroup, Cell, Icon, Icons, Space, ConfigProvider, Animate];
 
     packages.forEach((item: any) => {
         if (item.install) {
@@ -40,6 +48,13 @@ export {
     Container as KuiContainer,
     Switch as KuiSwitch,
     Animation as KuiAnimation,
+    CellGroup as KuiCellGroup,
+    Cell as KuiCell,
+    Icon as KuiIcon,
+    Space as KuiSpace,
+    ConfigProvider as KuiConfigProvider,
+    Icons as KuiIcons,
+    Animate as KuiAnimate,
     theme,
     app,
     version

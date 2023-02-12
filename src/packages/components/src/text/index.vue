@@ -1,14 +1,16 @@
 <template>
 	<text
-		class="kui-flex kui-flex-col kui-items-center kui-justify-center"
+		class="kui-flex kui-flex-col kui-justify-center"
 		:selectable="selectable"
 		:user-select="userSelect"
 		:space="space"
 		:decode="decode"
+        :class="[customClass]"
 		:style="{
 			color: data.color,
 			fontSize: data.fontSize,
-			fontWeight: data.fontWeight
+			fontWeight: data.fontWeight,
+            ...customStyle
 		}"
 	>
         {{ content }}
@@ -30,7 +32,7 @@
  *  @value false 否
  * @property {String} space 显示连续空格 [App、H5、微信小程序]
  * @property {Boolean} decode 是否解码 [App、H5、微信小程序]
- * @template
+ * @example
  * <kui-text>示例文本</kui-text>
  */
 import { reactive, getCurrentInstance, defineComponent, watch } from 'vue';
@@ -39,7 +41,8 @@ import { colorBuilder } from '@kviewui/color-builder';
 
 const { create } = createComponent('text');
 
-import { textProps } from './types';
+import { textProps, TextProps } from './types';
+import { getThemeColor } from '../../global/tools';
 
 export default create({
 	props: textProps,
@@ -50,23 +53,20 @@ export default create({
 	setup(props) {
 		// const { proxy }: any = getCurrentInstance();
 		// const theme = proxy.$theme;
-        const theme: KuiNamespace.Theme = uni.$kView.theme;
+        const theme: KuiNamespace.Theme = uni['$kView'].theme;
 				
 		const data = reactive({
 			mode: props.mode,
-			color: props.color,
+			color: getThemeColor(props.color, props.mode, props.colorLevel),
 			fontSize: props.size ? props.size : `${theme.size.fonts['base']}${theme.size.fontUnit}`,
 			fontWeight: props.weight
 		});
 		
-		data.color = theme.colors['light'][props.color] ? theme.colors[props.mode][props.color][5] : props.color;
-		
 		const changeMode = e => {
 			const isDark = e === 'dark';
-			const color = props.color ? props.color : theme.colors['light']['grey'][9];
-			const colorMap = theme.colors[e][props.color] ? theme.colors[e][props.color] : colorBuilder.generate(color, {dark: isDark, list: true});
+			const color = props.color ? getThemeColor(props.color, props.mode, props.colorLevel) : theme.colors[e]['grey'][9];
 			
-			data.color = props.color ? colorMap[5] : colorMap[8];
+			data.color = color;
 		};
 		
 		changeMode(data.mode);

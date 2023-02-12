@@ -1,0 +1,34 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "rootDir": ".",
+        "jsx": "preserve",
+        "strict": false,
+        "target": "ESNext",
+        "module": "ESNext",
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
+        "sourceMap": false,
+        "declaration": false,
+        "removeComments": true,
+        "experimentalDecorators": true,// 启动装饰器
+        "lib": [
+            "esnext",
+            "dom"
+        ],
+        "types": [
+            "@dcloudio/types",
+            "@types/node",
+            "@kviewui/types"
+        ]
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+    ],
+    "exclude": [
+        "./dist"
+    ]
+}

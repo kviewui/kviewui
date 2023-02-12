@@ -6,7 +6,14 @@ declare module "@vue/runtime-core" {
         kText: typeof import('./index').KuiText,
         kContainer: typeof import('./index').KuiContainer,
         kSwitch: typeof import('./index').KuiSwitch,
-        kAnimation: typeof import('./index').KuiAnimation
+        kAnimation: typeof import('./index').KuiAnimation,
+        kCellGroup: typeof import('./index').KuiCellGroup,
+        kCell: typeof import('./index').KuiCell,
+        kIcon: typeof import('./index').KuiIcon,
+        kIcons: typeof import('./index').KuiIcons,
+        kSpace: typeof import('./index').KuiSpace,
+        kConfigProvider: typeof import('./index').KuiConfigProvider,
+        kAnimate: typeof import('./index').KuiAnimate
     }
 }
 export {}

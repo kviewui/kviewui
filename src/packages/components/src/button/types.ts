@@ -1,17 +1,14 @@
 import {
-    ModeEnum, 
     SpinTypeEnum, 
     ShadowSizeEnum, 
-    TypeEnum
-} from '@kviewui/components/global/types';
+    TypeEnum,
+    globalProps
+} from '../../global/types';
 
 import { 
 	PropType,
-	inject,
     ExtractPropTypes
 } from 'vue';
-
-import { configProviderInjectionKey } from '@kviewui/components/src/config-provider/types';
 
 export type SizeEnum = 'large' | 'normal' | 'small' | 'mini';
 export type ShapeEnum = 'square' | 'capsule' | 'round';
@@ -21,6 +18,7 @@ export type OpenTypeEnum = 'feedback' | 'share' | 'getUserInfo' | 'contact' | 'g
 export type LangEnum = 'en' | 'zn_CN' | 'zn_TW'
 
 export const buttonProps = {
+    ...globalProps,
     /**
 	 * 按钮类型
 	 */
@@ -28,14 +26,13 @@ export const buttonProps = {
 		type: String as PropType<TypeEnum>,
 		default: '' as TypeEnum
 	},
-	/**
-	 * 页面模式
-	 */
-	mode: {
-		type: String as PropType<ModeEnum>,
-		default: () =>
-			inject(configProviderInjectionKey, undefined)?.mode ?? 'light'
-	},
+    /**
+     * 按钮内容
+     */
+    content: {
+        type: String,
+        default: ''
+    },
 	/**
 	 * 通栏按钮
 	 */
@@ -69,7 +66,7 @@ export const buttonProps = {
 	 */
 	radius: {
 		type: Number,
-		default: 10
+		default: 5
 	},
 	/**
 	 * 是否是文本按钮

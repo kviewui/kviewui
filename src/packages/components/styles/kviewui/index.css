@@ -1,9 +1,9 @@
 /**
 * kviewui组件库内置样式库，由工具自动生成，请不要手动修改！！！
-* 2023-01-08 10:24
+* 2023-02-12 12:25
 * @author kviewui@163.com
 * @version 1.0.0
-* @see {@link https://gitcode.net/kviewui/kviewui}
+* @see {@link git+https://github.com/kviewui/kviewui}
 * @license MIT
 * Copyright (c) 2023 cn.kviewui.com
 *
@@ -3058,6 +3058,9 @@ view {
 .kui-w-px {
   width: 1px !important;
 }
+.kui-w-min-px {
+  width: 0.5px !important;
+}
 .kui-w-0.5 {
   width: 4.6875rpx !important;
 }
@@ -3361,25 +3364,28 @@ view {
 .kui-h-px {
   height: 1px !important;
 }
-.kui-h-0_5 {
+.kui-h-min-px {
+  height: 0.5px !important;
+}
+.kui-h-0.5 {
   height: 4.6875rpx !important;
 }
 .kui-h-1 {
   height: 9.375rpx !important;
 }
-.kui-h-1_5 {
+.kui-h-1.5 {
   height: 14.0625rpx !important;
 }
 .kui-h-2 {
   height: 18.75rpx !important;
 }
-.kui-h-2_5 {
+.kui-h-2.5 {
   height: 23.4375rpx !important;
 }
 .kui-h-3 {
   height: 28.125rpx !important;
 }
-.kui-h-3_5 {
+.kui-h-3.5 {
   height: 32.8125rpx !important;
 }
 .kui-h-4 {
@@ -15664,139 +15670,7 @@ view {
           filter: grayscale(1) !important;
 }
 /* #endif */
-/* 动画 */
-/* #ifndef APP-NVUE */
-.kui-animate-none {
-  -webkit-animation: none !important;
-          animation: none !important;
-}
-.kui-animate-spin {
-  -webkit-animation: spin 1s linear infinite !important;
-          animation: spin 1s linear infinite !important;
-}
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-@keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-.kui-animate-ping {
-  -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite !important;
-          animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite !important;
-}
-@-webkit-keyframes ping {
-  75%,
-  100% {
-    -webkit-transform: scale(2);
-            transform: scale(2);
-    opacity: 0;
-  }
-}
-@keyframes ping {
-  75%,
-  100% {
-    -webkit-transform: scale(2);
-            transform: scale(2);
-    opacity: 0;
-  }
-}
-.kui-animate-pulse {
-  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
-          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
-}
-@-webkit-keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-@keyframes pulse {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
-}
-.kui-animate-bounce {
-  -webkit-animation: bounce 1s infinite !important;
-          animation: bounce 1s infinite !important;
-}
-@-webkit-keyframes bounce {
-  0%,
-  100% {
-    -webkit-transform: translateY(-25%);
-            transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
-}
-@keyframes bounce {
-  0%,
-  100% {
-    -webkit-transform: translateY(-25%);
-            transform: translateY(-25%);
-    -webkit-animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-            animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-            animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
-}
-.kui-animate-flicker {
-  -webkit-animation: flicker 1s infinite !important;
-          animation: flicker 1s infinite !important;
-}
-@-webkit-keyframes flicker {
-  from {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes flicker {
-  from {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-/* #endif */
+/* 动画 该部分已抽离单独的包 @kviewui/animate */
 /* 平移 */
 /* 倾斜 */
 /* 大小调整 */
@@ -16260,4 +16134,76 @@ view {
     width: 100vw !important;
     /* #endif */
     display: flex !important;
+  }
+
+  /* 阴影 */
+.kui-shadow {
+    /* #ifndef APP-NVUE */
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1) !important;
+    /* #endif */
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1) !important;
+        /* #ifdef APP-NVUE */
+        margin: 3px !important;
+        /* #endif */
+}
+  .kui-shadow-sm {
+    /* #ifndef APP-NVUE */
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+    /* #endif */
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+        /* #ifdef APP-NVUE */
+        margin: 2px !important;
+        /* #endif */
+  }
+  .kui-shadow-md {
+    /* #ifndef APP-NVUE */
+    -webkit-box-shadow: 0 4px 6px -1px rgb(0, 0, 0/0.1) !important;
+    /* #endif */
+        box-shadow: 0 4px 6px -1px rgb(0, 0, 0/0.1) !important;
+        /* #ifdef APP-NVUE */
+        margin: 6px !important;
+        /* #endif */
+  }
+  .kui-shadow-lg {
+    /* #ifndef APP-NVUE */
+    -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+    /* #endif */
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+        /* #ifdef APP-NVUE */
+        margin-bottom: 45px !important;
+        margin-right: 45px !important;
+        /* #endif */
+  }
+  .kui-shadow-xl {
+    /* #ifndef APP-NVUE */
+    -webkit-box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+    /* #endif */
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+        /* #ifdef APP-NVUE */
+        /* margin: 45px !important; */
+        /* #endif */
+  }
+  .kui-shadow-2xl {
+    /* #ifndef APP-NVUE */
+    -webkit-box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+    /* #endif */
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+        /* #ifdef APP-NVUE */
+        margin: 25px !important;
+        /* #endif */
+  }
+  .kui-shadow-inner {
+    /* #ifndef APP-NVUE */
+    -webkit-box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05) !important;
+    /* #endif */
+        box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05) !important;
+        /* #ifdef APP-NVUE */
+        margin: 4px !important;
+        /* #endif */
+  }
+  .kui-shadow-none {
+    /* #ifndef APP-NVUE */
+    -webkit-box-shadow: 0 0 #000000 !important;
+    /* #endif */
+        box-shadow: 0 0 #000000 !important;
   }

@@ -26,7 +26,8 @@
             "unplugin-vue-define-options/macros-global", 
             "vite/client",
             "@dcloudio/types",
-            "@types/node"
+            "@types/node",
+            "@kviewui/types"
         ]
     },
     "include": [

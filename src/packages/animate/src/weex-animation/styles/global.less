@@ -1,0 +1,4 @@
+@kui-variables-prefix: ~'kui'; // css 变量前缀
+
+// --kui-animate-spin or --animate-spin
+@kui-css-variables-prefix: if(@kui-variables-prefix = ~'', '-', ~'@{kui-variables-prefix}');

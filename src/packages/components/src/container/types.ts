@@ -1,7 +1,7 @@
-import { ModeEnum } from '@kviewui/components/global/types';
+import { ModeEnum } from '../../global/types';
 import { PropType, inject, ExtractPropTypes } from 'vue';
 import type { CSSProperties } from 'vue';
-import { configProviderInjectionKey } from '@kviewui/components/src/config-provider/types';
+import { configProviderInjectionKey } from '../config-provider/types';
 
 export const containerProps = {
     /**

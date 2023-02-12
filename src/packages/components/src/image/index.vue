@@ -1,8 +1,8 @@
 <template>
-	<view class="kui-leading-none" :class="elId">
-		<image :src="src" style="width: 0px;height: 0px;" @load="onLoadSuccess" @error="onLoadError"></image>
+	<view class="kui-leading-none" :class="[elId, customClass]">
+		<!-- <image :src="src" style="width: 0px;height: 0px;" @load="onLoadSuccess" @error="onLoadError"></image> -->
 		<view class="
-        kui-bg-gray-200
+        kui-bg-grey-2
         kui-flex
         kui-flex-col
         kui-justify-center
@@ -11,23 +11,22 @@
         width: width,
         height: height,
         borderRadius: `${radius}rpx`,
-      }" v-if="data.loading || error">
-			<!-- <kui-icons type="image" :size="Number(data.iconSize)" class="kui-text-gray-300"></kui-icons> -->
+      }" v-if="data.loading || data.loadError">
+			<kui-icons name="iov-pic" :size="50" class="kui-text-gray-300" v-if="data.loading" />
+            <kui-icons name="rxa-image-error-filled" :size="150" class="kui-text-gray-300" v-if="data.loadError" />
 		</view>
-		<image :src="data.src" :style="{
-        width: width,
-        height: height,
-        borderRadius: `${radius}rpx`,
-		transform: `scale(${scale})`
-      }" @click="onClick" v-if="!data.loading && data.src && disableFit && !error"></image>
-	  <image :src="data.src" :mode="fit" :style="{
-		  borderRadius: `${radius}rpx`,
-		  transform: `scale(${scale})`
-	  }" v-if="!data.loading && data.src && !disableFit"  @click="onClick"></image>
+        <template v-if="!data.loading && !data.loadError">
+            <image
+                :src="src"
+                :style="imageStyle"
+                :mode="disableFit ? '' : fit"
+                @click="onClick"
+            />
+        </template>
 	</view>
 </template>
 
-<script lang="ts" name="kui-image">
+<script lang="ts">
 	/**
 	 * Image 图片组件
 	 * @description 自定义图片组件，一般用于自定义图片展示
@@ -66,8 +65,12 @@
 		onMounted,
 		onUnmounted,
 		nextTick,
-		useSlots
+		useSlots,
+        CSSProperties,
+computed
 	} from "vue";
+
+    import KuiIcons from "../icons/index.vue";
 
     import { createComponent } from '@kviewui/utils';
     const { create } = createComponent('image');
@@ -81,14 +84,17 @@
 
 	export default create({
 		props: imageProps,
+        components: {
+            KuiIcons
+        },
 		emits: ['click', 'previewImageSuccess', 'previewImageFail'],
 		setup(props, context: SetupContext) {
 			
 			const data = reactive({
 				animateShow: props.fadeShow,
-				loadError: false,
+				loadError: props.error,
 				loading: props.loading,
-				iconSize: 100,
+				iconSize: 10,
 				slotLoading: useSlots().loading,
 				slotError: useSlots().error,
 				src: props.src,
@@ -98,24 +104,46 @@
 			// 随机生成元素ID
 			const elId = getElId();
 
-			if (props.delay) {
-				setTimeout(() => {
-					data.loadError = false;
-					data.animateShow = false;
-				}, props.delay);
-			}
+            const imageStyle = computed(() => {
+                const style: CSSProperties = reactive({});
 
-			const onLoadSuccess = (e) => {
+                style.width = props.width;
+                style.height = props.height;
+                style.borderRadius = `${props.radius}rpx`;
+                style.transform = `scale(${props.scale})`;
+
+                return style;
+            });
+
+			// if (props.delay) {
+			// 	setTimeout(() => {
+			// 		data.loadError = props.error;
+			// 		data.animateShow = false;
+			// 	}, props.delay);
+			// }
+
+			const onLoadSuccess = () => {
 				setTimeout(() => {
-					data.loadError = false;
-					data.loading = props.lazyload ? true : false;
+					data.loadError = props.error;
+                    data.loading = false;
 					data.animateShow = false;
 				}, props.delay);
 			};
 
-			const onLoadError = (e) => {
+			const onLoadError = () => {
 				data.loadError = true;
 			};
+
+            // 读取图片信息
+            uni.getImageInfo({
+                src: props.src,
+                success: () => {
+                    onLoadSuccess();
+                },
+                fail: () => {
+                    onLoadError();
+                }
+            })
 			
 			const onClick = (e) => {
 				if (!props.preview) {
@@ -136,15 +164,15 @@
 			
 			let imageHeight = 0;
 			
-			const getImageInfo = () => {
-				uni.getImageInfo({
-					src: props.src,
-					success: (res) => {
-						imageHeight = res.height;
-						data.loading = false;
-					}
-				})
-			}
+			// const getImageInfo = () => {
+			// 	uni.getImageInfo({
+			// 		src: props.src,
+			// 		success: (res) => {
+			// 			imageHeight = res.height;
+			// 			data.loading = false;
+			// 		}
+			// 	})
+			// }
 			
 			const getImageHeight = () => {
 				const src = props.src;
@@ -162,15 +190,15 @@
 				}
 			}
 			
-			getImageInfo();
+			// getImageInfo();
 			
 			setTimeout(() => {
 				getImageHeight();
 			}, 800);
 			
 			onMounted(() => {
-				setTimeout(() => {
-					if (props.lazyload) {
+                nextTick(() => {
+                    if (props.lazyload) {
 						intersectionObserver = uni.createIntersectionObserver(this);
 						
 						intersectionObserver.relativeToViewport({bottom: 0}).observe(`.${elId}`, (res) => {
@@ -181,16 +209,19 @@
 							}
 						});
 					}
-				}, 1000);
+                });
 			});
 			
-			// onUnmounted(() => {
-			// 	intersectionObserver.disconnect();
-			// });
+			onUnmounted(() => {
+                if (intersectionObserver) {
+				    intersectionObserver.disconnect();
+                }
+			});
 
 			return {
 				props,
 				data,
+                imageStyle,
 				elId,
 				onLoadSuccess,
 				onLoadError,

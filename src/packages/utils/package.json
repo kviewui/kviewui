@@ -7,12 +7,14 @@
   "typings": "dist/index.d.ts",
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "keywords": [
     "kviewui",
     "@kviewui/utils"
   ],
   "author": "kviewui@163.com",
+  "homepage": "https://cn.kviewui.com",
   "license": "MIT"
 }

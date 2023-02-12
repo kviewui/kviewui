@@ -7,17 +7,18 @@ const configInfo = {
 
 const config = useInject() ?? configInfo;
 
-const isWindow = (v: unknown) => {
+const isWindow = (v: unknown): boolean => {
 	return v === window;
 }
 
 /**
  * @zh 随机生成元素ID
- * @return {String} elId 元素ID
+ * @param {string} prefix 前缀
+ * @return {string} elId 元素ID
  */
-export const getElId = (): String => {
+export const getElId = (prefix: string = 'KUI_'): string => {
 	// 随机生成元素ID
-	const elId = `kUI_${Math.ceil(new Date().getTime() * 10e5).toString(36)}`;
+	const elId = `${prefix}${Math.ceil(new Date().getTime() * 10e5).toString(36)}`;
 	
 	return elId;
 }
@@ -38,50 +39,57 @@ export const getElId = (): String => {
 export const useKviewuiRect = (eleRef: (Element | Window | any) | Ref<Element | Window | any>, eleId: string = '', proxy: any): any => {
 	let element = unref(eleRef);
 	return new Promise((reslove) => {
-		// #ifdef H5
-		if (config.debug) {
-			console.log(element);
-		}
-		if (element && element.$el) {
-			element = element.$el;
-		}
-		if (isWindow(element)) {
-			const width = element.innerWidth;
-			const height = element.innerHeight;
-
-			reslove({
-				top: 0,
-				left: 0,
-				right: width,
-				bottom: height,
-				width,
-				height
-			});
-		}
-		if (config.debug) {
-			console.log(element);
-		}
-		if (element && element.getBoundingClientRect) {
-			reslove(element.getBoundingClientRect());
-		}
-
-		reslove({
-			top: 0,
-			left: 0,
-			right: 0,
-			bottom: 0,
-			width: 0,
-			height: 0
-		});
-		// #endif
-		// #ifndef H5
-		const query = uni.createSelectorQuery().in(proxy);
+        const query = uni.createSelectorQuery().in(proxy);
 		if (config.debug) {
 			console.log(`element:${query}`);
 		}
 		query.select(`#${eleId}`) && query.select(`#${eleId}`).boundingClientRect((data) => {
 			reslove(data);
 		}).exec();
+		// #ifdef H5
+		// if (config.debug) {
+		// 	console.log(element);
+		// }
+		// if (element && element.$el) {
+		// 	element = element.$el;
+		// }
+		// if (isWindow(element)) {
+		// 	const width = element.innerWidth;
+		// 	const height = element.innerHeight;
+
+		// 	reslove({
+		// 		top: 0,
+		// 		left: 0,
+		// 		right: width,
+		// 		bottom: height,
+		// 		width,
+		// 		height
+		// 	});
+		// }
+		// if (config.debug) {
+		// 	console.log(element);
+		// }
+		// if (element && element.getBoundingClientRect) {
+		// 	reslove(element.getBoundingClientRect());
+		// }
+
+		// reslove({
+		// 	top: 0,
+		// 	left: 0,
+		// 	right: 0,
+		// 	bottom: 0,
+		// 	width: 0,
+		// 	height: 0
+		// });
+		// #endif
+		// #ifndef H5
+		// const query = uni.createSelectorQuery().in(proxy);
+		// if (config.debug) {
+		// 	console.log(`element:${query}`);
+		// }
+		// query.select(`#${eleId}`) && query.select(`#${eleId}`).boundingClientRect((data) => {
+		// 	reslove(data);
+		// }).exec();
 		// #endif
 	});
 }

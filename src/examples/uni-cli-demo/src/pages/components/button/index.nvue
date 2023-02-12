@@ -1,0 +1,173 @@
+<template>
+    <kui-page :customHeader="false">
+        <template v-slot:body>
+            <view class="kui-mt-3">
+                <kui-config-provider font-size="18px" color="#666">
+                    <view class="kui-flex-col kui-h-full kui-w-full1">
+                        <kui-cell-group title="渐变按钮">
+                            <view class="kui-flex kui-flex-wrap">
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="主要按钮" @click="taped"
+                                    type="primary" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="信息按钮" type="info" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="默认按钮" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="成功按钮" type="success" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="警告按钮" type="warning" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="危险按钮" type="danger" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="自定义按钮" type="danger"
+                                    background-color="orange" text-color="black" />
+                            </view>
+                        </kui-cell-group>
+                        <kui-cell-group title="文本按钮" custom-class="kui-mt-6">
+                            <view class="kui-flex">
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="外边框按钮" type="primary" outline
+                                    text />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="纯文字按钮" type="primary" text />
+                            </view>
+                        </kui-cell-group>
+                        <kui-cell-group title="禁用状态" custom-class="kui-mt-6">
+                            <view class="kui-flex">
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="禁用状态" type="info" disabled />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="禁用状态" type="primary" outline text
+                                    disabled />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="禁用状态" type="danger" outline text
+                                    disabled />
+                            </view>
+                        </kui-cell-group>
+                        <kui-cell-group title="按钮形状" custom-class="kui-mt-6">
+                            <view class="kui-flex">
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="方形按钮" type="primary"
+                                    shape="square" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="胶囊按钮" type="warning" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="自定义圆角大小" type="danger"
+                                    shape="square" :radius="15" />
+                            </view>
+                        </kui-cell-group>
+                        <kui-cell-group title="圆形按钮" custom-class="kui-mt-6">
+                            <view class="kui-flex">
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" type="info" shape="round">
+                                    <kui-icons name="add" color="white" :size="30" />
+                                </kui-button>
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" type="danger" shape="round">
+                                    <kui-icons name="favor-filled" color="white" :size="30" :top="2" />
+                                </kui-button>
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" type="success" shape="round">
+                                    <kui-icons name="appreciate-filled" color="white" :size="30" />
+                                </kui-button>
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" type="warning" shape="round">
+                                    <kui-icons name="close" :size="30" color="white" />
+                                </kui-button>
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" background-color="rgba(0,0,0,0.2)"
+                                    shape="round">
+                                    <kui-icons name="forward-filled" :size="30" color="white" />
+                                </kui-button>
+                            </view>
+                        </kui-cell-group>
+                        <kui-cell-group title="加载状态" custom-class="kui-mt-6">
+                            <view class="kui-flex">
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" type="primary" loading />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="加载中..." type="info" loading />
+                            </view>
+                        </kui-cell-group>
+                        <kui-cell-group title="图标按钮" custom-class="kui-mt-6">
+                            <view class="kui-flex">
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" type="warning" outline text
+                                    icon="appreciate-filled"></kui-button>
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="点赞" type="primary"
+                                    icon="appreciate-filled" />
+                            </view>
+                        </kui-cell-group>
+                        <kui-cell-group title="按钮尺寸" custom-class="kui-mt-6">
+                            <view class="kui-flex kui-flex-wrap kui-items-center">
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="大号按钮" type="primary"
+                                    size="large" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="普通按钮" type="primary" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="小型按钮" type="primary"
+                                    size="small" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="迷你按钮" type="primary"
+                                    size="mini" />
+                            </view>
+                        </kui-cell-group>
+                        <kui-cell-group title="块级按钮" custom-class="kui-mt-6">
+                            <view class="kui-mt-0">
+                                <kui-button content="块级按钮" type="primary" size="normal" block />
+                            </view>
+                        </kui-cell-group>
+                        <kui-cell-group title="按钮阴影" custom-class="kui-mt-6">
+                            <view class="kui-flex kui-flex-wrap">
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="主要按钮" type="primary" shadow
+                                    shadow-size="lg" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="信息按钮" type="info" shadow
+                                    shadow-size="lg" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="默认按钮" shadow shadow-size="lg" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="成功按钮" type="success" shadow
+                                    shadow-size="xl" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="警告按钮" type="warning" shadow
+                                    shadow-size="xl" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="危险按钮" type="danger" shadow
+                                    shadow-size="xl" />
+                            </view>
+                        </kui-cell-group>
+                        <kui-cell-group title="防抖节流（实际效果请查看控制台）" custom-class="kui-mt-3">
+                            <view class="kui-flex">
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="节流演示" type="primary" :throttle="1" @click="taped" />
+                                <kui-button custom-class=" kui-mr-3 kui-mb-3" content="防抖演示" type="info" :throttle="2" @click="taped" />
+                            </view>
+                        </kui-cell-group>
+                        <!-- #ifdef MP -->
+                        <kui-cell-group title="开放能力" custom-class="kui-mt-6">
+                            <view class="kui-mt-3">
+                                <kui-button content="获取用户信息" type="primary" block size="large" open-type="getUserInfo"
+                                    @getuserinfo="getUserInfo" />
+                            </view>
+                            <view class="kui-mt-3">
+                                <kui-button content="打开反馈" type="info" size="large" block open-type="feedback" />
+                            </view>
+                            <view class="kui-mt-3">
+                                <kui-button content="用户转发" type="warning" size="large" block open-type="share" />
+                            </view>
+                            <view class="kui-mt-3">
+                                <kui-button content="打开授权设置" type="danger" size="large" block open-type="openSetting" />
+                            </view>
+                            <view class="kui-mt-3">
+                                <kui-button content="打开客服会话" type="success" size="large" block open-type="contact" />
+                            </view>
+                        </kui-cell-group>
+                        <!-- #endif -->
+                    </view>
+                </kui-config-provider>
+            </view>
+        </template>
+    </kui-page>
+</template>
+
+<script lang="ts" setup>
+
+import KuiButton from '@kviewui/kviewui/src/button/index.vue';
+import KuiText from '@kviewui/kviewui/src/text/index.vue';
+import KuiSpace from '@kviewui/kviewui/src/space/index.vue';
+import KuiIcons from '@kviewui/kviewui/src/icons/index.vue';
+import KuiPage from '@kviewui/kviewui/src/page/index.vue';
+import KuiConfigProvider from '@kviewui/kviewui/src/config-provider/index.vue';
+import KuiCellGroup from '@kviewui/kviewui/src/cell-group/index.vue';
+
+const taped = () => {
+    console.log(22222);
+}
+
+const getUserInfo = (e: { detail: { rawData: any; }; }) => {
+    uni.showModal({
+        title: '',
+        content: e.detail.rawData,
+        showCancel: false,
+        cancelText: '',
+        confirmText: '确定',
+        success: res => { },
+        fail: () => { },
+        complete: () => { }
+    });
+}
+</script>
+
+<style>
+
+</style>

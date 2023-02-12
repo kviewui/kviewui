@@ -1,0 +1,23 @@
+<template>
+    <kui-page :custom-header="false">
+        <template v-slot:body>
+            <button>哈哈哈</button>
+            <button>哈哈哈</button>
+            <button>哈哈哈</button>
+            <button>哈哈哈</button>
+            <button>哈哈哈</button>
+            <button>哈哈哈</button>
+            <button>哈哈哈</button>
+            <button>哈哈哈</button>
+            <button>哈哈哈</button>
+            <button>哈哈哈</button>
+            <button>哈哈哈</button>
+            <button>哈哈哈</button>
+            <button>哈哈哈</button>
+            <button>哈哈哈</button>
+        </template>
+    </kui-page>
+</template>
+<script lang="ts" setup>
+import KuiPage from '@kviewui/kviewui/src/page/index.vue';
+</script>

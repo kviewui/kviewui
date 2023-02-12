@@ -1,0 +1,1 @@
+<view render-whole="{{true}}" class="{{['kui-flex', 'kui-flex-wrap', a]}}" style="{{'justify-content:' + b + ';' + ('flex-direction:' + c) + ';' + ('align-items:' + d) + ';' + ('row-gap:' + e) + ';' + ('column-gap:' + f)}}"><slot></slot></view>

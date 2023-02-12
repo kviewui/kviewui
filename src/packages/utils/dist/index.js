@@ -29,7 +29,7 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-// ../../../node_modules/.pnpm/@vue+shared@3.2.45/node_modules/@vue/shared/dist/shared.esm-bundler.js
+// ../../../node_modules/.pnpm/@vue+shared@3.2.47/node_modules/@vue/shared/dist/shared.esm-bundler.js
 var shared_esm_bundler_exports = {};
 __export(shared_esm_bundler_exports, {
   EMPTY_ARR: () => EMPTY_ARR,
@@ -67,6 +67,7 @@ __export(shared_esm_bundler_exports, {
   isOn: () => isOn,
   isPlainObject: () => isPlainObject,
   isPromise: () => isPromise,
+  isRegExp: () => isRegExp,
   isReservedProp: () => isReservedProp,
   isSSRSafeAttrName: () => isSSRSafeAttrName,
   isSVGTag: () => isSVGTag,
@@ -77,6 +78,7 @@ __export(shared_esm_bundler_exports, {
   isVoidTag: () => isVoidTag,
   looseEqual: () => looseEqual,
   looseIndexOf: () => looseIndexOf,
+  looseToNumber: () => looseToNumber,
   makeMap: () => makeMap,
   normalizeClass: () => normalizeClass,
   normalizeProps: () => normalizeProps,
@@ -317,9 +319,9 @@ function looseIndexOf(arr, val) {
 function genPropsAccessExp(name) {
   return identRE.test(name) ? `__props.${name}` : `__props[${JSON.stringify(name)}]`;
 }
-var PatchFlagNames, slotFlagsText, GLOBALS_WHITE_LISTED, isGloballyWhitelisted, range, listDelimiterRE, propertyDelimiterRE, styleCommentRE, HTML_TAGS, SVG_TAGS, VOID_TAGS, isHTMLTag, isSVGTag, isVoidTag, specialBooleanAttrs, isSpecialBooleanAttr, isBooleanAttr, unsafeAttrCharRE, attrValidationCache, propsToAttrMap, isKnownHtmlAttr, isKnownSvgAttr, escapeRE, commentStripRE, toDisplayString, replacer, EMPTY_OBJ, EMPTY_ARR, NOOP, NO, onRE, isOn, isModelListener, extend, remove, hasOwnProperty, hasOwn, isArray, isMap, isSet, isDate, isFunction, isString, isSymbol, isObject, isPromise, objectToString, toTypeString, toRawType, isPlainObject, isIntegerKey, isReservedProp, isBuiltInDirective, cacheStringFunction, camelizeRE, camelize, hyphenateRE, hyphenate, capitalize, toHandlerKey, hasChanged, invokeArrayFns, def, toNumber, _globalThis, getGlobalThis, identRE;
+var PatchFlagNames, slotFlagsText, GLOBALS_WHITE_LISTED, isGloballyWhitelisted, range, listDelimiterRE, propertyDelimiterRE, styleCommentRE, HTML_TAGS, SVG_TAGS, VOID_TAGS, isHTMLTag, isSVGTag, isVoidTag, specialBooleanAttrs, isSpecialBooleanAttr, isBooleanAttr, unsafeAttrCharRE, attrValidationCache, propsToAttrMap, isKnownHtmlAttr, isKnownSvgAttr, escapeRE, commentStripRE, toDisplayString, replacer, EMPTY_OBJ, EMPTY_ARR, NOOP, NO, onRE, isOn, isModelListener, extend, remove, hasOwnProperty, hasOwn, isArray, isMap, isSet, isDate, isRegExp, isFunction, isString, isSymbol, isObject, isPromise, objectToString, toTypeString, toRawType, isPlainObject, isIntegerKey, isReservedProp, isBuiltInDirective, cacheStringFunction, camelizeRE, camelize, hyphenateRE, hyphenate, capitalize, toHandlerKey, hasChanged, invokeArrayFns, def, looseToNumber, toNumber, _globalThis, getGlobalThis, identRE;
 var init_shared_esm_bundler = __esm({
-  "../../../node_modules/.pnpm/@vue+shared@3.2.45/node_modules/@vue/shared/dist/shared.esm-bundler.js"() {
+  "../../../node_modules/.pnpm/@vue+shared@3.2.47/node_modules/@vue/shared/dist/shared.esm-bundler.js"() {
     PatchFlagNames = {
       [1]: `TEXT`,
       [2]: `CLASS`,
@@ -347,8 +349,8 @@ var init_shared_esm_bundler = __esm({
     listDelimiterRE = /;(?![^(]*\))/g;
     propertyDelimiterRE = /:([^]+)/;
     styleCommentRE = /\/\*.*?\*\//gs;
-    HTML_TAGS = "html,body,base,head,link,meta,style,title,address,article,aside,footer,header,h1,h2,h3,h4,h5,h6,nav,section,div,dd,dl,dt,figcaption,figure,picture,hr,img,li,main,ol,p,pre,ul,a,b,abbr,bdi,bdo,br,cite,code,data,dfn,em,i,kbd,mark,q,rp,rt,ruby,s,samp,small,span,strong,sub,sup,time,u,var,wbr,area,audio,map,track,video,embed,object,param,source,canvas,script,noscript,del,ins,caption,col,colgroup,table,thead,tbody,td,th,tr,button,datalist,fieldset,form,input,label,legend,meter,optgroup,option,output,progress,select,textarea,details,dialog,menu,summary,template,blockquote,iframe,tfoot";
-    SVG_TAGS = "svg,animate,animateMotion,animateTransform,circle,clipPath,color-profile,defs,desc,discard,ellipse,feBlend,feColorMatrix,feComponentTransfer,feComposite,feConvolveMatrix,feDiffuseLighting,feDisplacementMap,feDistanceLight,feDropShadow,feFlood,feFuncA,feFuncB,feFuncG,feFuncR,feGaussianBlur,feImage,feMerge,feMergeNode,feMorphology,feOffset,fePointLight,feSpecularLighting,feSpotLight,feTile,feTurbulence,filter,foreignObject,g,hatch,hatchpath,image,line,linearGradient,marker,mask,mesh,meshgradient,meshpatch,meshrow,metadata,mpath,path,pattern,polygon,polyline,radialGradient,rect,set,solidcolor,stop,switch,symbol,text,textPath,title,tspan,unknown,use,view";
+    HTML_TAGS = "html,body,base,head,link,meta,style,title,address,article,aside,footer,header,hgroup,h1,h2,h3,h4,h5,h6,nav,section,div,dd,dl,dt,figcaption,figure,picture,hr,img,li,main,ol,p,pre,ul,a,b,abbr,bdi,bdo,br,cite,code,data,dfn,em,i,kbd,mark,q,rp,rt,ruby,s,samp,small,span,strong,sub,sup,time,u,var,wbr,area,audio,map,track,video,embed,object,param,source,canvas,script,noscript,del,ins,caption,col,colgroup,table,thead,tbody,td,th,tr,button,datalist,fieldset,form,input,label,legend,meter,optgroup,option,output,progress,select,textarea,details,dialog,menu,summary,template,blockquote,iframe,tfoot";
+    SVG_TAGS = "svg,animate,animateMotion,animateTransform,circle,clipPath,color-profile,defs,desc,discard,ellipse,feBlend,feColorMatrix,feComponentTransfer,feComposite,feConvolveMatrix,feDiffuseLighting,feDisplacementMap,feDistantLight,feDropShadow,feFlood,feFuncA,feFuncB,feFuncG,feFuncR,feGaussianBlur,feImage,feMerge,feMergeNode,feMorphology,feOffset,fePointLight,feSpecularLighting,feSpotLight,feTile,feTurbulence,filter,foreignObject,g,hatch,hatchpath,image,line,linearGradient,marker,mask,mesh,meshgradient,meshpatch,meshrow,metadata,mpath,path,pattern,polygon,polyline,radialGradient,rect,set,solidcolor,stop,switch,symbol,text,textPath,title,tspan,unknown,use,view";
     VOID_TAGS = "area,base,br,col,embed,hr,img,input,link,meta,param,source,track,wbr";
     isHTMLTag = /* @__PURE__ */ makeMap(HTML_TAGS);
     isSVGTag = /* @__PURE__ */ makeMap(SVG_TAGS);
@@ -411,6 +413,7 @@ var init_shared_esm_bundler = __esm({
     isMap = (val) => toTypeString(val) === "[object Map]";
     isSet = (val) => toTypeString(val) === "[object Set]";
     isDate = (val) => toTypeString(val) === "[object Date]";
+    isRegExp = (val) => toTypeString(val) === "[object RegExp]";
     isFunction = (val) => typeof val === "function";
     isString = (val) => typeof val === "string";
     isSymbol = (val) => typeof val === "symbol";
@@ -457,8 +460,12 @@ var init_shared_esm_bundler = __esm({
         value
       });
     };
-    toNumber = (val) => {
+    looseToNumber = (val) => {
       const n = parseFloat(val);
+      return isNaN(n) ? val : n;
+    };
+    toNumber = (val) => {
+      const n = isString(val) ? Number(val) : NaN;
       return isNaN(n) ? val : n;
     };
     getGlobalThis = () => {
@@ -468,7 +475,7 @@ var init_shared_esm_bundler = __esm({
   }
 });
 
-// ../../../node_modules/.pnpm/@vue+compiler-core@3.2.45/node_modules/@vue/compiler-core/dist/compiler-core.esm-bundler.js
+// ../../../node_modules/.pnpm/@vue+compiler-core@3.2.47/node_modules/@vue/compiler-core/dist/compiler-core.esm-bundler.js
 function defaultOnError(error) {
   throw error;
 }
@@ -491,7 +498,7 @@ function createRoot(children, loc = locStub) {
   return {
     type: 0,
     children,
-    helpers: [],
+    helpers: /* @__PURE__ */ new Set(),
     components: [],
     directives: [],
     hoists: [],
@@ -730,7 +737,7 @@ function hasDynamicKeyVBind(node) {
     (p2) => p2.type === 7 && p2.name === "bind" && (!p2.arg || p2.arg.type !== 4 || !p2.arg.isStatic)
   );
 }
-function isText(node) {
+function isText$1(node) {
   return node.type === 5 || node.type === 2;
 }
 function isVSlot(p2) {
@@ -1921,7 +1928,7 @@ function transform(root, options) {
   if (!options.ssr) {
     createRootCodegen(root, context);
   }
-  root.helpers = [...context.helpers.keys()];
+  root.helpers = /* @__PURE__ */ new Set([...context.helpers.keys()]);
   root.components = [...context.components];
   root.directives = [...context.directives];
   root.imports = context.imports;
@@ -2095,9 +2102,11 @@ function generate(ast, options = {}) {
   if (options.onContextCreated)
     options.onContextCreated(context);
   const { mode, push, prefixIdentifiers, indent, deindent, newline, scopeId, ssr } = context;
-  const hasHelpers = ast.helpers.length > 0;
+  const helpers = Array.from(ast.helpers);
+  const hasHelpers = helpers.length > 0;
   const useWithBlock = !prefixIdentifiers && mode !== "module";
-  const preambleContext = context;
+  const isSetupInlined = false;
+  const preambleContext = isSetupInlined ? createCodegenContext(ast, options) : context;
   {
     genFunctionPreamble(ast, preambleContext);
   }
@@ -2112,7 +2121,7 @@ function generate(ast, options = {}) {
     push(`with (_ctx) {`);
     indent();
     if (hasHelpers) {
-      push(`const { ${ast.helpers.map(aliasHelper).join(", ")} } = _Vue`);
+      push(`const { ${helpers.map(aliasHelper).join(", ")} } = _Vue`);
       push(`
 `);
       newline();
@@ -2163,14 +2172,15 @@ function generate(ast, options = {}) {
   return {
     ast,
     code: context.code,
-    preamble: ``,
+    preamble: isSetupInlined ? preambleContext.code : ``,
     map: context.map ? context.map.toJSON() : void 0
   };
 }
 function genFunctionPreamble(ast, context) {
   const { ssr, prefixIdentifiers, push, newline, runtimeModuleName, runtimeGlobalName, ssrRuntimeModuleName } = context;
   const VueBinding = runtimeGlobalName;
-  if (ast.helpers.length > 0) {
+  const helpers = Array.from(ast.helpers);
+  if (helpers.length > 0) {
     {
       push(`const _Vue = ${VueBinding}
 `);
@@ -2181,7 +2191,7 @@ function genFunctionPreamble(ast, context) {
           CREATE_COMMENT,
           CREATE_TEXT,
           CREATE_STATIC
-        ].filter((helper) => ast.helpers.includes(helper)).map(aliasHelper).join(", ");
+        ].filter((helper) => helpers.includes(helper)).map(aliasHelper).join(", ");
         push(`const { ${staticHelpers} } = _Vue
 `);
       }
@@ -2222,11 +2232,11 @@ function genHoists(hoists, context) {
   }
   context.pure = false;
 }
-function isText$1(n) {
+function isText(n) {
   return isString(n) || n.type === 4 || n.type === 2 || n.type === 5 || n.type === 8;
 }
 function genNodeListAsArray(nodes, context) {
-  const multilines = nodes.length > 3 || process.env.NODE_ENV !== "production" && nodes.some((n) => isArray(n) || !isText$1(n));
+  const multilines = nodes.length > 3 || process.env.NODE_ENV !== "production" && nodes.some((n) => isArray(n) || !isText(n));
   context.push(`[`);
   multilines && context.indent();
   genNodeList(nodes, context, multilines);
@@ -3636,9 +3646,9 @@ function baseCompile(template, options = {}) {
     prefixIdentifiers
   }));
 }
-var errorMessages, FRAGMENT, TELEPORT, SUSPENSE, KEEP_ALIVE, BASE_TRANSITION, OPEN_BLOCK, CREATE_BLOCK, CREATE_ELEMENT_BLOCK, CREATE_VNODE, CREATE_ELEMENT_VNODE, CREATE_COMMENT, CREATE_TEXT, CREATE_STATIC, RESOLVE_COMPONENT, RESOLVE_DYNAMIC_COMPONENT, RESOLVE_DIRECTIVE, RESOLVE_FILTER, WITH_DIRECTIVES, RENDER_LIST, RENDER_SLOT, CREATE_SLOTS, TO_DISPLAY_STRING, MERGE_PROPS, NORMALIZE_CLASS, NORMALIZE_STYLE, NORMALIZE_PROPS, GUARD_REACTIVE_PROPS, TO_HANDLERS, CAMELIZE, CAPITALIZE, TO_HANDLER_KEY, SET_BLOCK_TRACKING, PUSH_SCOPE_ID, POP_SCOPE_ID, WITH_CTX, UNREF, IS_REF, WITH_MEMO, IS_MEMO_SAME, helperNameMap, locStub, isStaticExp, isBuiltInType, nonIdentifierRE, isSimpleIdentifier, validFirstIdentCharRE, validIdentCharRE, whitespaceRE, isMemberExpressionBrowser, isMemberExpressionNode, isMemberExpression, propsHelperSet, deprecationData, decodeRE, decodeMap, defaultParserOptions, isSpecialTemplateDirective, allowHoistedHelperSet, PURE_ANNOTATION, aliasHelper, isFunctionType, isStaticProperty, isStaticPropertyKey, prohibitedKeywordRE, stripStringRE, transformExpression, transformIf, transformFor, forAliasRE, forIteratorRE, stripParensRE, defaultFallback, trackSlotScopes, trackVForSlotScopes, buildClientSlotFn, directiveImportMap, transformElement, cacheStringFunction2, camelizeRE2, camelize2, transformSlotOutlet, fnExpRE, transformOn, transformBind, injectPrefix, transformText, seen, transformOnce, transformModel, validDivisionCharRE, transformFilter, seen$1, transformMemo, noopDirectiveTransform;
+var errorMessages, FRAGMENT, TELEPORT, SUSPENSE, KEEP_ALIVE, BASE_TRANSITION, OPEN_BLOCK, CREATE_BLOCK, CREATE_ELEMENT_BLOCK, CREATE_VNODE, CREATE_ELEMENT_VNODE, CREATE_COMMENT, CREATE_TEXT, CREATE_STATIC, RESOLVE_COMPONENT, RESOLVE_DYNAMIC_COMPONENT, RESOLVE_DIRECTIVE, RESOLVE_FILTER, WITH_DIRECTIVES, RENDER_LIST, RENDER_SLOT, CREATE_SLOTS, TO_DISPLAY_STRING, MERGE_PROPS, NORMALIZE_CLASS, NORMALIZE_STYLE, NORMALIZE_PROPS, GUARD_REACTIVE_PROPS, TO_HANDLERS, CAMELIZE, CAPITALIZE, TO_HANDLER_KEY, SET_BLOCK_TRACKING, PUSH_SCOPE_ID, POP_SCOPE_ID, WITH_CTX, UNREF, IS_REF, WITH_MEMO, IS_MEMO_SAME, helperNameMap, locStub, isStaticExp, isBuiltInType, nonIdentifierRE, isSimpleIdentifier, validFirstIdentCharRE, validIdentCharRE, whitespaceRE, isMemberExpressionBrowser, isMemberExpressionNode, isMemberExpression, propsHelperSet, deprecationData, decodeRE, decodeMap, defaultParserOptions, isSpecialTemplateDirective, allowHoistedHelperSet, PURE_ANNOTATION, aliasHelper, isFunctionType, isStaticProperty, isStaticPropertyKey, prohibitedKeywordRE, stripStringRE, transformExpression, transformIf, transformFor, forAliasRE, forIteratorRE, stripParensRE, defaultFallback, trackSlotScopes, trackVForSlotScopes, buildClientSlotFn, directiveImportMap, transformElement, cacheStringFunction2, camelizeRE2, camelize2, transformSlotOutlet, fnExpRE, transformOn, transformBind, injectPrefix, transformText, seen$1, transformOnce, transformModel, validDivisionCharRE, transformFilter, seen, transformMemo, noopDirectiveTransform;
 var init_compiler_core_esm_bundler = __esm({
-  "../../../node_modules/.pnpm/@vue+compiler-core@3.2.45/node_modules/@vue/compiler-core/dist/compiler-core.esm-bundler.js"() {
+  "../../../node_modules/.pnpm/@vue+compiler-core@3.2.47/node_modules/@vue/compiler-core/dist/compiler-core.esm-bundler.js"() {
     init_shared_esm_bundler();
     init_shared_esm_bundler();
     errorMessages = {
@@ -3679,7 +3689,7 @@ var init_compiler_core_esm_bundler = __esm({
       [34]: `v-bind is missing expression.`,
       [35]: `v-on is missing expression.`,
       [36]: `Unexpected custom directive on <slot> outlet.`,
-      [37]: `Mixed v-slot usage on both the component and nested <template>.When there are multiple named slots, all slots should use <template> syntax to avoid scope ambiguity.`,
+      [37]: `Mixed v-slot usage on both the component and nested <template>. When there are multiple named slots, all slots should use <template> syntax to avoid scope ambiguity.`,
       [38]: `Duplicate slot names found. `,
       [39]: `Extraneous children found when component already has explicitly named default slot. These children will be ignored.`,
       [40]: `v-slot can only be used on components or <template> tags.`,
@@ -3923,7 +3933,7 @@ Use a v-bind binding combined with a v-on listener that emits update:x event ins
     };
     isStaticProperty = (node) => node && (node.type === "ObjectProperty" || node.type === "ObjectMethod") && !node.computed;
     isStaticPropertyKey = (node, parent) => isStaticProperty(parent) && parent.key === node;
-    prohibitedKeywordRE = new RegExp("\\b" + "do,if,for,let,new,try,var,case,else,with,await,break,catch,class,const,super,throw,while,yield,delete,export,import,return,switch,default,extends,finally,continue,debugger,function,arguments,typeof,void".split(",").join("\\b|\\b") + "\\b");
+    prohibitedKeywordRE = new RegExp("\\b" + "arguments,await,break,case,catch,class,const,continue,debugger,default,delete,do,else,export,extends,finally,for,function,if,import,let,new,return,super,switch,throw,try,var,void,while,with,yield".split(",").join("\\b|\\b") + "\\b");
     stripStringRE = /'(?:[^'\\]|\\.)*'|"(?:[^"\\]|\\.)*"|`(?:[^`\\]|\\.)*\$\{|\}(?:[^`\\]|\\.)*`|`(?:[^`\\]|\\.)*`/g;
     transformExpression = (node, context) => {
       if (node.type === 5) {
@@ -4327,11 +4337,11 @@ Use a v-bind binding combined with a v-on listener that emits update:x event ins
           let hasText = false;
           for (let i = 0; i < children.length; i++) {
             const child = children[i];
-            if (isText(child)) {
+            if (isText$1(child)) {
               hasText = true;
               for (let j = i + 1; j < children.length; j++) {
                 const next = children[j];
-                if (isText(next)) {
+                if (isText$1(next)) {
                   if (!currentContainer) {
                     currentContainer = children[i] = createCompoundExpression([child], child.loc);
                   }
@@ -4350,7 +4360,7 @@ Use a v-bind binding combined with a v-on listener that emits update:x event ins
           }
           for (let i = 0; i < children.length; i++) {
             const child = children[i];
-            if (isText(child) || child.type === 8) {
+            if (isText$1(child) || child.type === 8) {
               const callArgs = [];
               if (child.type !== 2 || child.content !== " ") {
                 callArgs.push(child);
@@ -4369,13 +4379,13 @@ Use a v-bind binding combined with a v-on listener that emits update:x event ins
         };
       }
     };
-    seen = /* @__PURE__ */ new WeakSet();
+    seen$1 = /* @__PURE__ */ new WeakSet();
     transformOnce = (node, context) => {
       if (node.type === 1 && findDir(node, "once", true)) {
-        if (seen.has(node) || context.inVOnce) {
+        if (seen$1.has(node) || context.inVOnce) {
           return;
         }
-        seen.add(node);
+        seen$1.add(node);
         context.inVOnce = true;
         context.helper(SET_BLOCK_TRACKING);
         return () => {
@@ -4406,7 +4416,7 @@ Use a v-bind binding combined with a v-on listener that emits update:x event ins
         return createTransformProps();
       }
       const propName = arg ? arg : createSimpleExpression("modelValue", true);
-      const eventName = arg ? isStaticExp(arg) ? `onUpdate:${arg.content}` : createCompoundExpression(['"onUpdate:" + ', arg]) : `onUpdate:modelValue`;
+      const eventName = arg ? isStaticExp(arg) ? `onUpdate:${camelize(arg.content)}` : createCompoundExpression(['"onUpdate:" + ', arg]) : `onUpdate:modelValue`;
       let assignmentExp;
       const eventArg = context.isTS ? `($event: any)` : `$event`;
       {
@@ -4443,14 +4453,14 @@ Use a v-bind binding combined with a v-on listener that emits update:x event ins
         });
       }
     };
-    seen$1 = /* @__PURE__ */ new WeakSet();
+    seen = /* @__PURE__ */ new WeakSet();
     transformMemo = (node, context) => {
       if (node.type === 1) {
         const dir = findDir(node, "memo");
-        if (!dir || seen$1.has(node)) {
+        if (!dir || seen.has(node)) {
           return;
         }
-        seen$1.add(node);
+        seen.add(node);
         return () => {
           const codegenNode = node.codegenNode || context.currentNode.codegenNode;
           if (codegenNode && codegenNode.type === 13) {
@@ -4471,7 +4481,7 @@ Use a v-bind binding combined with a v-on listener that emits update:x event ins
   }
 });
 
-// ../../../node_modules/.pnpm/@vue+compiler-dom@3.2.45/node_modules/@vue/compiler-dom/dist/compiler-dom.esm-bundler.js
+// ../../../node_modules/.pnpm/@vue+compiler-dom@3.2.47/node_modules/@vue/compiler-dom/dist/compiler-dom.esm-bundler.js
 var compiler_dom_esm_bundler_exports = {};
 __export(compiler_dom_esm_bundler_exports, {
   BASE_TRANSITION: () => BASE_TRANSITION,
@@ -4588,7 +4598,7 @@ __export(compiler_dom_esm_bundler_exports, {
   isStaticProperty: () => isStaticProperty,
   isStaticPropertyKey: () => isStaticPropertyKey,
   isTemplateNode: () => isTemplateNode,
-  isText: () => isText,
+  isText: () => isText$1,
   isVSlot: () => isVSlot,
   locStub: () => locStub,
   makeBlock: () => makeBlock,
@@ -4654,7 +4664,7 @@ function parse(template, options = {}) {
 }
 var V_MODEL_RADIO, V_MODEL_CHECKBOX, V_MODEL_TEXT, V_MODEL_SELECT, V_MODEL_DYNAMIC, V_ON_WITH_MODIFIERS, V_ON_WITH_KEYS, V_SHOW, TRANSITION, TRANSITION_GROUP, decoder, isRawTextContainer, parserOptions, transformStyle, parseInlineCSS, DOMErrorMessages, transformVHtml, transformVText, transformModel2, isEventOptionModifier, isNonKeyModifier, maybeKeyModifier, isKeyboardEvent, resolveModifiers, transformClick, transformOn2, transformShow, transformTransition, ignoreSideEffectTags, DOMNodeTransforms, DOMDirectiveTransforms;
 var init_compiler_dom_esm_bundler = __esm({
-  "../../../node_modules/.pnpm/@vue+compiler-dom@3.2.45/node_modules/@vue/compiler-dom/dist/compiler-dom.esm-bundler.js"() {
+  "../../../node_modules/.pnpm/@vue+compiler-dom@3.2.47/node_modules/@vue/compiler-dom/dist/compiler-dom.esm-bundler.js"() {
     init_compiler_core_esm_bundler();
     init_compiler_core_esm_bundler();
     init_shared_esm_bundler();
@@ -5006,7 +5016,7 @@ var init_compiler_dom_esm_bundler = __esm({
   }
 });
 
-// ../../../node_modules/.pnpm/@vue+reactivity@3.2.45/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
+// ../../../node_modules/.pnpm/@vue+reactivity@3.2.47/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
 function warn(msg, ...args) {
   console.warn(`[Vue warn] ${msg}`, ...args);
 }
@@ -5106,7 +5116,7 @@ function trigger(target, type, key, newValue, oldValue, oldTarget) {
   if (type === "clear") {
     deps = [...depsMap.values()];
   } else if (key === "length" && isArray(target)) {
-    const newLength = toNumber(newValue);
+    const newLength = Number(newValue);
     depsMap.forEach((dep, key2) => {
       if (key2 === "length" || key2 >= newLength) {
         deps.push(dep);
@@ -5190,6 +5200,10 @@ function triggerEffect(effect2, debuggerEventExtraInfo) {
     }
   }
 }
+function getDepFromReactive(object, key) {
+  var _a2;
+  return (_a2 = targetMap.get(object)) === null || _a2 === void 0 ? void 0 : _a2.get(key);
+}
 function createArrayInstrumentations() {
   const instrumentations = {};
   ["includes", "indexOf", "lastIndexOf"].forEach((key) => {
@@ -5216,6 +5230,11 @@ function createArrayInstrumentations() {
   });
   return instrumentations;
 }
+function hasOwnProperty2(key) {
+  const obj = toRaw(this);
+  track(obj, "has", key);
+  return obj.hasOwnProperty(key);
+}
 function createGetter(isReadonly2 = false, shallow = false) {
   return function get2(target, key, receiver) {
     if (key === "__v_isReactive") {
@@ -5228,8 +5247,13 @@ function createGetter(isReadonly2 = false, shallow = false) {
       return target;
     }
     const targetIsArray = isArray(target);
-    if (!isReadonly2 && targetIsArray && hasOwn(arrayInstrumentations, key)) {
-      return Reflect.get(arrayInstrumentations, key, receiver);
+    if (!isReadonly2) {
+      if (targetIsArray && hasOwn(arrayInstrumentations, key)) {
+        return Reflect.get(arrayInstrumentations, key, receiver);
+      }
+      if (key === "hasOwnProperty") {
+        return hasOwnProperty2;
+      }
     }
     const res = Reflect.get(target, key, receiver);
     if (isSymbol(key) ? builtInSymbols.has(key) : isNonTrackableKeys(key)) {
@@ -5287,7 +5311,7 @@ function deleteProperty(target, key) {
   }
   return result;
 }
-function has(target, key) {
+function has$1(target, key) {
   const result = Reflect.has(target, key);
   if (!isSymbol(key) || !builtInSymbols.has(key)) {
     track(target, "has", key);
@@ -5298,7 +5322,7 @@ function ownKeys(target) {
   track(target, "iterate", isArray(target) ? "length" : ITERATE_KEY);
   return Reflect.ownKeys(target);
 }
-function get$1(target, key, isReadonly2 = false, isShallow3 = false) {
+function get(target, key, isReadonly2 = false, isShallow3 = false) {
   target = target["__v_raw"];
   const rawTarget = toRaw(target);
   const rawKey = toRaw(key);
@@ -5318,7 +5342,7 @@ function get$1(target, key, isReadonly2 = false, isShallow3 = false) {
     target.get(key);
   }
 }
-function has$1(key, isReadonly2 = false) {
+function has(key, isReadonly2 = false) {
   const target = this["__v_raw"];
   const rawTarget = toRaw(target);
   const rawKey = toRaw(key);
@@ -5346,7 +5370,7 @@ function add(value) {
   }
   return this;
 }
-function set$1(key, value) {
+function set(key, value) {
   value = toRaw(value);
   const target = toRaw(this);
   const { has: has2, get: get2 } = getProto(target);
@@ -5441,41 +5465,41 @@ function createReadonlyMethod(type) {
 function createInstrumentations() {
   const mutableInstrumentations2 = {
     get(key) {
-      return get$1(this, key);
+      return get(this, key);
     },
     get size() {
       return size(this);
     },
-    has: has$1,
+    has,
     add,
-    set: set$1,
+    set,
     delete: deleteEntry,
     clear,
     forEach: createForEach(false, false)
   };
   const shallowInstrumentations2 = {
     get(key) {
-      return get$1(this, key, false, true);
+      return get(this, key, false, true);
     },
     get size() {
       return size(this);
     },
-    has: has$1,
+    has,
     add,
-    set: set$1,
+    set,
     delete: deleteEntry,
     clear,
     forEach: createForEach(false, true)
   };
   const readonlyInstrumentations2 = {
     get(key) {
-      return get$1(this, key, true);
+      return get(this, key, true);
     },
     get size() {
       return size(this, true);
     },
     has(key) {
-      return has$1.call(this, key, true);
+      return has.call(this, key, true);
     },
     add: createReadonlyMethod("add"),
     set: createReadonlyMethod("set"),
@@ -5485,13 +5509,13 @@ function createInstrumentations() {
   };
   const shallowReadonlyInstrumentations2 = {
     get(key) {
-      return get$1(this, key, true, true);
+      return get(this, key, true, true);
     },
     get size() {
       return size(this, true);
     },
     has(key) {
-      return has$1.call(this, key, true);
+      return has.call(this, key, true);
     },
     add: createReadonlyMethod("add"),
     set: createReadonlyMethod("set"),
@@ -5626,16 +5650,17 @@ function trackRefValue(ref2) {
 }
 function triggerRefValue(ref2, newVal) {
   ref2 = toRaw(ref2);
-  if (ref2.dep) {
+  const dep = ref2.dep;
+  if (dep) {
     if (process.env.NODE_ENV !== "production") {
-      triggerEffects(ref2.dep, {
+      triggerEffects(dep, {
         target: ref2,
         type: "set",
         key: "value",
         newValue: newVal
       });
     } else {
-      triggerEffects(ref2.dep);
+      triggerEffects(dep);
     }
   }
 }
@@ -5700,14 +5725,14 @@ function computed(getterOrOptions, debugOptions, isSSR = false) {
   }
   return cRef;
 }
-var activeEffectScope, EffectScope, createDep, wasTracked, newTracked, initDepMarkers, finalizeDepMarkers, targetMap, effectTrackDepth, trackOpBit, maxMarkerBits, activeEffect, ITERATE_KEY, MAP_KEY_ITERATE_KEY, ReactiveEffect, shouldTrack, trackStack, isNonTrackableKeys, builtInSymbols, get, shallowGet, readonlyGet, shallowReadonlyGet, arrayInstrumentations, set, shallowSet, mutableHandlers, readonlyHandlers, shallowReactiveHandlers, shallowReadonlyHandlers, toShallow, getProto, mutableInstrumentations, readonlyInstrumentations, shallowInstrumentations, shallowReadonlyInstrumentations, mutableCollectionHandlers, shallowCollectionHandlers, readonlyCollectionHandlers, shallowReadonlyCollectionHandlers, reactiveMap, shallowReactiveMap, readonlyMap, shallowReadonlyMap, toReactive, toReadonly, RefImpl, shallowUnwrapHandlers, CustomRefImpl, ObjectRefImpl, _a, ComputedRefImpl, _a$1;
+var activeEffectScope, EffectScope, createDep, wasTracked, newTracked, initDepMarkers, finalizeDepMarkers, targetMap, effectTrackDepth, trackOpBit, maxMarkerBits, activeEffect, ITERATE_KEY, MAP_KEY_ITERATE_KEY, ReactiveEffect, shouldTrack, trackStack, isNonTrackableKeys, builtInSymbols, get$1, shallowGet, readonlyGet, shallowReadonlyGet, arrayInstrumentations, set$1, shallowSet, mutableHandlers, readonlyHandlers, shallowReactiveHandlers, shallowReadonlyHandlers, toShallow, getProto, mutableInstrumentations, readonlyInstrumentations, shallowInstrumentations, shallowReadonlyInstrumentations, mutableCollectionHandlers, shallowCollectionHandlers, readonlyCollectionHandlers, shallowReadonlyCollectionHandlers, reactiveMap, shallowReactiveMap, readonlyMap, shallowReadonlyMap, toReactive, toReadonly, RefImpl, shallowUnwrapHandlers, CustomRefImpl, ObjectRefImpl, _a$1, ComputedRefImpl, _a;
 var init_reactivity_esm_bundler = __esm({
-  "../../../node_modules/.pnpm/@vue+reactivity@3.2.45/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js"() {
+  "../../../node_modules/.pnpm/@vue+reactivity@3.2.47/node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js"() {
     init_shared_esm_bundler();
     EffectScope = class {
       constructor(detached = false) {
         this.detached = detached;
-        this.active = true;
+        this._active = true;
         this.effects = [];
         this.cleanups = [];
         this.parent = activeEffectScope;
@@ -5715,8 +5740,11 @@ var init_reactivity_esm_bundler = __esm({
           this.index = (activeEffectScope.scopes || (activeEffectScope.scopes = [])).push(this) - 1;
         }
       }
+      get active() {
+        return this._active;
+      }
       run(fn) {
-        if (this.active) {
+        if (this._active) {
           const currentEffectScope = activeEffectScope;
           try {
             activeEffectScope = this;
@@ -5735,7 +5763,7 @@ var init_reactivity_esm_bundler = __esm({
         activeEffectScope = this.parent;
       }
       stop(fromParent) {
-        if (this.active) {
+        if (this._active) {
           let i, l;
           for (i = 0, l = this.effects.length; i < l; i++) {
             this.effects[i].stop();
@@ -5756,7 +5784,7 @@ var init_reactivity_esm_bundler = __esm({
             }
           }
           this.parent = void 0;
-          this.active = false;
+          this._active = false;
         }
       }
     };
@@ -5861,18 +5889,18 @@ var init_reactivity_esm_bundler = __esm({
     builtInSymbols = new Set(
       /* @__PURE__ */ Object.getOwnPropertyNames(Symbol).filter((key) => key !== "arguments" && key !== "caller").map((key) => Symbol[key]).filter(isSymbol)
     );
-    get = /* @__PURE__ */ createGetter();
+    get$1 = /* @__PURE__ */ createGetter();
     shallowGet = /* @__PURE__ */ createGetter(false, true);
     readonlyGet = /* @__PURE__ */ createGetter(true);
     shallowReadonlyGet = /* @__PURE__ */ createGetter(true, true);
     arrayInstrumentations = /* @__PURE__ */ createArrayInstrumentations();
-    set = /* @__PURE__ */ createSetter();
+    set$1 = /* @__PURE__ */ createSetter();
     shallowSet = /* @__PURE__ */ createSetter(true);
     mutableHandlers = {
-      get,
-      set,
+      get: get$1,
+      set: set$1,
       deleteProperty,
-      has,
+      has: has$1,
       ownKeys
     };
     readonlyHandlers = {
@@ -5981,13 +6009,16 @@ var init_reactivity_esm_bundler = __esm({
       set value(newVal) {
         this._object[this._key] = newVal;
       }
+      get dep() {
+        return getDepFromReactive(toRaw(this._object), this._key);
+      }
     };
     ComputedRefImpl = class {
       constructor(getter, _setter, isReadonly2, isSSR) {
         this._setter = _setter;
         this.dep = void 0;
         this.__v_isRef = true;
-        this[_a] = false;
+        this[_a$1] = false;
         this._dirty = true;
         this.effect = new ReactiveEffect(getter, () => {
           if (!this._dirty) {
@@ -6012,12 +6043,12 @@ var init_reactivity_esm_bundler = __esm({
         this._setter(newValue);
       }
     };
-    _a = "__v_isReadonly";
     _a$1 = "__v_isReadonly";
+    _a = "__v_isReadonly";
   }
 });
 
-// ../../../node_modules/.pnpm/@vue+runtime-core@3.2.45/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js
+// ../../../node_modules/.pnpm/@vue+runtime-core@3.2.47/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js
 function pushWarningContext(vnode) {
   stack.push(vnode);
 }
@@ -6109,6 +6140,17 @@ function formatProp(key, value, raw) {
   } else {
     value = toRaw(value);
     return raw ? value : [`${key}=`, value];
+  }
+}
+function assertNumber(val, type) {
+  if (!(process.env.NODE_ENV !== "production"))
+    return;
+  if (val === void 0) {
+    return;
+  } else if (typeof val !== "number") {
+    warn2(`${type} is not a valid number - got ${JSON.stringify(val)}.`);
+  } else if (isNaN(val)) {
+    warn2(`${type} is NaN - the duration expression might be incorrect.`);
   }
 }
 function callWithErrorHandling(fn, instance, type, args) {
@@ -6405,7 +6447,7 @@ function tryWrap(fn) {
     }
   };
 }
-function emit(event, ...args) {
+function emit$1(event, ...args) {
   if (devtools) {
     devtools.emit(event, ...args);
   } else if (!devtoolsNotInstalled) {
@@ -6437,7 +6479,7 @@ function setDevtoolsHook(hook, target) {
   }
 }
 function devtoolsInitApp(app, version2) {
-  emit("app:init", app, version2, {
+  emit$1("app:init", app, version2, {
     Fragment,
     Text,
     Comment,
@@ -6445,22 +6487,22 @@ function devtoolsInitApp(app, version2) {
   });
 }
 function devtoolsUnmountApp(app) {
-  emit("app:unmount", app);
+  emit$1("app:unmount", app);
 }
 function createDevtoolsComponentHook(hook) {
   return (component) => {
-    emit(hook, component.appContext.app, component.uid, component.parent ? component.parent.uid : void 0, component);
+    emit$1(hook, component.appContext.app, component.uid, component.parent ? component.parent.uid : void 0, component);
   };
 }
 function createDevtoolsPerformanceHook(hook) {
   return (component, type, time) => {
-    emit(hook, component.appContext.app, component.uid, component, type, time);
+    emit$1(hook, component.appContext.app, component.uid, component, type, time);
   };
 }
 function devtoolsComponentEmit(component, event, params) {
-  emit("component:emit", component.appContext.app, component, event, params);
+  emit$1("component:emit", component.appContext.app, component, event, params);
 }
-function emit$1(instance, event, ...rawArgs) {
+function emit(instance, event, ...rawArgs) {
   if (instance.isUnmounted)
     return;
   const props = instance.vnode.props || EMPTY_OBJ;
@@ -6492,7 +6534,7 @@ function emit$1(instance, event, ...rawArgs) {
       args = rawArgs.map((a) => isString(a) ? a.trim() : a);
     }
     if (number) {
-      args = rawArgs.map(toNumber);
+      args = rawArgs.map(looseToNumber);
     }
   }
   if (process.env.NODE_ENV !== "production" || __VUE_PROD_DEVTOOLS__) {
@@ -6920,7 +6962,10 @@ function createSuspenseBoundary(vnode, parent, parentComponent, container, hidde
     console[console.info ? "info" : "log"](`<Suspense> is an experimental feature and its API will likely change.`);
   }
   const { p: patch, m: move, um: unmount, n: next, o: { parentNode, remove: remove2 } } = rendererInternals;
-  const timeout = toNumber(vnode.props && vnode.props.timeout);
+  const timeout = vnode.props ? toNumber(vnode.props.timeout) : void 0;
+  if (process.env.NODE_ENV !== "production") {
+    assertNumber(timeout, `Suspense timeout`);
+  }
   const suspense = {
     vnode,
     parent,
@@ -7206,7 +7251,7 @@ function doWatch(source, cb, { immediate, deep, flush, onTrack, onTrigger } = EM
   const warnInvalidSource = (s) => {
     warn2(`Invalid watch source: `, s, `A watch source can only be a getter/effect function, a ref, a reactive object, or an array of these types.`);
   };
-  const instance = currentInstance;
+  const instance = getCurrentScope() === (currentInstance === null || currentInstance === void 0 ? void 0 : currentInstance.scope) ? currentInstance : null;
   let getter;
   let forceTrigger = false;
   let isMultiSource = false;
@@ -7700,7 +7745,7 @@ function matches(pattern, name) {
     return pattern.some((p2) => matches(p2, name));
   } else if (isString(pattern)) {
     return pattern.split(",").includes(name);
-  } else if (pattern.test) {
+  } else if (isRegExp(pattern)) {
     return pattern.test(name);
   }
   return false;
@@ -8602,8 +8647,8 @@ function validatePropName(key) {
   return false;
 }
 function getType(ctor) {
-  const match = ctor && ctor.toString().match(/^\s*function (\w+)/);
-  return match ? match[1] : ctor === null ? "null" : "";
+  const match = ctor && ctor.toString().match(/^\s*(function|class) (\w+)/);
+  return match ? match[2] : ctor === null ? "null" : "";
 }
 function isSameType(a, b) {
   return getType(a) === getType(b);
@@ -8741,7 +8786,7 @@ function createAppAPI(render2, hydrate2) {
     const installedPlugins = /* @__PURE__ */ new Set();
     let isMounted = false;
     const app = context.app = {
-      _uid: uid++,
+      _uid: uid$1++,
       _component: rootComponent,
       _props: rootProps,
       _container: null,
@@ -9388,6 +9433,7 @@ function baseCreateRenderer(options, createHydrationFns) {
     if (dirs) {
       invokeDirectiveHook(vnode, null, parentComponent, "created");
     }
+    setScopeId(el, vnode, vnode.scopeId, slotScopeIds, parentComponent);
     if (props) {
       for (const key in props) {
         if (key !== "value" && !isReservedProp(key)) {
@@ -9401,7 +9447,6 @@ function baseCreateRenderer(options, createHydrationFns) {
         invokeVNodeHook(vnodeHook, parentComponent, vnode);
       }
     }
-    setScopeId(el, vnode, vnode.scopeId, slotScopeIds, parentComponent);
     if (process.env.NODE_ENV !== "production" || __VUE_PROD_DEVTOOLS__) {
       Object.defineProperty(el, "__vnode", {
         value: vnode,
@@ -10482,7 +10527,8 @@ function cloneVNode(vnode, extraProps, mergeRef = false) {
     ssFallback: vnode.ssFallback && cloneVNode(vnode.ssFallback),
     el: vnode.el,
     anchor: vnode.anchor,
-    ctx: vnode.ctx
+    ctx: vnode.ctx,
+    ce: vnode.ce
   };
   return cloned;
 }
@@ -10601,7 +10647,7 @@ function createComponentInstance(vnode, parent, suspense) {
   const type = vnode.type;
   const appContext = (parent ? parent.appContext : vnode.appContext) || emptyAppContext;
   const instance = {
-    uid: uid$1++,
+    uid: uid++,
     vnode,
     type,
     parent,
@@ -10664,7 +10710,7 @@ function createComponentInstance(vnode, parent, suspense) {
     instance.ctx = { _: instance };
   }
   instance.root = parent ? parent.root : instance;
-  instance.emit = emit$1.bind(null, instance);
+  instance.emit = emit.bind(null, instance);
   if (vnode.ce) {
     vnode.ce(instance);
   }
@@ -10843,8 +10889,23 @@ function createAttrsProxy(instance) {
 }
 function createSetupContext(instance) {
   const expose = (exposed) => {
-    if (process.env.NODE_ENV !== "production" && instance.exposed) {
-      warn2(`expose() should be called only once per setup().`);
+    if (process.env.NODE_ENV !== "production") {
+      if (instance.exposed) {
+        warn2(`expose() should be called only once per setup().`);
+      }
+      if (exposed != null) {
+        let exposedType = typeof exposed;
+        if (exposedType === "object") {
+          if (isArray(exposed)) {
+            exposedType = "array";
+          } else if (isRef(exposed)) {
+            exposedType = "ref";
+          }
+        }
+        if (exposedType !== "object") {
+          warn2(`expose() should be passed a plain object, received ${exposedType}.`);
+        }
+      }
     }
     instance.exposed = exposed || {};
   };
@@ -11218,9 +11279,9 @@ function isMemoSame(cached, memo) {
   }
   return true;
 }
-var stack, ErrorTypeStrings, isFlushing, isFlushPending, queue, flushIndex, pendingPostFlushCbs, activePostFlushCbs, postFlushIndex, resolvedPromise, currentFlushPromise, RECURSION_LIMIT, getId, comparator, isHmrUpdating, hmrDirtyComponents, map, devtools, buffer, devtoolsNotInstalled, devtoolsComponentAdded, devtoolsComponentUpdated, _devtoolsComponentRemoved, devtoolsComponentRemoved, devtoolsPerfStart, devtoolsPerfEnd, currentRenderingInstance, currentScopeId, withScopeId, accessedAttrs, getChildRoot, getFunctionalFallthrough, filterModelListeners, isElementRoot, isSuspense, SuspenseImpl, Suspense, hasWarned, INITIAL_WATCHER_VALUE, TransitionHookValidator, BaseTransitionImpl, BaseTransition, isAsyncWrapper, isKeepAlive, KeepAliveImpl, KeepAlive, createHook, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted, onServerPrefetch, onRenderTriggered, onRenderTracked, COMPONENTS, DIRECTIVES, NULL_DYNAMIC_COMPONENT, getPublicInstance, publicPropertiesMap, isReservedPrefix, hasSetupBinding, PublicInstanceProxyHandlers, RuntimeCompiledPublicInstanceProxyHandlers, shouldCacheAccess, internalOptionMergeStrats, isSimpleType, isInternalKey, normalizeSlotValue, normalizeSlot, normalizeObjectSlots, normalizeVNodeSlots, initSlots, updateSlots, uid, hasMismatch, isSVGContainer, isComment, supported, perf, queuePostRenderEffect, isTeleport, isTeleportDisabled, isTargetSVG, resolveTarget, TeleportImpl, Teleport, Fragment, Text, Comment, Static, blockStack, currentBlock, isBlockTreeEnabled, vnodeArgsTransformer, createVNodeWithArgsTransform, InternalObjectKey, normalizeKey, normalizeRef, createVNode, emptyAppContext, uid$1, currentInstance, getCurrentInstance, setCurrentInstance, unsetCurrentInstance, isBuiltInTag, isInSSRComponentSetup, compile2, installWithProxy, isRuntimeOnly, classifyRE, classify, computed2, warnRuntimeUsage, ssrContextKey, useSSRContext, version, _ssrUtils, ssrUtils, resolveFilter, compatUtils;
+var stack, ErrorTypeStrings, isFlushing, isFlushPending, queue, flushIndex, pendingPostFlushCbs, activePostFlushCbs, postFlushIndex, resolvedPromise, currentFlushPromise, RECURSION_LIMIT, getId, comparator, isHmrUpdating, hmrDirtyComponents, map, devtools, buffer, devtoolsNotInstalled, devtoolsComponentAdded, devtoolsComponentUpdated, _devtoolsComponentRemoved, devtoolsComponentRemoved, devtoolsPerfStart, devtoolsPerfEnd, currentRenderingInstance, currentScopeId, withScopeId, accessedAttrs, getChildRoot, getFunctionalFallthrough, filterModelListeners, isElementRoot, isSuspense, SuspenseImpl, Suspense, hasWarned, INITIAL_WATCHER_VALUE, TransitionHookValidator, BaseTransitionImpl, BaseTransition, isAsyncWrapper, isKeepAlive, KeepAliveImpl, KeepAlive, createHook, onBeforeMount, onMounted, onBeforeUpdate, onUpdated, onBeforeUnmount, onUnmounted, onServerPrefetch, onRenderTriggered, onRenderTracked, COMPONENTS, DIRECTIVES, NULL_DYNAMIC_COMPONENT, getPublicInstance, publicPropertiesMap, isReservedPrefix, hasSetupBinding, PublicInstanceProxyHandlers, RuntimeCompiledPublicInstanceProxyHandlers, shouldCacheAccess, internalOptionMergeStrats, isSimpleType, isInternalKey, normalizeSlotValue, normalizeSlot, normalizeObjectSlots, normalizeVNodeSlots, initSlots, updateSlots, uid$1, hasMismatch, isSVGContainer, isComment, supported, perf, queuePostRenderEffect, isTeleport, isTeleportDisabled, isTargetSVG, resolveTarget, TeleportImpl, Teleport, Fragment, Text, Comment, Static, blockStack, currentBlock, isBlockTreeEnabled, vnodeArgsTransformer, createVNodeWithArgsTransform, InternalObjectKey, normalizeKey, normalizeRef, createVNode, emptyAppContext, uid, currentInstance, getCurrentInstance, setCurrentInstance, unsetCurrentInstance, isBuiltInTag, isInSSRComponentSetup, compile2, installWithProxy, isRuntimeOnly, classifyRE, classify, computed2, warnRuntimeUsage, ssrContextKey, useSSRContext, version, _ssrUtils, ssrUtils, resolveFilter, compatUtils;
 var init_runtime_core_esm_bundler = __esm({
-  "../../../node_modules/.pnpm/@vue+runtime-core@3.2.45/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js"() {
+  "../../../node_modules/.pnpm/@vue+runtime-core@3.2.47/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js"() {
     init_reactivity_esm_bundler();
     init_reactivity_esm_bundler();
     init_shared_esm_bundler();
@@ -11543,7 +11604,7 @@ var init_runtime_core_esm_bundler = __esm({
         }
         function pruneCacheEntry(key) {
           const cached = cache.get(key);
-          if (!current || cached.type !== current.type) {
+          if (!current || !isSameVNodeType(cached, current)) {
             unmount(cached);
           } else if (current) {
             resetShapeFlag(current);
@@ -11571,7 +11632,7 @@ var init_runtime_core_esm_bundler = __esm({
           cache.forEach((cached) => {
             const { subTree, suspense } = instance;
             const vnode = getInnerChild(subTree);
-            if (cached.type === vnode.type) {
+            if (cached.type === vnode.type && cached.key === vnode.key) {
               resetShapeFlag(vnode);
               const da = vnode.component.da;
               da && queuePostRenderEffect(da, suspense);
@@ -11918,7 +11979,7 @@ var init_runtime_core_esm_bundler = __esm({
         }
       }
     };
-    uid = 0;
+    uid$1 = 0;
     hasMismatch = false;
     isSVGContainer = (container) => /svg/.test(container.namespaceURI) && container.tagName !== "foreignObject";
     isComment = (node) => node.nodeType === 8;
@@ -12049,7 +12110,7 @@ var init_runtime_core_esm_bundler = __esm({
     };
     createVNode = process.env.NODE_ENV !== "production" ? createVNodeWithArgsTransform : _createVNode;
     emptyAppContext = createAppContext();
-    uid$1 = 0;
+    uid = 0;
     currentInstance = null;
     getCurrentInstance = () => currentInstance || currentRenderingInstance;
     setCurrentInstance = (instance) => {
@@ -12079,7 +12140,7 @@ var init_runtime_core_esm_bundler = __esm({
         return ctx;
       }
     };
-    version = "3.2.45";
+    version = "3.2.47";
     _ssrUtils = {
       createComponentInstance,
       setupComponent,
@@ -12094,7 +12155,7 @@ var init_runtime_core_esm_bundler = __esm({
   }
 });
 
-// ../../../node_modules/.pnpm/@vue+runtime-dom@3.2.45/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js
+// ../../../node_modules/.pnpm/@vue+runtime-dom@3.2.47/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js
 var runtime_dom_esm_bundler_exports = {};
 __export(runtime_dom_esm_bundler_exports, {
   BaseTransition: () => BaseTransition,
@@ -12110,6 +12171,7 @@ __export(runtime_dom_esm_bundler_exports, {
   Transition: () => Transition,
   TransitionGroup: () => TransitionGroup,
   VueElement: () => VueElement,
+  assertNumber: () => assertNumber,
   callWithAsyncErrorHandling: () => callWithAsyncErrorHandling,
   callWithErrorHandling: () => callWithErrorHandling,
   camelize: () => camelize,
@@ -12259,15 +12321,15 @@ function patchStyle(el, prev, next) {
   const style = el.style;
   const isCssString = isString(next);
   if (next && !isCssString) {
-    for (const key in next) {
-      setStyle(style, key, next[key]);
-    }
     if (prev && !isString(prev)) {
       for (const key in prev) {
         if (next[key] == null) {
           setStyle(style, key, "");
         }
       }
+    }
+    for (const key in next) {
+      setStyle(style, key, next[key]);
     }
   } else {
     const currentDisplay = style.display;
@@ -12332,11 +12394,11 @@ function patchAttr(el, key, value, isSVG, instance) {
       el.setAttributeNS(xlinkNS, key, value);
     }
   } else {
-    const isBoolean2 = isSpecialBooleanAttr(key);
-    if (value == null || isBoolean2 && !includeBooleanAttr(value)) {
+    const isBoolean3 = isSpecialBooleanAttr(key);
+    if (value == null || isBoolean3 && !includeBooleanAttr(value)) {
       el.removeAttribute(key);
     } else {
-      el.setAttribute(key, isBoolean2 ? "" : value);
+      el.setAttribute(key, isBoolean3 ? "" : value);
     }
   }
 }
@@ -12652,16 +12714,10 @@ function normalizeDuration(duration) {
 }
 function NumberOf(val) {
   const res = toNumber(val);
-  if (process.env.NODE_ENV !== "production")
-    validateDuration(res);
-  return res;
-}
-function validateDuration(val) {
-  if (typeof val !== "number") {
-    warn2(`<transition> explicit duration is not a valid number - got ${JSON.stringify(val)}.`);
-  } else if (isNaN(val)) {
-    warn2(`<transition> explicit duration is NaN - the duration expression might be incorrect.`);
+  if (process.env.NODE_ENV !== "production") {
+    assertNumber(res, "<transition> explicit duration");
   }
+  return res;
 }
 function addTransitionClass(el, cls) {
   cls.split(/\s+/).forEach((c) => c && el.classList.add(c));
@@ -12975,9 +13031,9 @@ function normalizeContainer(container) {
   }
   return container;
 }
-var svgNS, doc, templateContainer, nodeOps, semicolonRE, importantRE, prefixes, prefixCache, xlinkNS, optionsModifierRE, cachedNow, p, getNow, nativeOnRE, patchProp, defineSSRCustomElement, BaseClass, VueElement, TRANSITION2, ANIMATION, Transition, DOMTransitionPropsValidators, TransitionPropsValidators, callHook2, hasExplicitCallback, endId, positionMap, newPositionMap, TransitionGroupImpl, TransitionGroup, getModelAssigner, vModelText, vModelCheckbox, vModelRadio, vModelSelect, vModelDynamic, systemModifiers, modifierGuards, withModifiers, keyNames, withKeys, vShow, rendererOptions, renderer, enabledHydration, render, hydrate, createApp, createSSRApp, ssrDirectiveInitialized, initDirectivesForSSR;
+var svgNS, doc, templateContainer, nodeOps, semicolonRE, importantRE, prefixes, prefixCache, xlinkNS, optionsModifierRE, cachedNow, p, getNow, nativeOnRE, patchProp, defineSSRCustomElement, BaseClass, VueElement, TRANSITION2, ANIMATION, Transition, DOMTransitionPropsValidators, TransitionPropsValidators, callHook2, hasExplicitCallback, endId, positionMap, newPositionMap, TransitionGroupImpl, removeMode, TransitionGroup, getModelAssigner, vModelText, vModelCheckbox, vModelRadio, vModelSelect, vModelDynamic, systemModifiers, modifierGuards, withModifiers, keyNames, withKeys, vShow, rendererOptions, renderer, enabledHydration, render, hydrate, createApp, createSSRApp, ssrDirectiveInitialized, initDirectivesForSSR;
 var init_runtime_dom_esm_bundler = __esm({
-  "../../../node_modules/.pnpm/@vue+runtime-dom@3.2.45/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js"() {
+  "../../../node_modules/.pnpm/@vue+runtime-dom@3.2.47/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js"() {
     init_runtime_core_esm_bundler();
     init_runtime_core_esm_bundler();
     init_shared_esm_bundler();
@@ -13359,6 +13415,8 @@ var init_runtime_dom_esm_bundler = __esm({
         };
       }
     };
+    removeMode = (props) => delete props.mode;
+    /* @__PURE__ */ removeMode(TransitionGroupImpl.props);
     TransitionGroup = TransitionGroupImpl;
     getModelAssigner = (vnode) => {
       const fn = vnode.props["onUpdate:modelValue"] || false;
@@ -13376,7 +13434,7 @@ var init_runtime_dom_esm_bundler = __esm({
             domValue = domValue.trim();
           }
           if (castToNumber) {
-            domValue = toNumber(domValue);
+            domValue = looseToNumber(domValue);
           }
           el._assign(domValue);
         });
@@ -13405,7 +13463,7 @@ var init_runtime_dom_esm_bundler = __esm({
           if (trim && el.value.trim() === value) {
             return;
           }
-          if ((number || el.type === "number") && toNumber(el.value) === value) {
+          if ((number || el.type === "number") && looseToNumber(el.value) === value) {
             return;
           }
         }
@@ -13473,7 +13531,7 @@ var init_runtime_dom_esm_bundler = __esm({
       created(el, { value, modifiers: { number } }, vnode) {
         const isSetModel = isSet(value);
         addEventListener(el, "change", () => {
-          const selectedVal = Array.prototype.filter.call(el.options, (o) => o.selected).map((o) => number ? toNumber(getValue(o)) : getValue(o));
+          const selectedVal = Array.prototype.filter.call(el.options, (o) => o.selected).map((o) => number ? looseToNumber(getValue(o)) : getValue(o));
           el._assign(el.multiple ? isSetModel ? new Set(selectedVal) : selectedVal : selectedVal[0]);
         });
         el._assign = getModelAssigner(vnode);
@@ -13640,27 +13698,25 @@ var init_runtime_dom_esm_bundler = __esm({
   }
 });
 
-// ../../../node_modules/.pnpm/vue@3.2.45/node_modules/vue/dist/vue.cjs.prod.js
+// ../../../node_modules/.pnpm/vue@3.2.47/node_modules/vue/dist/vue.cjs.prod.js
 var require_vue_cjs_prod = __commonJS({
-  "../../../node_modules/.pnpm/vue@3.2.45/node_modules/vue/dist/vue.cjs.prod.js"(exports) {
+  "../../../node_modules/.pnpm/vue@3.2.47/node_modules/vue/dist/vue.cjs.prod.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var compilerDom = (init_compiler_dom_esm_bundler(), __toCommonJS(compiler_dom_esm_bundler_exports));
     var runtimeDom = (init_runtime_dom_esm_bundler(), __toCommonJS(runtime_dom_esm_bundler_exports));
     var shared = (init_shared_esm_bundler(), __toCommonJS(shared_esm_bundler_exports));
-    function _interopNamespace(e) {
-      if (e && e.__esModule)
-        return e;
+    function _interopNamespaceDefault(e) {
       var n = /* @__PURE__ */ Object.create(null);
       if (e) {
-        Object.keys(e).forEach(function(k) {
+        for (var k in e) {
           n[k] = e[k];
-        });
+        }
       }
-      n["default"] = e;
+      n.default = e;
       return Object.freeze(n);
     }
-    var runtimeDom__namespace = /* @__PURE__ */ _interopNamespace(runtimeDom);
+    var runtimeDom__namespace = /* @__PURE__ */ _interopNamespaceDefault(runtimeDom);
     var compileCache = /* @__PURE__ */ Object.create(null);
     function compileToFunction(template, options) {
       if (!shared.isString(template)) {
@@ -13693,35 +13749,33 @@ var require_vue_cjs_prod = __commonJS({
       return compileCache[key] = render2;
     }
     runtimeDom.registerRuntimeCompiler(compileToFunction);
+    exports.compile = compileToFunction;
     Object.keys(runtimeDom).forEach(function(k) {
       if (k !== "default")
         exports[k] = runtimeDom[k];
     });
-    exports.compile = compileToFunction;
   }
 });
 
-// ../../../node_modules/.pnpm/vue@3.2.45/node_modules/vue/dist/vue.cjs.js
+// ../../../node_modules/.pnpm/vue@3.2.47/node_modules/vue/dist/vue.cjs.js
 var require_vue_cjs = __commonJS({
-  "../../../node_modules/.pnpm/vue@3.2.45/node_modules/vue/dist/vue.cjs.js"(exports) {
+  "../../../node_modules/.pnpm/vue@3.2.47/node_modules/vue/dist/vue.cjs.js"(exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var compilerDom = (init_compiler_dom_esm_bundler(), __toCommonJS(compiler_dom_esm_bundler_exports));
     var runtimeDom = (init_runtime_dom_esm_bundler(), __toCommonJS(runtime_dom_esm_bundler_exports));
     var shared = (init_shared_esm_bundler(), __toCommonJS(shared_esm_bundler_exports));
-    function _interopNamespace(e) {
-      if (e && e.__esModule)
-        return e;
+    function _interopNamespaceDefault(e) {
       var n = /* @__PURE__ */ Object.create(null);
       if (e) {
-        Object.keys(e).forEach(function(k) {
+        for (var k in e) {
           n[k] = e[k];
-        });
+        }
       }
-      n["default"] = e;
+      n.default = e;
       return Object.freeze(n);
     }
-    var runtimeDom__namespace = /* @__PURE__ */ _interopNamespace(runtimeDom);
+    var runtimeDom__namespace = /* @__PURE__ */ _interopNamespaceDefault(runtimeDom);
     var compileCache = /* @__PURE__ */ Object.create(null);
     function compileToFunction(template, options) {
       if (!shared.isString(template)) {
@@ -13764,17 +13818,17 @@ ${codeFrame}` : message);
       return compileCache[key] = render2;
     }
     runtimeDom.registerRuntimeCompiler(compileToFunction);
+    exports.compile = compileToFunction;
     Object.keys(runtimeDom).forEach(function(k) {
       if (k !== "default")
         exports[k] = runtimeDom[k];
     });
-    exports.compile = compileToFunction;
   }
 });
 
-// ../../../node_modules/.pnpm/vue@3.2.45/node_modules/vue/index.js
+// ../../../node_modules/.pnpm/vue@3.2.47/node_modules/vue/index.js
 var require_vue = __commonJS({
-  "../../../node_modules/.pnpm/vue@3.2.45/node_modules/vue/index.js"(exports, module) {
+  "../../../node_modules/.pnpm/vue@3.2.47/node_modules/vue/index.js"(exports, module) {
     "use strict";
     if (process.env.NODE_ENV === "production") {
       module.exports = require_vue_cjs_prod();
@@ -13842,7 +13896,7 @@ function useThrottle(func, wait, isTimer = false) {
   throttle.cancel = cancel;
 }
 
-// ../../../node_modules/.pnpm/vue@3.2.45/node_modules/vue/index.mjs
+// ../../../node_modules/.pnpm/vue@3.2.47/node_modules/vue/index.mjs
 var vue_exports = {};
 __reExport(vue_exports, __toESM(require_vue(), 1));
 
@@ -13871,6 +13925,12 @@ var getUnitByUnit = (e) => {
   }
   if (e.endsWith("rem")) {
     return "rem";
+  }
+  if (e.endsWith("em")) {
+    return "em";
+  }
+  if (e.endsWith("upx")) {
+    return "upx";
   }
   return "";
 };
@@ -13964,48 +14024,13 @@ var configInfo2 = {
   debug: true
 };
 var config2 = _nullishCoalesce(useInject(), () => ( configInfo2));
-var isWindow = (v) => {
-  return v === window;
-};
-var getElId = () => {
-  const elId = `kUI_${Math.ceil(new Date().getTime() * 1e6).toString(36)}`;
+var getElId = (prefix = "KUI_") => {
+  const elId = `${prefix}${Math.ceil(new Date().getTime() * 1e6).toString(36)}`;
   return elId;
 };
 var useKviewuiRect = (eleRef, eleId = "", proxy) => {
   let element = (0, vue_exports.unref)(eleRef);
   return new Promise((reslove) => {
-    if (config2.debug) {
-      console.log(element);
-    }
-    if (element && element.$el) {
-      element = element.$el;
-    }
-    if (isWindow(element)) {
-      const width = element.innerWidth;
-      const height = element.innerHeight;
-      reslove({
-        top: 0,
-        left: 0,
-        right: width,
-        bottom: height,
-        width,
-        height
-      });
-    }
-    if (config2.debug) {
-      console.log(element);
-    }
-    if (element && element.getBoundingClientRect) {
-      reslove(element.getBoundingClientRect());
-    }
-    reslove({
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      width: 0,
-      height: 0
-    });
     const query = uni.createSelectorQuery().in(proxy);
     if (config2.debug) {
       console.log(`element:${query}`);
@@ -14013,6 +14038,95 @@ var useKviewuiRect = (eleRef, eleId = "", proxy) => {
     query.select(`#${eleId}`) && query.select(`#${eleId}`).boundingClientRect((data) => {
       reslove(data);
     }).exec();
+  });
+};
+
+// src/is/index.ts
+var isNumber = (e) => {
+  return typeof e === "number" || typeof e === "bigint";
+};
+var isString2 = (e) => {
+  return typeof e === "string";
+};
+var isObject2 = (e) => {
+  return typeof e === "boolean";
+};
+var isBoolean2 = (e) => {
+  return typeof e === "boolean";
+};
+
+// src/size/index.ts
+var getFontSize = (size2) => {
+  if (isNumber(size2) || getUnitByUnit(size2) === "")
+    return `${size2}px`;
+  return size2;
+};
+
+// src/prompt/index.ts
+var showToast = (title, icon = "success") => {
+  uni.showToast({
+    title,
+    icon
+  });
+};
+var hideToast = () => {
+  uni.hideToast();
+};
+var showLoading = (title) => {
+  uni.showLoading({
+    title
+  });
+};
+var hideLoading = () => {
+  uni.hideLoading();
+};
+
+// src/theme/index.ts
+var themeColors = [
+  "red",
+  "orangered",
+  "orange",
+  "gold",
+  "yellow",
+  "lime",
+  "green",
+  "cyan",
+  "blue",
+  "deepblue",
+  "purple",
+  "pinkpurple",
+  "magenta",
+  "grey",
+  "primary",
+  "success",
+  "danger",
+  "warning",
+  "link",
+  "info"
+];
+var isThemeColor = (color) => {
+  return themeColors.indexOf(color) > -1;
+};
+
+// src/system/clipboard.ts
+var setCliboardData = (data, showToast2 = true) => {
+  return new Promise((resolve2, reject) => {
+    uni.setClipboardData({
+      data,
+      showToast: showToast2,
+      success: () => {
+        resolve2({
+          errCode: 0,
+          errMsg: "\u590D\u5236\u6210\u529F"
+        });
+      },
+      fail: () => {
+        reject({
+          errCode: 1,
+          errMsg: "\u590D\u5236\u5931\u8D25"
+        });
+      }
+    });
   });
 };
 
@@ -14030,4 +14144,16 @@ var useKviewuiRect = (eleRef, eleId = "", proxy) => {
 
 
 
-exports.compress = compress; exports.createComponent = createComponent; exports.fileToUrl = fileToUrl; exports.getElId = getElId; exports.getImageInfo = getImageInfo; exports.getNumberByUnit = getNumberByUnit; exports.getUnitByUnit = getUnitByUnit; exports.isImage = isImage; exports.useConfig = useConfig; exports.useInject = useInject; exports.useKviewuiRect = useKviewuiRect; exports.useProvide = useProvide; exports.useThrottle = useThrottle; exports.withInstall = withInstall;
+
+
+
+
+
+
+
+
+
+
+
+
+exports.compress = compress; exports.createComponent = createComponent; exports.fileToUrl = fileToUrl; exports.getElId = getElId; exports.getFontSize = getFontSize; exports.getImageInfo = getImageInfo; exports.getNumberByUnit = getNumberByUnit; exports.getUnitByUnit = getUnitByUnit; exports.hideLoading = hideLoading; exports.hideToast = hideToast; exports.isBoolean = isBoolean2; exports.isImage = isImage; exports.isNumber = isNumber; exports.isObject = isObject2; exports.isString = isString2; exports.isThemeColor = isThemeColor; exports.setCliboardData = setCliboardData; exports.showLoading = showLoading; exports.showToast = showToast; exports.themeColors = themeColors; exports.useConfig = useConfig; exports.useInject = useInject; exports.useKviewuiRect = useKviewuiRect; exports.useProvide = useProvide; exports.useThrottle = useThrottle; exports.withInstall = withInstall;

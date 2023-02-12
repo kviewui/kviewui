@@ -1,0 +1,21 @@
+{
+    "name": "@kviewui/theme",
+    "version": "1.0.0",
+    "description": "kviewui组件库内置主题库",
+    "main": "dist/index.js",
+    "module": "dist/esm/index.js",
+    "typings": "dist/index.d.ts",
+    "files": [
+      "dist",
+      "README.md",
+      "LICENSE"
+    ],
+    "keywords": [
+      "kviewui",
+      "@kviewui/theme"
+    ],
+    "author": "kviewui@163.com",
+    "homepage": "https://cn.kviewui.com",
+    "license": "MIT"
+  }
+  

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "Button 按钮",
+  "usingComponents": {
+    "kui-button": "../../../node-modules/@kviewui/kviewui/src/button/index",
+    "kui-space": "../../../node-modules/@kviewui/kviewui/src/space/index",
+    "kui-icon": "../../../node-modules/@kviewui/kviewui/src/icon/index",
+    "kui-page": "../../../node-modules/@kviewui/kviewui/src/page/index",
+    "kui-config-provider": "../../../node-modules/@kviewui/kviewui/src/config-provider/index",
+    "kui-cell-group": "../../../node-modules/@kviewui/kviewui/src/cell-group/index"
+  }
+}

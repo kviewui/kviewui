@@ -1,2 +1,2 @@
-/// <reference path="./components/theme.d.ts" />
-/// <reference path="./components/image.d.ts" />
+/// <reference path="./components/index.d.ts" />
+/// <reference path="./utils/index.d.ts" />

@@ -1,0 +1,24 @@
+.kui-switch .open {
+  transform: translateX(144%);
+  transition-duration: 300ms;
+}
+.kui-switch .close {
+  transform: translateX(28%);
+  transition-duration: 300ms;
+}
+.kui-switch .open-text {
+  transform: translateX(-120%);
+  transition-duration: 300ms;
+}
+.kui-switch .nvue-open-text {
+  transform: translateX(-72%);
+  transition-duration: 300ms;
+}
+.kui-switch .close-text {
+  transform: translateX(120%);
+  transition-duration: 300ms;
+}
+.kui-switch .nvue-close-text {
+  transform: translateX(30%);
+  transition-duration: 300ms;
+}

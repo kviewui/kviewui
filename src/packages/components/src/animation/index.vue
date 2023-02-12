@@ -28,9 +28,7 @@
 
     const { create } = createComponent('animation');
 
-	import {
-		timingFunctionMap
-	} from '../../common/theme/animation';
+    import { timingFunctionMap } from '@kviewui/theme';
 
 	export default create({
 		props: AnimationProps,

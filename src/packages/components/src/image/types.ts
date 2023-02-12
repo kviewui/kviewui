@@ -1,9 +1,10 @@
-import { ModeEnum } from '@kviewui/components/global/types';
+import { ModeEnum, globalProps } from '../../global/types';
 import { PropType, ExtractPropTypes } from 'vue';
 
 export type FitEnum = 'scaleToFill' | 'aspectFit' | 'aspectFill' | 'widthFix' | 'heightFix' | 'top' | 'bottom' | 'center' | 'left' | 'right' | 'top left' | 'top right' | 'bottom left	' | 'bottom right';
 
 export const imageProps = {
+    ...globalProps,
     /**
 	 * @zh 图片路径
 	 */

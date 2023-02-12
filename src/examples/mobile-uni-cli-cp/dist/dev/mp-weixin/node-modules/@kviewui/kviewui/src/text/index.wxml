@@ -1,0 +1,1 @@
+<text class="kui-flex kui-flex-col kui-items-center kui-justify-center" selectable="{{b}}" user-select="{{c}}" space="{{d}}" decode="{{e}}" style="{{'color:' + f + ';' + ('font-size:' + g) + ';' + ('font-weight:' + h)}}">{{a}}</text>

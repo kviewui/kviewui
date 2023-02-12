@@ -1,0 +1,1 @@
+<view class="{{['kui-animation', 'data-v-758bc2a2', a]}}" style="{{'animation-duration:' + b + ';' + ('animation-timing-function:' + c) + ';' + ('animation-delay:' + d) + ';' + ('animation-iteration-count:' + e) + ';' + ('animation-direction:' + f) + ';' + ('animation-fill-mode:' + g) + ';' + ('animation-play-state:' + h)}}"><slot></slot></view>

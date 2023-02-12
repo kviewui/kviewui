@@ -362,3 +362,75 @@
     /* #endif */
     display: flex !important;
   }
+
+  /* 阴影 */
+.kui-shadow {
+    /* #ifndef APP-NVUE */
+    -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1) !important;
+    /* #endif */
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1) !important;
+        /* #ifdef APP-NVUE */
+        margin: 3px !important;
+        /* #endif */
+}
+  .kui-shadow-sm {
+    /* #ifndef APP-NVUE */
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+    /* #endif */
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05) !important;
+        /* #ifdef APP-NVUE */
+        margin: 2px !important;
+        /* #endif */
+  }
+  .kui-shadow-md {
+    /* #ifndef APP-NVUE */
+    -webkit-box-shadow: 0 4px 6px -1px rgb(0, 0, 0/0.1) !important;
+    /* #endif */
+        box-shadow: 0 4px 6px -1px rgb(0, 0, 0/0.1) !important;
+        /* #ifdef APP-NVUE */
+        margin: 6px !important;
+        /* #endif */
+  }
+  .kui-shadow-lg {
+    /* #ifndef APP-NVUE */
+    -webkit-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+    /* #endif */
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+        /* #ifdef APP-NVUE */
+        margin-bottom: 45px !important;
+        margin-right: 45px !important;
+        /* #endif */
+  }
+  .kui-shadow-xl {
+    /* #ifndef APP-NVUE */
+    -webkit-box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+    /* #endif */
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1) !important;
+        /* #ifdef APP-NVUE */
+        /* margin: 45px !important; */
+        /* #endif */
+  }
+  .kui-shadow-2xl {
+    /* #ifndef APP-NVUE */
+    -webkit-box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+    /* #endif */
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+        /* #ifdef APP-NVUE */
+        margin: 25px !important;
+        /* #endif */
+  }
+  .kui-shadow-inner {
+    /* #ifndef APP-NVUE */
+    -webkit-box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05) !important;
+    /* #endif */
+        box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05) !important;
+        /* #ifdef APP-NVUE */
+        margin: 4px !important;
+        /* #endif */
+  }
+  .kui-shadow-none {
+    /* #ifndef APP-NVUE */
+    -webkit-box-shadow: 0 0 #000000 !important;
+    /* #endif */
+        box-shadow: 0 0 #000000 !important;
+  }

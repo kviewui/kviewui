@@ -1,5 +1,5 @@
 <template>
-	<view :class="[customClass]" class="kui-container kui-flex kui-flex-col kui-flex-1" :style="{
+	<view :class="[customClass]" class="kui-container kui-flex kui-flex-col kui-box-border kui-flex-shrink" :style="{
 		width: width,
 		height: height,
 		color: data.backgroundColor,
@@ -16,6 +16,7 @@
 		marginTop: `${marginY}rpx`,
 		marginBottom: `${marginY}rpx`,
         backgroundColor: data.backgroundColor,
+        flexShrink: 0,
         ...customStyle
 	}">
 		<slot></slot>
@@ -38,9 +39,13 @@
 
 	export default create({
 		props: containerProps,
+        options: {
+			// 小程序虚拟节点设置
+			virtualHost: true
+		},
 		setup(props) {
 
-            const theme: KuiNamespace.Theme = uni.$kView.theme;
+            const theme: KuiNamespace.Theme = uni['$kView'].theme;
 
 			const data = reactive({
 				mode: props.mode,

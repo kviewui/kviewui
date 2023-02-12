@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "uni-app",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "kui-page": "../../node-modules/@kviewui/kviewui/src/page/index",
+    "kui-image": "../../node-modules/@kviewui/kviewui/src/image/index",
+    "kui-text": "../../node-modules/@kviewui/kviewui/src/text/index",
+    "kui-container": "../../node-modules/@kviewui/kviewui/src/container/index",
+    "kui-switch": "../../node-modules/@kviewui/kviewui/src/switch/index",
+    "kui-cell-group": "../../node-modules/@kviewui/kviewui/src/cell-group/index",
+    "kui-cell": "../../node-modules/@kviewui/kviewui/src/cell/index",
+    "kui-icon": "../../node-modules/@kviewui/kviewui/src/icon/index",
+    "kui-space": "../../node-modules/@kviewui/kviewui/src/space/index"
+  }
+}

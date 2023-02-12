@@ -1,4 +1,4 @@
-import { useInject } from '@kviewui/utils/src/use';
+import { useInject } from '../use';
 
 let configInfo = {
 	debug: false

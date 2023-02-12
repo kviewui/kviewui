@@ -1924,6 +1924,10 @@ view {
     width: 1px !important;
 }
 
+.@{kui-css-variables-prefix}-w-min-px{
+    width: 0.5px !important;
+}
+
 .@{kui-css-variables-prefix}-w-0.5 {
     width: 0.125 * 37.5rpx !important;
 }
@@ -2239,7 +2243,11 @@ view {
     height: 1px !important;
 }
 
-.@{kui-css-variables-prefix}-h-0_5 {
+.@{kui-css-variables-prefix}-h-min-px{
+    height: 0.5px !important;
+}
+
+.@{kui-css-variables-prefix}-h-0.5 {
     height: 0.125 * 37.5rpx !important;
 }
 
@@ -2247,7 +2255,7 @@ view {
     height: 0.25 * 37.5rpx !important;
 }
 
-.@{kui-css-variables-prefix}-h-1_5 {
+.@{kui-css-variables-prefix}-h-1.5 {
     height: 0.375 * 37.5rpx !important;
 }
 
@@ -2255,7 +2263,7 @@ view {
     height: 0.5 * 37.5rpx !important;
 }
 
-.@{kui-css-variables-prefix}-h-2_5 {
+.@{kui-css-variables-prefix}-h-2.5 {
     height: 0.625 * 37.5rpx !important;
 }
 
@@ -2263,7 +2271,7 @@ view {
     height: 0.75 * 37.5rpx !important;
 }
 
-.@{kui-css-variables-prefix}-h-3_5 {
+.@{kui-css-variables-prefix}-h-3.5 {
     height: 0.875 * 37.5rpx !important;
 }
 
@@ -5016,91 +5024,7 @@ view {
 
 /* #endif */
 
-/* 动画 */
-/* #ifndef APP-NVUE */
-.@{kui-css-variables-prefix}-animate-none {
-    animation: none !important;
-}
-
-.@{kui-css-variables-prefix}-animate-spin {
-    animation: spin 1s linear infinite !important;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.@{kui-css-variables-prefix}-animate-ping {
-    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite !important;
-}
-
-@keyframes ping {
-
-    75%,
-    100% {
-        transform: scale(2);
-        opacity: 0;
-    }
-}
-
-.@{kui-css-variables-prefix}-animate-pulse {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: .5;
-    }
-}
-
-.@{kui-css-variables-prefix}-animate-bounce {
-    animation: bounce 1s infinite !important;
-}
-
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(-25%);
-        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
-
-    50% {
-        transform: translateY(0);
-        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-}
-
-.@{kui-css-variables-prefix}-animate-flicker {
-    animation: flicker 1s infinite !important;
-}
-
-@keyframes flicker {
-    from {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-/* #endif */
+/* 动画 该部分已抽离单独的包 @kviewui/animate */
 
 /* 平移 */
 /* 倾斜 */

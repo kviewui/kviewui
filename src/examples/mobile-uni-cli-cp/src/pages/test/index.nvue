@@ -1,0 +1,51 @@
+<template>
+  <div class="test kui-flex kui-flex-col">
+    test
+    <!-- <text class="kui-icon kui-code"></text> -->
+  </div>
+  <!-- <kui-icons name="code" />
+  <kui-icons name="code" />
+  <kui-icons name="code" />
+  <kui-icons name="code" />
+  <kui-icons name="code" />
+  <kui-icons name="code" />
+  <kui-icons name="code" />
+  <kui-icons name="code" />
+  <kui-icons name="code" /> -->
+  <!-- <A1>
+    <A2 />
+  </A1> -->
+  <!-- <text class="tt-icon">&#xec7a;</text> -->
+</template>
+
+<script lang="ts" setup>
+import { onBeforeMount } from 'vue';
+import KuiIcons from '@/components/icons/index.vue';
+import A1 from '@/components/A1/index.vue';
+import A2 from '@/components/A2/index.vue';
+
+// onBeforeMount(() => {
+//     const domModule = uni.requireNativePlugin('dom');
+//     domModule.addRule('fontFace', {
+//         "fontFamily": "tt-icon",
+//         "src": "url('http://at.alicdn.com/t/c/font_3857824_gyoeqmrcylg.ttf?t=1673661541883')"
+//     });
+// })
+
+const test = '22222';
+
+
+</script>
+
+<style scoped>
+/* @import '@kviewui/kviewui/src/icon/kviewicons.css';
+
+@font-face {
+    font-family: kviewicons;
+    src: url('http:at.alicdn.com/t/c/font_3857824_xhasxwq88ir.ttf?t=1673400146978') format('truetype');
+} */
+
+.tt-icon {
+    font-family: tt-icon;
+}
+</style>

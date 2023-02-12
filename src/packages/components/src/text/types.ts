@@ -1,17 +1,9 @@
-import {ModeEnum} from '@kviewui/components/global/types';
+import {globalProps, WeightEnum} from '../../global/types';
 import {PropType, inject, ExtractPropTypes} from 'vue';
-import { configProviderInjectionKey } from '@kviewui/components/src/config-provider/types';
-
-export type WeightEnum = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900
+import { configProviderInjectionKey } from '../config-provider/types';
 
 export const textProps = {
-    /**
-	 * 页面模式
-	 */
-	mode: {
-		type: String as PropType<ModeEnum>,
-		default: () => inject(configProviderInjectionKey, undefined)?.mode ?? 'light'
-	},
+    ...globalProps,
 	/**
 	 * 文本颜色
 	 */
@@ -19,6 +11,13 @@ export const textProps = {
 		type: String,
 		default: () => inject(configProviderInjectionKey, undefined)?.color ?? ''
 	},
+    /**
+     * 颜色色阶
+     */
+    colorLevel: {
+        type: Number as PropType<KuiNamespace.ColorLevel>,
+        default: 5
+    },
 	/**
 	 * 文本大小
 	 */

@@ -2,9 +2,9 @@
     <view class="kui-switch kui-flex kui-items-center" :id="rootState.id" :style="rootStyle" @tap="onClick">
         <view class="kui-switch-button kui-flex kui-justify-center kui-items-center" :class="[buttonState.status]"
             :style="buttonStyle">
-            <kui-animation name="rotate-center" :duration="1" runing infinite v-if="rootState.loading">
-				<!-- <kui-icons :size="iconState.size" :color="iconState.color" type="spinner6"></kui-icons> -->
-			</kui-animation>
+            <!-- <kui-animation name="rotate-center" :duration="1" runing infinite v-if="rootState.loading">
+				<kui-icons :size="iconState.size" :color="iconState.color" type="spinner6"></kui-icons>
+			</kui-animation> -->
             <!-- #ifndef APP-NVUE -->
             <view class="open-text" v-if="activeText && modelValue">
                 <kui-text :content="activeText" :size="textState.size" :color="textState.color" />
@@ -38,7 +38,7 @@ import {
 } from 'vue';
 
 import KuiText from '../text/index.vue';
-import KuiAnimation from '../animation/index.vue';
+// import KuiAnimation from '../animation/index.vue';
 
 import { switchProps } from './types';
 import { colorBuilder } from '@kviewui/color-builder';
@@ -53,7 +53,7 @@ export default create({
     emits: ['update:modelValue', 'change'],
     components: {
         KuiText,
-        KuiAnimation
+        // KuiAnimation
     },
     setup(props, { emit }) {
         // 随机生成元素ID
@@ -63,7 +63,7 @@ export default create({
         // 	proxy
         // }: any = getCurrentInstance();
         // const theme = proxy.$theme;
-        const theme: KuiNamespace.Theme = uni.$kView.theme;
+        const theme: KuiNamespace.Theme = uni['$kView'].theme;
 
         const isActive = computed(() => props.modelValue === props.activeValue);
 
