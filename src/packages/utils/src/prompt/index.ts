@@ -56,17 +56,17 @@ export const hideLoading = () => {
  * @param {Function} complete 完成回调
  */
 export const showModal = (
-    title: string, 
-    content: string, 
-    showCancel: boolean,
-    cancelText: string,
-    confirmText: string,
-    cancelColor: string,
-    confirmColor: string = '#00BC79',
-    editable: boolean,
-    success: () => {},
-    fail: () => {},
-    complete: () => {}
+    title?: string, 
+    content?: string, 
+    showCancel?: boolean,
+    cancelText?: string,
+    confirmText?: string,
+    cancelColor?: string,
+    confirmColor?: string,
+    editable?: boolean,
+    success?: any,
+    fail?: any,
+    complete?: any
 ) => {
     uni.showModal({
         title: title,
@@ -74,8 +74,8 @@ export const showModal = (
         showCancel: showCancel ?? true,
         cancelText: cancelText ?? '取消',
         confirmText: confirmText ?? '确定',
-        cancelColor: cancelColor,
-        confirmColor: confirmColor,
+        cancelColor: cancelColor ?? '#999',
+        confirmColor: confirmColor ?? '#00BC79',
         editable: editable ?? false,
         success: success,
         fail: fail,

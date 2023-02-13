@@ -1,10 +1,9 @@
 <template>
-    <view :render-whole="true" class="kui-flex kui-flex-wrap" :class="[(data.direction === 'column' && block) ? 'kui-w-full1' : '']" :style="{
+    <view :render-whole="true" class="kui-flex" :class="[(data.direction === 'column' && block) ? 'kui-w-full1' : '']" :style="{
     	justifyContent: data.justify,
     	flexDirection: data.direction,
     	alignItems: data.align,
-        rowGap: `${data.rowGap}px`,
-        columnGap: `${data.columnGap}px`
+        ...spaceStyle
     }">
         <slot></slot>
     </view>
@@ -41,13 +40,16 @@ import {
     computed,
     watch,
     toRefs,
-    onBeforeMount
+    onBeforeMount,
+ref,
+CSSProperties
 } from 'vue';
 
+import { spaceProviderKey } from '../../global/symbols';
 import { spaceProps } from './types';
-import { SpaceComponentProps } from '../../global/types';
+import { SpaceComponentProps, SpaceProviderOptions } from '../../global/types';
 
-import { createComponent } from '@kviewui/utils';
+import { createComponent, isArray } from '@kviewui/utils';
 const { create } = createComponent('space');
 
 export default defineComponent({
@@ -63,9 +65,30 @@ export default defineComponent({
             justify: props.justify == 'flex-end' ? 'flex-end' : props.justify,
             direction: props.direction,
             align: props.align,
-            rowGap: props.gap[0] === 0 ? 0 : props.gap[0],
-            columnGap: props.gap[1] === 0 ? 0 : props.gap[1]
+            rowGap: 0,
+            columnGap: 0
         });
+
+        const spaceStyle = computed(() => {
+            const style: CSSProperties = reactive({});
+            
+            style.flexWrap = props.wrap ? 'wrap' : 'nowrap';
+
+            return style;
+        });
+
+        if (isArray(props.gap)) {
+            if (props.gap.length === 0) {
+                data.rowGap = data.columnGap = 10;
+            } else if (props.gap.length === 1) {
+                data.rowGap = data.columnGap = props.gap[0] as any;
+            } else {
+                data.rowGap = props.gap[0] as any;
+                data.columnGap = props.gap[1] as any;
+            }
+        } else {
+            data.rowGap = data.columnGap = props.gap as any;
+        }
 
         const pushChildrens = (item: any) => {
             childrens.push(item);
@@ -126,13 +149,21 @@ export default defineComponent({
 
         init();
 
-        provide('spaceComponent', computed(() => childrens));
+        const providerOptions: SpaceProviderOptions = reactive({
+            marginRight: data.rowGap ?? 0,
+            marginBottom: data.columnGap ?? 0
+        });
+
+        provide(spaceProviderKey, providerOptions);
+
+        // provide('spaceComponent', computed(() => childrens));
 
         return {
             data,
             pushChildrens,
             childrens,
-            updateDom
+            updateDom,
+            spaceStyle
         }
     }
 });

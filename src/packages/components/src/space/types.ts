@@ -27,7 +27,7 @@ export const spaceProps = {
 	 * 子元素间距
 	 */
 	gap: {
-		type: Array,
+		type: [Array, String, Number] as PropType<any>,
 		default: [10,10]
 	},
 	/**
@@ -36,7 +36,14 @@ export const spaceProps = {
 	block: {
 		type: Boolean,
 		default: false
-	}
+	},
+    /**
+     * 是否自动换行，仅用于水平排列
+     */
+    wrap: {
+        type: Boolean,
+        default: true
+    }
 };
 
 export type SpaceProps = ExtractPropTypes<typeof spaceProps>;

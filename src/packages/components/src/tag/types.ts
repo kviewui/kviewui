@@ -15,6 +15,13 @@ export const tagProps = {
         default: ''
     },
     /**
+     * @zh 标签文本内容
+     */
+    text: {
+        type: String,
+        default: ''
+    },
+    /**
      * @zh 块级标签
      */
     block: {
@@ -124,7 +131,7 @@ export const tagProps = {
      */
     loadingIcon: {
         type: String,
-        default: 'spiner-solid'
+        default: 'spinner'
     },
     /**
      * @zh 可选中标签

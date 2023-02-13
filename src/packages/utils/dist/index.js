@@ -13932,6 +13932,12 @@ var getUnitByUnit = (e) => {
   if (e.endsWith("upx")) {
     return "upx";
   }
+  if (e.endsWith("vw")) {
+    return "vw";
+  }
+  if (e.endsWith("vh")) {
+    return "vh";
+  }
   return "";
 };
 var getNumberByUnit = (e) => {
@@ -14054,6 +14060,9 @@ var isObject2 = (e) => {
 var isBoolean2 = (e) => {
   return typeof e === "boolean";
 };
+var isArray2 = (e) => {
+  return Array.isArray(e);
+};
 
 // src/size/index.ts
 var getFontSize = (size2) => {
@@ -14061,6 +14070,7 @@ var getFontSize = (size2) => {
     return `${size2}px`;
   return size2;
 };
+var getUnitSize = getFontSize;
 
 // src/prompt/index.ts
 var showToast = (title, icon = "success") => {
@@ -14080,15 +14090,15 @@ var showLoading = (title) => {
 var hideLoading = () => {
   uni.hideLoading();
 };
-var showModal = (title, content, showCancel, cancelText, confirmText, cancelColor, confirmColor = "#00BC79", editable, success, fail, complete) => {
+var showModal = (title, content, showCancel, cancelText, confirmText, cancelColor, confirmColor, editable, success, fail, complete) => {
   uni.showModal({
     title,
     content,
     showCancel: _nullishCoalesce(showCancel, () => ( true)),
     cancelText: _nullishCoalesce(cancelText, () => ( "\u53D6\u6D88")),
     confirmText: _nullishCoalesce(confirmText, () => ( "\u786E\u5B9A")),
-    cancelColor,
-    confirmColor,
+    cancelColor: _nullishCoalesce(cancelColor, () => ( "#999")),
+    confirmColor: _nullishCoalesce(confirmColor, () => ( "#00BC79")),
     editable: _nullishCoalesce(editable, () => ( false)),
     success,
     fail,
@@ -14172,4 +14182,6 @@ var setCliboardData = (data, showToast2 = true) => {
 
 
 
-exports.compress = compress; exports.createComponent = createComponent; exports.fileToUrl = fileToUrl; exports.getElId = getElId; exports.getFontSize = getFontSize; exports.getImageInfo = getImageInfo; exports.getNumberByUnit = getNumberByUnit; exports.getUnitByUnit = getUnitByUnit; exports.hideLoading = hideLoading; exports.hideToast = hideToast; exports.isBoolean = isBoolean2; exports.isImage = isImage; exports.isNumber = isNumber; exports.isObject = isObject2; exports.isString = isString2; exports.isThemeColor = isThemeColor; exports.setCliboardData = setCliboardData; exports.showLoading = showLoading; exports.showModal = showModal; exports.showToast = showToast; exports.themeColors = themeColors; exports.useConfig = useConfig; exports.useInject = useInject; exports.useKviewuiRect = useKviewuiRect; exports.useProvide = useProvide; exports.useThrottle = useThrottle; exports.withInstall = withInstall;
+
+
+exports.compress = compress; exports.createComponent = createComponent; exports.fileToUrl = fileToUrl; exports.getElId = getElId; exports.getFontSize = getFontSize; exports.getImageInfo = getImageInfo; exports.getNumberByUnit = getNumberByUnit; exports.getUnitByUnit = getUnitByUnit; exports.getUnitSize = getUnitSize; exports.hideLoading = hideLoading; exports.hideToast = hideToast; exports.isArray = isArray2; exports.isBoolean = isBoolean2; exports.isImage = isImage; exports.isNumber = isNumber; exports.isObject = isObject2; exports.isString = isString2; exports.isThemeColor = isThemeColor; exports.setCliboardData = setCliboardData; exports.showLoading = showLoading; exports.showModal = showModal; exports.showToast = showToast; exports.themeColors = themeColors; exports.useConfig = useConfig; exports.useInject = useInject; exports.useKviewuiRect = useKviewuiRect; exports.useProvide = useProvide; exports.useThrottle = useThrottle; exports.withInstall = withInstall;

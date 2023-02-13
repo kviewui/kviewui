@@ -33,3 +33,12 @@ export const isObject = (e: any): boolean => {
 export const isBoolean = (e: any): boolean => {
     return typeof e === 'boolean';
 }
+
+/**
+ * 判断是否为数组，不支持ES5以前的环境
+ * @param {any} e 校验内容
+ * @returns {boolean}
+ */
+export const isArray = (e: any): boolean => {
+    return Array.isArray(e);
+}

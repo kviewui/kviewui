@@ -45,13 +45,7 @@
                 </view>
                 <view :class="[icon ? ' kui-ml-1' : '']">
                     <slot>
-                        <text :style="{
-                            color: data.color,
-                            fontSize: data.fontSize
-                        }">{{ content }}</text>
-                    </slot>
-                    <slot name="content">
-
+                        <kui-text :color="data.color" :size="data.size" :content="content" />
                     </slot>
                 </view>
             </view>
@@ -97,6 +91,7 @@ import { createComponent } from '@kviewui/utils'
 import { useThrottle, getElId, useKviewuiRect } from '@kviewui/utils';
 import { theme as Theme } from '../../common/theme';
 import KuiIcons from "../icons/index.vue";
+import KuiText from '../text/index.vue'
 import KuiAnimate from "../animate/index.vue";
 
 const { create } = createComponent('button');
@@ -108,7 +103,8 @@ export default create({
     props: buttonProps,
     components: {
         KuiIcons,
-        KuiAnimate
+        KuiAnimate,
+        KuiText
     },
     emits: ['click', 'getphonenumber', 'getuserinfo', 'error', 'opensetting', 'launchapp'],
     options: {

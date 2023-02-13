@@ -18,6 +18,12 @@ export const getUnitByUnit = (e): String => {
     if (e.endsWith('upx')) {
         return 'upx';
     }
+    if (e.endsWith('vw')) {
+        return 'vw';
+    }
+    if (e.endsWith('vh')) {
+        return 'vh';
+    }
 	return '';
 }
 

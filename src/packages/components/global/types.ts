@@ -2,7 +2,9 @@ import { configProviderInjectionKey } from '../src/config-provider/types';
 import { 
 	PropType,
 	inject,
-    ExtractPropTypes
+    ExtractPropTypes,
+    InjectionKey,
+    Ref
 } from 'vue';
 import type { CSSProperties } from 'vue';
 
@@ -24,6 +26,11 @@ type ValidatorType<T> = (score: T) => boolean;
 export interface RulesType {
 	validator?: ValidatorType<string | number>,
 	message?: string
+}
+
+export interface SpaceProviderOptions {
+    marginRight: any
+    marginBottom: any
 }
 
 export const globalProps = {

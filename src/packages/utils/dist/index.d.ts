@@ -30,18 +30,20 @@ declare const isNumber: (e: any) => boolean;
 declare const isString: (e: any) => boolean;
 declare const isObject: (e: any) => boolean;
 declare const isBoolean: (e: any) => boolean;
+declare const isArray: (e: any) => boolean;
 
 declare const getFontSize: (size: string | number) => string;
+declare const getUnitSize: (size: string | number) => string;
 
 declare const showToast: (title: string, icon?: 'success' | 'loading' | 'error' | 'none') => void;
 declare const hideToast: () => void;
 declare const showLoading: (title: string) => void;
 declare const hideLoading: () => void;
-declare const showModal: (title: string, content: string, showCancel: boolean, cancelText: string, confirmText: string, cancelColor: string, confirmColor: string, editable: boolean, success: () => {}, fail: () => {}, complete: () => {}) => void;
+declare const showModal: (title?: string, content?: string, showCancel?: boolean, cancelText?: string, confirmText?: string, cancelColor?: string, confirmColor?: string, editable?: boolean, success?: any, fail?: any, complete?: any) => void;
 
 declare const themeColors: string[];
 declare const isThemeColor: (color: string) => boolean;
 
 declare const setCliboardData: (data: string, showToast?: boolean) => Promise<any>;
 
-export { compress, createComponent, fileToUrl, getElId, getFontSize, getImageInfo, getNumberByUnit, getUnitByUnit, hideLoading, hideToast, isBoolean, isImage, isNumber, isObject, isString, isThemeColor, setCliboardData, showLoading, showModal, showToast, themeColors, useConfig, useInject, useKviewuiRect, useProvide, useThrottle, withInstall };
+export { SFCWithInstall, compress, createComponent, fileToUrl, getElId, getFontSize, getImageInfo, getNumberByUnit, getUnitByUnit, getUnitSize, hideLoading, hideToast, isArray, isBoolean, isImage, isNumber, isObject, isString, isThemeColor, setCliboardData, showLoading, showModal, showToast, themeColors, useConfig, useInject, useKviewuiRect, useProvide, useThrottle, withInstall };
