@@ -133,7 +133,7 @@ import KuiGrid from 'kviewui/src/icons/index.vue';
 | 参数          | 说明                                      | 类型                    | 默认值      |
 |---------------|------------------------------------------|------------------------|------------|
 | columns    | 列数                                     | number         | `4`        |
-| icon-size     | 图标大小，参考 <a href="/components/icons">Icons 图标</a> 组件          | number        | `56`     |
+| icon-size     | 图标大小，参考 <a href="/component/icons">Icons 图标</a> 组件          | number        | `56`     |
 | icon-color    | 图标颜色                                  | string                 | -          |
 | gutter        | 格子之间的间距，默认单位为`rpx`               | number        | `0`        |
 | reverse        | 内容反向                               | boolean                | `false`     |
@@ -152,7 +152,7 @@ import KuiGrid from 'kviewui/src/icons/index.vue';
 | 参数                  | 说明                                                                                     | 类型               | 默认值      |
 |----------------------|-----------------------------------------------------------------------------------------|--------------------|------------|
 | text                 | 文字                                                                                     | string             | -          |
-| icon                 | [图标名称](/components/icons#api)                                                             | string             | -          |
+| icon                 | [图标名称](/component/icons#api)                                                             | string             | -          |
 | icon-size            | 图标大小                                                | number   | `56`     |
 | icon-color           | 图标颜色                                                                                  | string            | -           |
 | id           | 唯一标识                                                                                  | string            | -           |

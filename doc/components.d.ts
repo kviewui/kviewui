@@ -9,23 +9,16 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    AAnchor: typeof import('@arco-design/web-vue')['Anchor']
-    AAnchorLink: typeof import('@arco-design/web-vue')['AnchorLink']
     ABadge: typeof import('@arco-design/web-vue')['Badge']
     AButton: typeof import('@arco-design/web-vue')['Button']
     ALink: typeof import('@arco-design/web-vue')['Link']
-    AMessage: typeof import('@arco-design/web-vue')['Message']
-    ARadio: typeof import('@arco-design/web-vue')['Radio']
-    ARadioGroup: typeof import('@arco-design/web-vue')['RadioGroup']
     ATable: typeof import('@arco-design/web-vue')['Table']
     ATag: typeof import('@arco-design/web-vue')['Tag']
     ATypographyText: typeof import('@arco-design/web-vue')['TypographyText']
     Badge: typeof import('./.vitepress/vitepress/components/Badge.vue')['default']
     ChangeMode: typeof import('./.vitepress/vitepress/components/ChangeMode.vue')['default']
-    Colors: typeof import('./.vitepress/vitepress/components/token/Colors.vue')['default']
     CssPrefix: typeof import('./.vitepress/vitepress/components/css/CssPrefix.md')['default']
     Palettes: typeof import('./.vitepress/vitepress/components/Palettes.vue')['default']
-    Size: typeof import('./.vitepress/vitepress/components/token/Size.vue')['default']
     Test: typeof import('./.vitepress/vitepress/components/Test.md')['default']
     TipsIntroduce: typeof import('./.vitepress/vitepress/components/docs/tips/TipsIntroduce.md')['default']
     TokenColors: typeof import('./.vitepress/vitepress/components/token/TokenColors.vue')['default']
