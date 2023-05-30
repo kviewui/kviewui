@@ -1,9 +1,9 @@
 /**
 * kviewui组件库布局样式库，由工具自动生成，请不要手动修改！！！
-* 2023-03-23 00:13
+* 2023-05-30 11:41
 * @author kviewui@163.com
-* @version 1.0.0
-* @see {@link git+https://github.com/kviewui/kviewui-css}
+* @version 1.0.1
+* @see {@link git+https://github.com/kviewui/kviewui/tree/main/packages/kviewui-css}
 * @license MIT
 * Copyright (c) 2023 cn.kviewui.com
 *
@@ -11455,6 +11455,10 @@ view {
   border-top-left-radius: 0rpx !important;
   border-top-right-radius: 0rpx !important;
 }
+.kui-rounded-t-xs {
+  border-top-left-radius: 10rpx !important;
+  border-top-right-radius: 10rpx !important;
+}
 .kui-rounded-t-sm {
   border-top-left-radius: 20rpx !important;
   border-top-right-radius: 20rpx !important;
@@ -11490,6 +11494,10 @@ view {
 .kui-rounded-r-none {
   border-top-right-radius: 0rpx !important;
   border-bottom-right-radius: 0rpx !important;
+}
+.kui-rounded-r-xs {
+  border-top-right-radius: 10rpx !important;
+  border-bottom-right-radius: 10rpx !important;
 }
 .kui-rounded-r-sm {
   border-top-right-radius: 20rpx !important;
@@ -11527,6 +11535,10 @@ view {
   border-bottom-left-radius: 0rpx !important;
   border-bottom-right-radius: 0rpx !important;
 }
+.kui-rounded-b-xs {
+  border-bottom-left-radius: 10rpx !important;
+  border-bottom-right-radius: 10rpx !important;
+}
 .kui-rounded-b-sm {
   border-bottom-left-radius: 20rpx !important;
   border-bottom-right-radius: 20rpx !important;
@@ -11563,6 +11575,10 @@ view {
   border-top-left-radius: 0rpx !important;
   border-bottom-left-radius: 0rpx !important;
 }
+.kui-rounded-l-xs {
+  border-top-left-radius: 10rpx !important;
+  border-bottom-left-radius: 10rpx !important;
+}
 .kui-rounded-l-sm {
   border-top-left-radius: 20rpx !important;
   border-bottom-left-radius: 20rpx !important;
@@ -11598,6 +11614,9 @@ view {
 .kui-rounded-tl-none {
   border-top-left-radius: 0rpx !important;
 }
+.kui-rounded-tl-xs {
+  border-top-left-radius: 10rpx !important;
+}
 .kui-rounded-tl-sm {
   border-top-left-radius: 0rpx !important;
 }
@@ -11624,6 +11643,9 @@ view {
 }
 .kui-rounded-tr-none {
   border-top-right-radius: 0rpx !important;
+}
+.kui-rounded-tr-xs {
+  border-top-right-radius: 10rpx !important;
 }
 .kui-rounded-tr-sm {
   border-top-right-radius: 20rpx !important;
@@ -11652,6 +11674,9 @@ view {
 .kui-rounded-br-none {
   border-bottom-right-radius: 0rpx !important;
 }
+.kui-rounded-br-xs {
+  border-bottom-right-radius: 10rpx !important;
+}
 .kui-rounded-br-sm {
   border-bottom-right-radius: 20rpx !important;
 }
@@ -11678,6 +11703,9 @@ view {
 }
 .kui-rounded-bl-none {
   border-bottom-left-radius: 0rpx !important;
+}
+.kui-rounded-bl-xs {
+  border-bottom-left-radius: 10rpx !important;
 }
 .kui-rounded-bl-sm {
   border-bottom-left-radius: 20rpx !important;
