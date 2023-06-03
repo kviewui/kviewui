@@ -116,13 +116,16 @@
 /******** White *******/
 @color-white: #FFFFFF;
 @dark-color-white: fade(
-    #fff,
+    #000,
     90%
 );
 
 /******** Black *******/
 @color-black: #000000;
-@dark-color-black: #000000;
+@dark-color-black: fade(
+    #fff,
+    90%
+);
 
 /******** 变量 *******/
 @color-border: rgb(var(~'@{kui-css-variables-prefix}-gray-3'));

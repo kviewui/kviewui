@@ -1,8 +1,8 @@
 /**
 * kviewui组件库布局样式库，由工具自动生成，请不要手动修改！！！
-* 2023-05-30 11:41
+* 2023-06-03 23:06
 * @author kviewui@163.com
-* @version 1.0.1
+* @version 1.0.2
 * @see {@link git+https://github.com/kviewui/kviewui/tree/main/packages/kviewui-css}
 * @license MIT
 * Copyright (c) 2023 cn.kviewui.com
@@ -3882,19 +3882,19 @@ view {
   color: #000000 !important;
 }
 .kui-placeholder-black::-webkit-input-placeholder.dark {
-  color: #000000 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 .kui-placeholder-black::-moz-placeholder.dark {
-  color: #000000 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 .kui-placeholder-black:-ms-input-placeholder.dark {
-  color: #000000 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 .kui-placeholder-black::-ms-input-placeholder.dark {
-  color: #000000 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 .kui-placeholder-black::placeholder.dark {
-  color: #000000 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 .kui-placeholder-white::-webkit-input-placeholder {
   color: #FFFFFF !important;
@@ -3912,19 +3912,19 @@ view {
   color: #FFFFFF !important;
 }
 .kui-placeholder-white::-webkit-input-placeholder.dark {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(0, 0, 0, 0.9) !important;
 }
 .kui-placeholder-white::-moz-placeholder.dark {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(0, 0, 0, 0.9) !important;
 }
 .kui-placeholder-white:-ms-input-placeholder.dark {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(0, 0, 0, 0.9) !important;
 }
 .kui-placeholder-white::-ms-input-placeholder.dark {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(0, 0, 0, 0.9) !important;
 }
 .kui-placeholder-white::placeholder.dark {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(0, 0, 0, 0.9) !important;
 }
 /*  Grey / 中性灰 */
 .kui-placeholder-grey-0::-webkit-input-placeholder {
@@ -8962,13 +8962,13 @@ view {
   color: #000000 !important;
 }
 .kui-black.dark {
-  color: #000000 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 .kui-white {
   color: #FFFFFF !important;
 }
 .kui-white.dark {
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: rgba(0, 0, 0, 0.9) !important;
 }
 /*  Grey / 中性灰 */
 .kui-grey-0 {
@@ -10251,13 +10251,13 @@ view {
   background-color: #000000 !important;
 }
 .kui-bg-black.dark {
-  background-color: #000000 !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
 }
 .kui-bg-white {
   background-color: #FFFFFF !important;
 }
 .kui-bg-white.dark {
-  background-color: rgba(255, 255, 255, 0.9) !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
 }
 /*  Grey / 中性灰 */
 .kui-bg-grey-0 {
@@ -11909,13 +11909,13 @@ view {
   border-color: #000000 !important;
 }
 .kui-border-black.dark {
-  border-color: #000000 !important;
+  border-color: rgba(255, 255, 255, 0.9) !important;
 }
 .kui-border-white {
   border-color: #FFFFFF !important;
 }
 .kui-border-white.dark {
-  border-color: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(0, 0, 0, 0.9) !important;
 }
 /*  Grey / 中性灰 */
 .kui-border-grey-0 {
