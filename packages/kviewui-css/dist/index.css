@@ -1,8 +1,8 @@
 /**
 * kviewui组件库布局样式库，由工具自动生成，请不要手动修改！！！
-* 2023-06-03 23:06
+* 2023-06-14 13:48
 * @author kviewui@163.com
-* @version 1.0.2
+* @version 1.0.3
 * @see {@link git+https://github.com/kviewui/kviewui/tree/main/packages/kviewui-css}
 * @license MIT
 * Copyright (c) 2023 cn.kviewui.com
@@ -11747,6 +11747,9 @@ view {
 .kui-border {
   border-width: 1px !important;
 }
+.kui-border-rpx {
+  border-width: 1rpx !important;
+}
 .kui-border-t-0 {
   border-top-width: 0px !important;
 }
@@ -11762,6 +11765,9 @@ view {
 .kui-border-t {
   border-top-width: 1px !important;
 }
+.kui-border-t-rpx {
+  border-top-width: 1rpx !important;
+}
 .kui-border-r-0 {
   border-right-width: 0px !important;
 }
@@ -11776,6 +11782,9 @@ view {
 }
 .kui-border-r {
   border-right-width: 1px !important;
+}
+.kui-border-r-rpx {
+  border-right-width: 1rpx !important;
 }
 .kui-border-b-0 {
   border-bottom-width: 0px !important;
@@ -11809,6 +11818,9 @@ view {
 }
 .kui-border-l {
   border-left-width: 1px !important;
+}
+.kui-border-l-rpx {
+  border-left-width: 1rpx !important;
 }
 /* 边框样式 */
 .kui-border-solid {
